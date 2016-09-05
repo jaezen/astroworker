@@ -4,75 +4,45 @@
  * @flow
  */
 
-import React, { Component } from 'react';
-import Button from 'react-native-button';
-import Onboard_2 from '.app/components/Onboard_2.js';
+import React, {
+  Component
+} from 'react';
 
 import {
   AppRegistry,
-  StyleSheet,
-  Text,
   View,
   StatusBar,
 } from 'react-native';
 
-class AstroWorker extends Component {
+// Renamed AstroWorker component to Onboard_1 and moved it to `Pages`. `index` should only be
+// responsible for registering the component with the `AppRegistry`.
+import Onboard_1 from './app/components/Pages/Onboard_1.js';
 
-  constructor(props, context) {
-      super(props, context);
+// `./` = root of your project. Onboard_2.js is inside a folder called `Pages`
+import Onboard_2 from './app/components/Pages/Onboard_2.js';
+
+const AstroWorker = () => (
+  <View style={{flex:1}}>
+    {
+    /*
+      If you want tos style your StatusBar instead of hiding it, see my answer to this question on SO:
+      http://stackoverflow.com/questions/39297291/how-to-set-ios-status-bar-background-color-in-react-native/39300715#39300715
+    */
     }
-    _handlePress() {
-      console.log('Pressed!');
-}
-  render() {
-    return (
-      <View style={styles.container}>
-        <StatusBar hidden={false} />
-        <Text style={styles.welcome}>
-          ASTRO WORKER
-        </Text>
-        <Text style={styles.instructions}>
-        Get on-demand work
-        </Text>
-        <Button
-     containerStyle={{padding:10, height:45, width: 300, overflow:'hidden', borderRadius:4, backgroundColor: 'blue', marginBottom: 10,}}
-     style={{fontSize: 20, color: 'white'}}>
-     QUICK START
-        </Button>
-        <Button
-     containerStyle={{padding:10, height:45,width: 300, overflow:'hidden', borderRadius:4, backgroundColor: 'blue'}}
-     style={{fontSize: 20, color: 'white'}}>
-     LOG-IN
-        </Button>
-      </View>
-    );
-  }
-}
+    <StatusBar hidden={false} />
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    flexDirection:'column',
-    alignItems:'center',
+    {
+    /*
+      To show Onboard_2 instead, just change this to `= Onboard_2`, etc (until we setup a router to do this)
+    */
+    }
+    <Onboard_1 />
 
-    backgroundColor: 'white',
-  },
-  welcome: {
-    fontFamily:'Helvetica',
-    fontSize: 30,
-    fontWeight:'bold',
-    textAlign: 'center',
-    justifyContent:'center',
-    padding: 70,
-    backgroundColor: 'white'
-  },
-  instructions: {
-    fontSize:20,
-    textAlign: 'center',
-    padding: 80,
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
+  </View>
+);
 
+
+
+
+// You should only do this once ever.
 AppRegistry.registerComponent('AstroWorker', () => AstroWorker);
