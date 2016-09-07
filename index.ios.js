@@ -36,7 +36,7 @@ const AstroWorker = () => (
       To show Onboard_2 instead, just change this to `= Onboard_2`, etc (until we setup a router to do this)
     */
     }
-    <Onboard_1 />
+    <Onboard_2 />
 
   </View>
 );
