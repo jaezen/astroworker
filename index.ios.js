@@ -21,6 +21,10 @@ import Onboard_1 from './app/components/Pages/Onboard_1.js';
 // `./` = root of your project. Onboard_2.js is inside a folder called `Pages`
 import Onboard_2 from './app/components/Pages/Onboard_2.js';
 
+// `./` = root of your project. Onboard_3.js is inside a folder called `Pages`
+import Onboard_3 from './app/components/Pages/Onboard_3.js';
+
+
 const AstroWorker = () => (
   <View style={{flex:1}}>
     {
@@ -36,7 +40,7 @@ const AstroWorker = () => (
       To show Onboard_2 instead, just change this to `= Onboard_2`, etc (until we setup a router to do this)
     */
     }
-    <Onboard_2 />
+    <Onboard_3 />
 
   </View>
 );

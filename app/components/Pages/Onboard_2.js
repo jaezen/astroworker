@@ -26,7 +26,7 @@ export default class Onboard_2 extends Component {
           Which U.S. city do you want to work in?
         </Text>
         <TextInput
-          style={{height: 40, width: 250, borderColor:'gray', borderWidth: 1}}
+          style={styles.textEdit}
           onChangeText={(text) => this.setState({text})}
           value={this.state.text}
         />
@@ -35,6 +35,7 @@ export default class Onboard_2 extends Component {
     );
   }
 }
+
 
 
 const styles = StyleSheet.create({
@@ -51,6 +52,14 @@ const styles = StyleSheet.create({
     padding: 80,
     color: '#333333',
     marginBottom: 5,
+  },
+  textEdit: {
+    alignSelf:'center',
+    height:40,
+    width:250,
+    backgroundColor:'white',
+    borderColor:'gray',
+    borderWidth:1,
   },
 
 });
