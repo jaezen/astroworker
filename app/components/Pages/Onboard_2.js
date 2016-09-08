@@ -13,7 +13,7 @@ import {
 export default class Onboard_2 extends Component {
   constructor(props) {
     super(props);
-    this.state = { text: 'Type city name' };
+    this.state = { text: '' };
 }
 
   render() {
@@ -26,6 +26,7 @@ export default class Onboard_2 extends Component {
           Which U.S. city do you want to work in?
         </Text>
         <TextInput
+          placeholder="Type city name"
           style={styles.textEdit}
           onChangeText={(text) => this.setState({text})}
           value={this.state.text}
@@ -35,8 +36,6 @@ export default class Onboard_2 extends Component {
     );
   }
 }
-
-
 
 const styles = StyleSheet.create({
   container: {

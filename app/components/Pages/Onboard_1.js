@@ -6,25 +6,35 @@ import {
   View,
 } from 'react-native';
 
+import {
+  Header,
+  Link,
+  nativeHistory,
+  Route,
+  Router,
+  StackRoute,
+  withRouter,
+} from 'react-router-native';
+
 import Button from 'react-native-button';
 
-export default class Onboard_1 extends Component {
+export default withRouter(class Onboard_1 extends Component {
 
   constructor(props, context) {
     super(props, context);
   }
 
-  handleQuickStartButtonPress() {
-    console.log('Quick Start Pressed');
-    alert('Quick Start Pressed');
-  }
-
-  handleLoginButtonPress() {
-    console.log('Login Pressed');
-    alert('Login Pressed');
-  }
-
   render() {
+
+    const handleQuickStartButtonPress = () => {
+      this.props.router.push('/onboard-2');
+    }
+
+    const handleLoginButtonPress = () => {
+      console.log('Login Pressed');
+      alert('Login Pressed');
+    };
+
     return (
       <View style={styles.container}>
 
@@ -41,7 +51,7 @@ export default class Onboard_1 extends Component {
         <Button
          containerStyle={styles.quickStartButtonContainer}
          style={{fontSize: 20, color: 'white'}}
-         onPress={this.handleQuickStartButtonPress}
+         onPress={handleQuickStartButtonPress}
         >
          QUICK START
         </Button>
@@ -49,7 +59,7 @@ export default class Onboard_1 extends Component {
         <Button
          containerStyle={styles.loginButtonContainer}
          style={{fontSize: 20, color: 'white'}}
-         onPress={this.handleLoginButtonPress}
+         onPress={handleLoginButtonPress}
         >
          LOG-IN
         </Button>
@@ -57,7 +67,7 @@ export default class Onboard_1 extends Component {
       </View>
     );
   }
-}
+});
 
 const styles = StyleSheet.create({
   container: {
