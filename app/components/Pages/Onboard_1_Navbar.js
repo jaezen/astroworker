@@ -15,7 +15,7 @@ const Onboard_1_Navbar = (props) => {
     <Header
       {...props}
       style={{ backgroundColor: '#EEEEEE' }}
-      title="Astro Worker"
+      title="Home"
     />
   );
 };

@@ -16,7 +16,6 @@ const Onboard_2_Navbar = (props) => {
       {...props}
       style={{ backgroundColor: '#EEEEEE' }}
       leftButtonText="< Back"
-      rightButtonText="Next >"
       title="Set-up"
     />
   );

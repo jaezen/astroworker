@@ -53,6 +53,10 @@ import Onboard_1_Navbar from './app/components/Pages/Onboard_1_Navbar';
 import Onboard_2 from './app/components/Pages/Onboard_2';
 import Onboard_2_Navbar from './app/components/Pages/Onboard_2_Navbar';
 
+// `./` = root of your project. Onboard_2.js is inside a folder called `Pages`
+import Onboard_3 from './app/components/Pages/Onboard_3';
+import Onboard_3_Navbar from './app/components/Pages/Onboard_3_Navbar';
+
 const Master = (props) => (
   <View style={styles.component}>
     {
@@ -70,8 +74,9 @@ const Master = (props) => (
 const routes = (
   <Router history={nativeHistory}>
     <StackRoute path="master" component={Master}>
-      <Route path="/" component={Onboard_1} overlayComponent={Onboard_1_Navbar} />
+      <Route path="/" component={Onboard_1}/>
       <Route path="/onboard-2" component={Onboard_2} overlayComponent={Onboard_2_Navbar} />
+      <Route path="/onboard-3" component={Onboard_3} overlayComponent={Onboard_3_Navbar} />
     </StackRoute>
   </Router>
 );
