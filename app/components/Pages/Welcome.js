@@ -18,7 +18,7 @@ import {
 
 import Button from 'react-native-button';
 
-export default withRouter(class Onboard_1 extends Component {
+export default withRouter(class Welcome extends Component {
 
   constructor(props, context) {
     super(props, context);
