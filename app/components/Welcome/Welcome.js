@@ -18,7 +18,7 @@ import {
 
 import Button from 'react-native-button';
 
-export default withRouter(class Welcome extends Component {
+class Welcome extends Component {
 
   constructor(props, context) {
     super(props, context);
@@ -27,7 +27,7 @@ export default withRouter(class Welcome extends Component {
   render() {
 
     const handleQuickStartButtonPress = () => {
-      this.props.router.push('/onboard-2');
+      this.props.router.push('/city-prompt');
     }
 
     const handleLoginButtonPress = () => {
@@ -67,7 +67,7 @@ export default withRouter(class Welcome extends Component {
       </View>
     );
   }
-});
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -111,3 +111,5 @@ const styles = StyleSheet.create({
     backgroundColor: 'blue'
   },
 });
+
+export default withRouter(Welcome);

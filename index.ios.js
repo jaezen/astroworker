@@ -46,16 +46,16 @@ const styles = StyleSheet.create({
 
 // Renamed AstroWorker component to Onboard_1 and moved it to `Pages`. `index` should only be
 // responsible for registering the component with the `AppRegistry`.
-import Onboard_1 from './app/components/Pages/Onboard_1';
-import Onboard_1_Navbar from './app/components/Pages/Onboard_1_Navbar';
+import Welcome from './app/components/Welcome/Welcome';
+// import WelcomeNavbar from './app/components/Pages/WelcomeNavbar';
 
 // `./` = root of your project. Onboard_2.js is inside a folder called `Pages`
-import Onboard_2 from './app/components/Pages/Onboard_2';
-import Onboard_2_Navbar from './app/components/Pages/Onboard_2_Navbar';
+import CityPrompt from './app/components/CityPrompt/CityPrompt';
+import CityPromptNavbar from './app/components/CityPrompt/CityPromptNavbar';
 
 // `./` = root of your project. Onboard_2.js is inside a folder called `Pages`
-import Onboard_3 from './app/components/Pages/Onboard_3';
-import Onboard_3_Navbar from './app/components/Pages/Onboard_3_Navbar';
+import DOBPrompt from './app/components/DOBPrompt/DOBPrompt';
+import DOBPromptNavbar from './app/components/DOBPrompt/DOBPromptNavbar';
 
 const Master = (props) => (
   <View style={styles.component}>
@@ -74,9 +74,9 @@ const Master = (props) => (
 const routes = (
   <Router history={nativeHistory}>
     <StackRoute path="master" component={Master}>
-      <Route path="/" component={Onboard_1}/>
-      <Route path="/onboard-2" component={Onboard_2} overlayComponent={Onboard_2_Navbar} />
-      <Route path="/onboard-3" component={Onboard_3} overlayComponent={Onboard_3_Navbar} />
+      <Route path="/" component={Welcome}/>
+      <Route path="/city-prompt" component={CityPrompt} overlayComponent={CityPromptNavbar} />
+      <Route path="/dob-prompt" component={DOBPrompt} overlayComponent={DOBPromptNavbar} />
     </StackRoute>
   </Router>
 );

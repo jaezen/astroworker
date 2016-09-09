@@ -10,29 +10,27 @@ import {
   View,
 } from 'react-native';
 
-export default class Onboard_2 extends Component {
+class DOBPrompt extends Component {
   constructor(props) {
     super(props);
     this.state = { text: '' };
-}
+  }
 
   render() {
     // render() cannot return an array of components, so we need to wrap them in a `<View />``
     return (
       <View style={styles.container}>
 
-        <Text>Step 1 of 4</Text>
         <Text style={styles.question}>
-          Which U.S. city do you want to work in?
+          DOB
         </Text>
         <TextInput
-          placeholder="Type city name"
+          placeholder="MM/DD/YYYY"
           style={styles.textEdit}
           onChangeText={(text) => this.setState({text})}
           value={this.state.text}
         />
       </View>
-
     );
   }
 }
@@ -42,8 +40,8 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection:'column',
     alignItems:'center',
-    marginTop: 70,
-    backgroundColor: 'aqua',
+    paddingTop: 70,
+    backgroundColor: '#fff',
   },
   question: {
     fontSize:20,
@@ -60,8 +58,6 @@ const styles = StyleSheet.create({
     borderColor:'gray',
     borderWidth:1,
   },
-
 });
 
-// You only register your root component, So this is not eneded.
-// AppRegistry.registerComponent('AstroWorker', () => AstroWorker);
+export default DOBPrompt;

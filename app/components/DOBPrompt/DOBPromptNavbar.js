@@ -10,14 +10,15 @@ import {
   withRouter,
 } from 'react-router-native';
 
-const Onboard_1_Navbar = (props) => {
+const DOBPromptNavbar = (props) => {
   return (
     <Header
       {...props}
       style={{ backgroundColor: '#EEEEEE' }}
-      title="Home"
+      leftButtonText="< Back"
+      title="Step 2 of 4"
     />
   );
 };
 
-export default Onboard_1_Navbar;
+export default DOBPromptNavbar;

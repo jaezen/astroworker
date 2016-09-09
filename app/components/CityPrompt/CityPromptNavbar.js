@@ -10,16 +10,22 @@ import {
   withRouter,
 } from 'react-router-native';
 
-const Onboard_2_Navbar = (props) => {
+const CityPromptNavbar = (props) => {
+
+  const handleRightButtonPress = () => {
+    props.router.push('/dob-prompt');
+  }
+
   return (
     <Header
       {...props}
       style={{ backgroundColor: '#EEEEEE' }}
       leftButtonText="< Back"
       rightButtonText="Next >"
-      title="Set-up"
+      onRightButtonPress={handleRightButtonPress}
+      title="Step 1 of 4"
     />
   );
 };
 
-export default Onboard_2_Navbar;
+export default withRouter(CityPromptNavbar);

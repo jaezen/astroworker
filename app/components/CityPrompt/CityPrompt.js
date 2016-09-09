@@ -10,29 +10,26 @@ import {
   View,
 } from 'react-native';
 
-export default class Onboard_3 extends Component {
+class CityPrompt extends Component {
   constructor(props) {
     super(props);
     this.state = { text: '' };
-}
+  }
 
   render() {
     // render() cannot return an array of components, so we need to wrap them in a `<View />``
     return (
       <View style={styles.container}>
-
-        <Text>Step 2 of 4</Text>
         <Text style={styles.question}>
-          When is your bithday?
+          Which U.S. city do you want to work in?
         </Text>
         <TextInput
-          placeholder="MM/DD/YYYY"
+          placeholder="Type city name"
           style={styles.textEdit}
           onChangeText={(text) => this.setState({text})}
           value={this.state.text}
         />
       </View>
-
     );
   }
 }
@@ -42,8 +39,8 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection:'column',
     alignItems:'center',
-    marginTop: 70,
-    backgroundColor: 'aqua',
+    paddingTop: 70,
+    backgroundColor: '#fff',
   },
   question: {
     fontSize:20,
@@ -63,5 +60,4 @@ const styles = StyleSheet.create({
 
 });
 
-// You only register your root component, So this is not eneded.
-// AppRegistry.registerComponent('AstroWorker', () => AstroWorker);
+export default CityPrompt;
