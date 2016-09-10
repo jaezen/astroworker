@@ -10,7 +10,7 @@ import {
   View,
 } from 'react-native';
 
-class CityPrompt extends Component {
+class SSNPrompt extends Component {
   constructor(props) {
     super(props);
     this.state = { text: '' };
@@ -21,13 +21,13 @@ class CityPrompt extends Component {
     return (
       <View style={styles.container}>
       <Text>
-        Step 1 of 4
+        Step 3 of 4
       </Text>
         <Text style={styles.question}>
-          Which U.S. city do you want to work in?
+          Do you have a Social Security Number and are legally able to work in the U.S.?
         </Text>
         <TextInput
-          placeholder="Type city name"
+          placeholder="MM/DD/YYYY"
           style={styles.textEdit}
           onChangeText={(text) => this.setState({text})}
           value={this.state.text}
@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
   question: {
     fontSize:20,
     textAlign: 'center',
-    padding: 80,
+    padding: 30,
     color: '#333333',
     marginBottom: 5,
   },
@@ -60,7 +60,6 @@ const styles = StyleSheet.create({
     borderColor:'gray',
     borderWidth:1,
   },
-
 });
 
-export default CityPrompt;
+export default SSNPrompt;

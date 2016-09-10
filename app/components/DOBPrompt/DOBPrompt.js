@@ -20,9 +20,11 @@ class DOBPrompt extends Component {
     // render() cannot return an array of components, so we need to wrap them in a `<View />``
     return (
       <View style={styles.container}>
-
+      <Text>
+        Step 2 of 4
+      </Text>
         <Text style={styles.question}>
-          DOB
+          What is your Date of Birth?
         </Text>
         <TextInput
           placeholder="MM/DD/YYYY"
@@ -46,7 +48,7 @@ const styles = StyleSheet.create({
   question: {
     fontSize:20,
     textAlign: 'center',
-    padding: 80,
+    padding: 60,
     color: '#333333',
     marginBottom: 5,
   },

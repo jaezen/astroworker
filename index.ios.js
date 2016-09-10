@@ -57,6 +57,10 @@ import CityPromptNavbar from './app/components/CityPrompt/CityPromptNavbar';
 import DOBPrompt from './app/components/DOBPrompt/DOBPrompt';
 import DOBPromptNavbar from './app/components/DOBPrompt/DOBPromptNavbar';
 
+// `./` = root of your project. Onboard_2.js is inside a folder called `Pages`
+import SSNPrompt from './app/components/SSNPrompt/SSNPrompt';
+import SSNPromptNavbar from './app/components/SSNPrompt/SSNPromptNavbar';
+
 const Master = (props) => (
   <View style={styles.component}>
     {
@@ -77,6 +81,7 @@ const routes = (
       <Route path="/" component={Welcome}/>
       <Route path="/city-prompt" component={CityPrompt} overlayComponent={CityPromptNavbar} />
       <Route path="/dob-prompt" component={DOBPrompt} overlayComponent={DOBPromptNavbar} />
+      <Route path="/ssn-prompt" component={SSNPrompt} overlayComponent={SSNPromptNavbar} />
     </StackRoute>
   </Router>
 );

@@ -11,14 +11,22 @@ import {
 } from 'react-router-native';
 
 const DOBPromptNavbar = (props) => {
+
+  const handleRightButtonPress = () => {
+    props.router.push('/ssn-prompt');
+  }
+
   return (
     <Header
       {...props}
       style={{ backgroundColor: '#EEEEEE' }}
       leftButtonText="< Back"
-      title="Step 2 of 4"
+      rightButtonText="Next >"
+      onRightButtonPress={handleRightButtonPress}
+      title="Set-up"
     />
   );
 };
 
-export default DOBPromptNavbar;
+// export default DOBPromptNavbar;
+export default withRouter(DOBPromptNavbar);

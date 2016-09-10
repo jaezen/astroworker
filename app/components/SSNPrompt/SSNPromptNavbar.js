@@ -10,10 +10,10 @@ import {
   withRouter,
 } from 'react-router-native';
 
-const CityPromptNavbar = (props) => {
+const SSNPromptNavbar = (props) => {
 
   const handleRightButtonPress = () => {
-    props.router.push('/dob-prompt');
+    props.router.push('/ssn-prompt');
   }
 
   return (
@@ -28,4 +28,4 @@ const CityPromptNavbar = (props) => {
   );
 };
 
-export default withRouter(CityPromptNavbar);
+export default SSNPromptNavbar;
