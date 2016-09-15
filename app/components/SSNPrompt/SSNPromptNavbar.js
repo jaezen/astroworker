@@ -13,7 +13,7 @@ import {
 const SSNPromptNavbar = (props) => {
 
   const handleRightButtonPress = () => {
-    props.router.push('/ssn-prompt');
+    props.router.push('/worker-prompt');
   }
 
   return (
@@ -28,4 +28,4 @@ const SSNPromptNavbar = (props) => {
   );
 };
 
-export default SSNPromptNavbar;
+export default withRouter(SSNPromptNavbar);

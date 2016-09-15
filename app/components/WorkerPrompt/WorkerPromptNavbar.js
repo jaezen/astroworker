@@ -10,10 +10,10 @@ import {
   withRouter,
 } from 'react-router-native';
 
-const DOBPromptNavbar = (props) => {
+const WorkerPromptNavbar = (props) => {
 
   const handleRightButtonPress = () => {
-    props.router.push('/ssn-prompt');
+    props.router.push('/search');
   }
 
   return (
@@ -28,4 +28,4 @@ const DOBPromptNavbar = (props) => {
   );
 };
 
-export default withRouter(DOBPromptNavbar);
+export default withRouter(WorkerPromptNavbar);

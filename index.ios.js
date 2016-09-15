@@ -61,11 +61,19 @@ import DOBPromptNavbar from './app/components/DOBPrompt/DOBPromptNavbar';
 import SSNPrompt from './app/components/SSNPrompt/SSNPrompt';
 import SSNPromptNavbar from './app/components/SSNPrompt/SSNPromptNavbar';
 
+// `./` = root of your project. Onboard_2.js is inside a folder called `Pages`
+import WorkerPrompt from './app/components/WorkerPrompt/WorkerPrompt';
+import WorkerPromptNavbar from './app/components/WorkerPrompt/WorkerPromptNavbar';
+
+// `./` = root of your project. Onboard_2.js is inside a folder called `Pages`
+import Search from './app/components/Search/Search';
+import SearchNavbar from './app/components/Search/SearchNavbar';
+
 const Master = (props) => (
   <View style={styles.component}>
     {
     /*
-      If you want tos style your StatusBar instead of hiding it, see my answer to this question on SO:
+      If you want to style your StatusBar instead of hiding it, see my answer to this question on SO:
       http://stackoverflow.com/questions/39297291/how-to-set-ios-status-bar-background-color-in-react-native/39300715#39300715
     */
     }
@@ -76,12 +84,14 @@ const Master = (props) => (
 
 
 const routes = (
-  <Router history={nativeHistory}>
+  <Router addressBar history={nativeHistory}>
     <StackRoute path="master" component={Master}>
       <Route path="/" component={Welcome}/>
       <Route path="/city-prompt" component={CityPrompt} overlayComponent={CityPromptNavbar} />
       <Route path="/dob-prompt" component={DOBPrompt} overlayComponent={DOBPromptNavbar} />
       <Route path="/ssn-prompt" component={SSNPrompt} overlayComponent={SSNPromptNavbar} />
+      <Route path="/worker-prompt" component={WorkerPrompt} overlayComponent={WorkerPromptNavbar} />
+      <Route path="/search" component={Search} overlayComponent={SearchNavbar} />
     </StackRoute>
   </Router>
 );

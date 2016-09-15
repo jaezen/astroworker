@@ -10,22 +10,22 @@ import {
   withRouter,
 } from 'react-router-native';
 
-const DOBPromptNavbar = (props) => {
+const SearchNavbar = (props) => {
 
   const handleRightButtonPress = () => {
-    props.router.push('/ssn-prompt');
+    props.router.push('/worker-prompt');
   }
 
   return (
     <Header
       {...props}
       style={{ backgroundColor: '#EEEEEE' }}
-      leftButtonText="< Back"
-      rightButtonText="Next >"
+      leftButtonText="Profile"
+      rightButtonText="Find >"
       onRightButtonPress={handleRightButtonPress}
-      title="Set-up"
+      title="Pick Options"
     />
   );
 };
 
-export default withRouter(DOBPromptNavbar);
+export default withRouter(SearchNavbar);

@@ -72,14 +72,6 @@ const styles = StyleSheet.create({
     color: '#333333',
     marginBottom: 5,
   },
-  textEdit: {
-    alignSelf:'center',
-    height:40,
-    width:250,
-    backgroundColor:'white',
-    borderColor:'gray',
-    borderWidth:1,
-  },
   YesButtonContainer: {
     padding: 10,
     height: 45,
