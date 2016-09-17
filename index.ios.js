@@ -26,6 +26,8 @@ import {
   withRouter,
 } from 'react-router-native';
 
+import { Examples } from '@shoutem/ui';
+
 const styles = StyleSheet.create({
   component: {
     backgroundColor: '#FFFFFF',
@@ -69,6 +71,10 @@ import WorkerPromptNavbar from './app/components/WorkerPrompt/WorkerPromptNavbar
 import Search from './app/components/Search/Search';
 import SearchNavbar from './app/components/Search/SearchNavbar';
 
+// `./` = root of your project. Onboard_2.js is inside a folder called `Pages`
+// import Results from './app/components/Results/Results';
+// import ResultsNavbar from './app/components/Results/ResultsNavbar';
+
 const Master = (props) => (
   <View style={styles.component}>
     {
@@ -95,6 +101,10 @@ const routes = (
     </StackRoute>
   </Router>
 );
+
+
+
+
 
 // You should only do this once ever.
 AppRegistry.registerComponent('AstroWorker', () => () => routes);

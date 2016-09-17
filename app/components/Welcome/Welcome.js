@@ -16,7 +16,10 @@ import {
   withRouter,
 } from 'react-router-native';
 
+
 import Button from 'react-native-button';
+
+
 
 class Welcome extends Component {
 
@@ -82,15 +85,16 @@ const styles = StyleSheet.create({
     fontWeight:'bold',
     textAlign: 'center',
     justifyContent:'center',
-    padding: 70,
+    marginTop:100,
+    padding: 20,
     backgroundColor: 'white'
   },
   instructions: {
     fontSize:20,
     textAlign: 'center',
-    padding: 80,
+    padding: 60,
     color: '#333333',
-    marginBottom: 5,
+    marginBottom: 20,
   },
   // It's important for maintainability and performance not to inline your styles in your render().
   quickStartButtonContainer: {

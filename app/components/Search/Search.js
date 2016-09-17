@@ -9,83 +9,73 @@ import {
   Text,
   TextInput,
   View,
+  ScrollView,
 } from 'react-native';
 
 import CheckBox from 'react-native-checkbox';
+
+
+//create child component
+class SearchRow extends Component {
+
+  render(){
+
+    return (
+      <View
+        style={styles.row}
+      >
+         <CheckBox
+          containerStyle={styles.checkbox}
+          labelStyle={styles.checkBoxLabel}
+          label={this.props.rowName}
+          checked={false}
+          onChange={(checked) => console.log('I am not checked', checked)}
+         />
+      </View>
+    )
+  }
+
+}
+
 
 class Search extends Component {
   //Initialize the hardcoded data
    constructor(props) {
      super(props);
-     const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
-     this.state = {
-       dataSource: ds.cloneWithRows([
-         'Drive people', 'Deliver things', 'Shop for people', 'Clean houses', 'Use your skills'
 
-       ])
-     };
    }
+
    render() {
      return (
-       <View style={styles.container}>
-         <ListView
-           dataSource={this.state.dataSource}
-           renderRow={(rowData) => <Text>{rowData}</Text>}
-         />
-         <CheckBox style={styles.drive}
-          label='Drive people'
-          checked={false}
-          onChange={(checked) => console.log('I am checked', checked)}
-         />
-         <CheckBox style={styles.deliver}
-          label='Deliver things'
-          checked={false}
-          onChange={(checked) => console.log('I am checked', checked)}
-         />
-         <CheckBox style={styles.shop}
-          label='Shop for people'
-          checked={true}
-          onChange={(checked) => console.log('I am checked', checked)}
-         />
-         <CheckBox style={styles.clean}
-          label='Clean houses'
-          checked={true}
-          onChange={(checked) => console.log('I am checked', checked)}
-         />
-         <CheckBox style={styles.skills}
-          label='Use your skills'
-          checked={true}
-          onChange={(checked) => console.log('I am checked', checked)}
-         />
-       </View>
+       <ScrollView style={styles.container}>
+
+        <SearchRow rowName="Drive people" rowImage="" />
+        <SearchRow rowName="Deliver things" rowImage="" />
+        <SearchRow rowName="Shop for people" rowImage="" />
+        <SearchRow rowName="Clean houses" rowImage="" />
+        <SearchRow rowName="Use your skills" rowImage="" />
+       </ScrollView>
      );
    }
  }
+
 
  const styles = StyleSheet.create({
    container: {
      flex: 1,
      flexDirection:'column',
-     justifyContent: 'space-between',
-     padding:40,
-     backgroundColor:'white',
    },
-   drive: {
-     fontSize:30,
+   row: {
+    backgroundColor: 'aqua',
+    height: 107,
+    borderBottomWidth: 'black',
+    borderBottomWidth: 1,
+    justifyContent: 'center',
+   },
+   checkBox: {
+     backgroundColor: 'green',
    }
-// this.state.dataSource: {
-//   justifyContent: 'space-between',
-// //     backgroundColor:'yellow',
-// //     fontSize:12,
-// },
-  // NoButtonContainer: {
-  //   padding:10,
-  //   height:45,
-  //   width: 300,
-  //   overflow:'hidden',
-  //   borderRadius:4,
-  //   backgroundColor: 'blue'
-  // },
+
 });
 
 export default Search;

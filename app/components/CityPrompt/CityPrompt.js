@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
   question: {
     fontSize:20,
     textAlign: 'center',
-    padding: 80,
+    padding: 50,
     color: '#333333',
     marginBottom: 5,
   },
