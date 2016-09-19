@@ -27,9 +27,10 @@ class SearchRow extends Component {
          <CheckBox
           containerStyle={styles.checkbox}
           labelStyle={styles.checkBoxLabel}
+          checkboxStyle ={styles.checkboxStyle}
           label={this.props.rowName}
           checked={false}
-          onChange={(checked) => console.log('I am not checked', checked)}
+          onChange={(checked) => console.log('I am checked', checked)}
          />
       </View>
     )
@@ -39,13 +40,13 @@ class SearchRow extends Component {
 
 
 class Search extends Component {
-  //Initialize the hardcoded data
    constructor(props) {
      super(props);
 
    }
 
    render() {
+
      return (
        <ScrollView style={styles.container}>
 
@@ -62,20 +63,25 @@ class Search extends Component {
 
  const styles = StyleSheet.create({
    container: {
-     flex: 1,
-     flexDirection:'column',
+    flex: 1,
+    flexDirection:'column',
    },
    row: {
-    backgroundColor: 'aqua',
+    backgroundColor: 'cadetblue',
     height: 107,
-    borderBottomWidth: 'black',
+    borderBottomColor: 'white',
     borderBottomWidth: 1,
     justifyContent: 'center',
    },
-   checkBox: {
-     backgroundColor: 'green',
-   }
-
+  checkboxStyle: {
+    margin:15,
+  },
+  checkBoxLabel: {
+    fontSize:14,
+    color:'white',
+    fontWeight:'bold',
+    //padding:16,
+   },
 });
 
 export default Search;

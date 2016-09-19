@@ -13,7 +13,7 @@ import {
 const SearchNavbar = (props) => {
 
   const handleRightButtonPress = () => {
-    props.router.push('/worker-prompt');
+    props.router.push('/results');
   }
 
   return (
@@ -21,7 +21,7 @@ const SearchNavbar = (props) => {
       {...props}
       style={{ backgroundColor: '#EEEEEE' }}
       leftButtonText="Profile"
-      rightButtonText="Find >"
+      rightButtonText="Find"
       onRightButtonPress={handleRightButtonPress}
       title="Pick Options"
     />

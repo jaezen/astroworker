@@ -72,6 +72,10 @@ import Search from './app/components/Search/Search';
 import SearchNavbar from './app/components/Search/SearchNavbar';
 
 // `./` = root of your project. Onboard_2.js is inside a folder called `Pages`
+import Results from './app/components/Results/Results';
+import ResultsNavbar from './app/components/Results/ResultsNavbar';
+
+// `./` = root of your project. Onboard_2.js is inside a folder called `Pages`
 // import Results from './app/components/Results/Results';
 // import ResultsNavbar from './app/components/Results/ResultsNavbar';
 
@@ -98,6 +102,7 @@ const routes = (
       <Route path="/ssn-prompt" component={SSNPrompt} overlayComponent={SSNPromptNavbar} />
       <Route path="/worker-prompt" component={WorkerPrompt} overlayComponent={WorkerPromptNavbar} />
       <Route path="/search" component={Search} overlayComponent={SearchNavbar} />
+      <Route path="/results" component={Results} overlayComponent={ResultsNavbar} />
     </StackRoute>
   </Router>
 );

@@ -21,9 +21,9 @@ const ResultsNavbar = (props) => {
       {...props}
       style={{ backgroundColor: '#EEEEEE' }}
       leftButtonText="Profile"
-      rightButtonText="Search Icon"
+      rightButtonText="Search"
       onRightButtonPress={handleRightButtonPress}
-      title="Pick Options"
+      title="Results"
     />
   );
 };
