@@ -13,7 +13,6 @@ import {
 
 import {
   Image,
-  ListView,
   Tile,
   Title,
   Subtitle,
@@ -29,9 +28,9 @@ class ResultsRow extends Component {
       <View
         style={styles.row}
       >
-         <ListView
-          renderRow={this.props.rowName}
-         />
+         <Text style={styles.rowText}>
+           {this.props.rowName}
+         </Text>
       </View>
     )
   }
@@ -73,6 +72,9 @@ class Results extends Component {
     borderBottomWidth: 1,
     justifyContent: 'center',
    },
+   rowText: {
+     color: '#FFFFFF',
+   }
 });
 
 export default Results;
