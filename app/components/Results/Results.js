@@ -5,7 +5,6 @@ import React, {
 import {
   AppRegistry,
   StyleSheet,
-  Text,
   TextInput,
   View,
   ScrollView,
@@ -15,8 +14,14 @@ import {
   Image,
   Tile,
   Title,
-  Subtitle,
   Overlay,
+  Row,
+  Icon,
+  Subtitle,
+  Text,
+  Button,
+  Divider,
+  Caption,
 } from '@shoutem/ui';
 
 
@@ -28,11 +33,32 @@ class ResultsRow extends Component {
       <View
         style={styles.row}
       >
-         <Text style={styles.rowText}>
-           {this.props.rowName}
-         </Text>
+      <Row>
+        <Image
+          styleName="small rounded-corners"
+          source={{ uri: 'http://shoutem.github.io/img/ui-toolkit/examples/image-3.png' }}
+        />
+        <View styleName="vertical stretch space-between">
+          <Subtitle>Wilco Cover David Bowie&#39;s "Space Oddity"</Subtitle>
+          <Caption>June 21  ·  20:00</Caption>
+        </View>
+        <Button styleName="right-icon"><Icon name="add-event" /></Button>
+      </Row>
       </View>
     )
+  }
+
+}
+
+class SectionHeader extends Component {
+
+  render() {
+
+    return (
+      <Tile styleName="text-centric">
+        <Title styleName="sm-gutter-bottom">Drive</Title>
+      </Tile>
+    );
   }
 
 }
@@ -48,9 +74,11 @@ class Results extends Component {
 
      return (
        <ScrollView style={styles.container}>
-
+        <SectionHeader />
         <ResultsRow rowName="Uber" rowImage="" />
         <ResultsRow rowName="Lyft" rowImage="" />
+        <Divider styleName="section-header" />
+        <SectionHeader />
         <ResultsRow rowName="Instacart" rowImage="" />
         <ResultsRow rowName="Postmates" rowImage="" />
         <ResultsRow rowName="Door Dash" rowImage="" />
@@ -73,7 +101,17 @@ class Results extends Component {
     justifyContent: 'center',
    },
    rowText: {
-     color: '#FFFFFF',
+     color: 'white',
+     fontWeight:'bold',
+     margin:15,
+   },
+   header: {
+     backgroundColor: 'red',
+     height: 40,
+   },
+   headerText: {
+     color: "#FFFFFF",
+     fontSize: 20,
    }
 });
 
