@@ -27,7 +27,17 @@ import {
 
 class ResultsRow extends Component {
 
+  myFunctionThatDoesMath(a, b){
+    return a + b;
+  }
+
   render(){
+
+    doSum(a, b){
+      return a + b;
+    }
+
+
 
     return (
       <View
@@ -40,7 +50,7 @@ class ResultsRow extends Component {
         />
         <View styleName="vertical stretch space-between">
           <Subtitle>Wilco Cover David Bowie&#39;s "Space Oddity"</Subtitle>
-          <Caption>June 21  ·  20:00</Caption>
+          <Caption>June {doSum(1,2)}  ·  20:00</Caption>
         </View>
         <Button styleName="right-icon"><Icon name="add-event" /></Button>
       </Row>
