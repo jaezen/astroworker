@@ -33,11 +33,6 @@ class ResultsRow extends Component {
 
   render(){
 
-    doSum(a, b){
-      return a + b;
-    }
-
-
 
     return (
       <View
@@ -50,7 +45,7 @@ class ResultsRow extends Component {
         />
         <View styleName="vertical stretch space-between">
           <Subtitle>Wilco Cover David Bowie&#39;s "Space Oddity"</Subtitle>
-          <Caption>June {doSum(1,2)}  ·  20:00</Caption>
+          <Caption>June {this.myFunctionThatDoesMath(1,2)}</Caption>
         </View>
         <Button styleName="right-icon"><Icon name="add-event" /></Button>
       </Row>
@@ -66,7 +61,7 @@ class SectionHeader extends Component {
 
     return (
       <Tile styleName="text-centric">
-        <Title styleName="sm-gutter-bottom">Drive</Title>
+        <Title styleName="sm-gutter-bottom">Drive people</Title>
       </Tile>
     );
   }
@@ -87,7 +82,7 @@ class Results extends Component {
         <SectionHeader />
         <ResultsRow rowName="Uber" rowImage="" />
         <ResultsRow rowName="Lyft" rowImage="" />
-        <Divider styleName="section-header" />
+        <Divider styleName="line" />
         <SectionHeader />
         <ResultsRow rowName="Instacart" rowImage="" />
         <ResultsRow rowName="Postmates" rowImage="" />
@@ -102,6 +97,7 @@ class Results extends Component {
    container: {
     flex: 1,
     flexDirection:'column',
+    backgroundColor: 'cadetblue',
    },
    row: {
     backgroundColor: 'cadetblue',
