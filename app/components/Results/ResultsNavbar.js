@@ -13,7 +13,7 @@ import {
 const ResultsNavbar = (props) => {
 
   const handleRightButtonPress = () => {
-    props.router.push('/worker-prompt');
+    props.router.push('/service-details');
   }
 
   return (

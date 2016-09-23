@@ -76,8 +76,9 @@ import Results from './app/components/Results/Results';
 import ResultsNavbar from './app/components/Results/ResultsNavbar';
 
 // `./` = root of your project. Onboard_2.js is inside a folder called `Pages`
-// import Results from './app/components/Results/Results';
-// import ResultsNavbar from './app/components/Results/ResultsNavbar';
+import ServiceDetails from './app/components/ServiceDetails/ServiceDetails';
+import ServiceDetailsNavbar from './app/components/ServiceDetails/ServiceDetailsNavbar';
+
 
 const Master = (props) => (
   <View style={styles.component}>
@@ -103,6 +104,7 @@ const routes = (
       <Route path="/worker-prompt" component={WorkerPrompt} overlayComponent={WorkerPromptNavbar} />
       <Route path="/search" component={Search} overlayComponent={SearchNavbar} />
       <Route path="/results" component={Results} overlayComponent={ResultsNavbar} />
+      <Route path="/service-details" component={ServiceDetails} overlayComponent={ServiceDetailsNavbar} />
     </StackRoute>
   </Router>
 );
