@@ -32,7 +32,11 @@ class ResultsRow extends Component {
   }
 
   render(){
-
+    //Need to change this to push to ServiceDetails page
+    const handleRightArrowButtonPress = () => {
+      console.log('right-arrow Pressed');
+      alert('right-arrow Pressed');
+    }
 
     return (
       <View
@@ -47,7 +51,10 @@ class ResultsRow extends Component {
           <Subtitle>Wilco Cover"Space Oddity"</Subtitle>
           <Caption>June {this.myFunctionThatDoesMath(1,2)}</Caption>
         </View>
-        <Button styleName="right-icon"><Icon name="right-arrow" /></Button>
+        <Button
+         onPress={handleRightArrowButtonPress}
+         styleName="right-icon"><Icon name="right-arrow" />
+        </Button>
       </Row>
       </View>
     )
