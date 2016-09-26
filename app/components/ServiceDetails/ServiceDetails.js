@@ -22,58 +22,64 @@ class ServiceDetails extends Component {
   render() {
     // render() cannot return an array of components, so we need to wrap them in a `<View />``
     return (
-      <ScrollView style={styles.container}>
-        <MediaScroll />
-        <Text style={styles.heading}>
-        Overview
-        </Text>
-        <Text style={styles.question}>
-          What you have to do
-        </Text>
-        <Text style={styles.answer}>
-          Drive 1-4 people in your car to their desired location
-        </Text>
-        <Text style={styles.question}>
-          What you need
-        </Text>
-        <Text style={styles.answer}>
-          A 4-door car less than 10 years old in good condition
-        </Text>
-        <Text style={styles.question}>
-          How much you get
-        </Text>
-        <Text style={styles.answer}>
-          $19-$30 per hour
-        </Text>
-        <Text style={styles.question}>
-          How much they take
-        </Text>
-        <Text style={styles.answer}>
-          25% of the money you make
-        </Text>
-        <Text style={styles.heading}>
-        Check Payoff
-        </Text>
-        <Text style={styles.question}>
-          Estimated number of hours worked per week
-        </Text>
-        <Text style={styles.answer}>
-          Put slider here
-        </Text>
-        <Text style={styles.question}>
-          Estimated profit per week
-        </Text>
-        <Text style={styles.answer}>
-          After fees and taxes but before expenses
-        </Text>
-        <Text style={styles.answer}>
-          Put slider here
-        </Text>
-        <Text style={styles.answer}>
-          To earn $$$ profit per week, we estimate you have to work about XX hours per week, giving you $$ per hour before expenses
-        </Text>
-        <ApplyNowButton />
-      </ScrollView>
+        <View style={styles.EntireContainer}>
+          <ScrollView style={styles.MediaContainer} horizontal={true}>
+            <View style={{width: 282, height: 120, backgroundColor: 'powderblue'}} />
+            <View style={{width: 282, height: 120, backgroundColor: 'skyblue'}} />
+            <View style={{width: 282, height: 120, backgroundColor: 'steelblue'}} />
+          </ScrollView>
+          <ScrollView style={styles.DetailsContainer}>
+            <Text style={styles.heading}>
+            Overview
+            </Text>
+            <Text style={styles.question}>
+              What you have to do
+            </Text>
+            <Text style={styles.answer}>
+              Drive 1-4 people in your car to their desired location
+            </Text>
+            <Text style={styles.question}>
+              What you need
+            </Text>
+            <Text style={styles.answer}>
+              A 4-door car less than 10 years old in good condition
+            </Text>
+            <Text style={styles.question}>
+              How much you get
+            </Text>
+            <Text style={styles.answer}>
+              $19-$30 per hour
+            </Text>
+            <Text style={styles.question}>
+              How much they take
+            </Text>
+            <Text style={styles.answer}>
+              25% of the money you make
+            </Text>
+            <Text style={styles.heading}>
+            Check Payoff
+            </Text>
+            <Text style={styles.question}>
+              Estimated number of hours worked per week
+            </Text>
+            <Text style={styles.answer}>
+              Put slider here
+            </Text>
+            <Text style={styles.question}>
+              Estimated profit per week
+            </Text>
+            <Text style={styles.answer}>
+              After fees and taxes but before expenses
+            </Text>
+            <Text style={styles.answer}>
+              Put slider here
+            </Text>
+            <Text style={styles.answer}>
+              To earn $$$ profit per week, we estimate you have to work about XX hours per week, giving you $$ per hour before expenses
+            </Text>
+          </ScrollView>
+          <ApplyNowButton />
+       </View>
     );
   }
 }
@@ -99,28 +105,22 @@ class ApplyNowButton extends Component {
   }
 }
 
-//this is meant to be the horizontal scroll view at the top that contains pictures and videos - aim to make it a separate view
-class MediaScroll extends Component {
-
-  render() {
-    return (
-      <View style={styles.MediaContainer}>
-        <View style={{width: 100, height: 120, backgroundColor: 'powderblue'}} />
-        <View style={{width: 100, height: 120, backgroundColor: 'skyblue'}} />
-        <View style={{width: 100, height: 120, backgroundColor: 'steelblue'}} />
-      </View>
-    );
-  }
-};
-
 
 const styles = StyleSheet.create({
-  container: {
+  EntireContainer: {
     flex: 1,
+    backgroundColor: 'white',
+  },
+  MediaContainer: {
+    height:10,
+    padding:20
+  },
+  DetailsContainer: {
     flexDirection:'column',
-    paddingTop: 150,
+    paddingTop: 10,
     paddingLeft:20,
-    backgroundColor: '#fff',
+    height:190,
+    backgroundColor: 'pink',
     position:'relative',
   },
   heading: {
@@ -149,14 +149,8 @@ const styles = StyleSheet.create({
     overflow:'hidden',
     borderRadius:4,
     backgroundColor: 'blue',
-    alignItems:'center',
-    position:'absolute',
-    bottom:8,
-  },
-  MediaContainer: {
-    flex:1,
-    flexDirection:'row',
-    justifyContent:'space-between',
+    alignSelf:'center',
+    bottom:10,
   },
 });
 
