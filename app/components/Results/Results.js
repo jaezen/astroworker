@@ -38,6 +38,7 @@ class ResultsRow extends Component {
       alert('right-arrow Pressed');
     }
 
+
     return (
       <View
         style={styles.row}

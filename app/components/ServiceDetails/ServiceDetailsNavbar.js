@@ -12,18 +12,17 @@ import {
 
 const ServiceDetailsNavbar = (props) => {
 
-  const handleRightButtonPress = () => {
-    props.router.push('/search');
+  const handleLeftButtonPress = () => {
+    props.router.push('/results');
   }
 
   return (
     <Header
       {...props}
       style={{ backgroundColor: '#EEEEEE' }}
-      leftButtonText="Profile"
-      rightButtonText="Search"
-      onRightButtonPress={handleRightButtonPress}
-      title="Results"
+      leftButtonText="Back"
+      onLeftButtonPress={handleLeftButtonPress}
+      title="Company Name"
     />
   );
 };
