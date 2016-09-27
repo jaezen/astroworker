@@ -9,6 +9,7 @@ import {
   TextInput,
   View,
   ScrollView,
+  Slider,
 } from 'react-native';
 
 import Button from 'react-native-button';
@@ -62,20 +63,16 @@ class ServiceDetails extends Component {
             <Text style={styles.question}>
               Estimated number of hours worked per week
             </Text>
-            <Text style={styles.answer}>
-              Put slider here
-            </Text>
+            <HoursSlider />
             <Text style={styles.question}>
               Estimated profit per week
             </Text>
             <Text style={styles.answer}>
               After fees and taxes but before expenses
             </Text>
+            <ProfitSlider />
             <Text style={styles.answer}>
-              Put slider here
-            </Text>
-            <Text style={styles.answer}>
-              To earn $$$ profit per week, we estimate you have to work about XX hours per week, giving you $$ per hour before expenses
+              To earn $$$ profit per week, you have to work about XX hours per week, giving you $$ per hour before expenses
             </Text>
           </ScrollView>
           <ApplyNowButton />
@@ -105,6 +102,59 @@ class ApplyNowButton extends Component {
   }
 }
 
+class HoursSlider extends Component {
+  static defaultProps = {
+      value:50,
+    };
+
+    state = {
+      value: this.props.value,
+    };
+
+    render() {
+      return (
+        <View style={styles.slider}>
+          <Text style={styles.text} >
+            {this.state.value && +this.state.value.toFixed(3)}
+          </Text>
+          <Slider
+            value={50}
+            step={1}
+            minimumValue={1}
+            maximumValue={100}
+            onValueChange={(value) => this.setState({value: value})} />
+        </View>
+      );
+    }
+  }
+
+  class ProfitSlider extends Component {
+    static defaultProps = {
+        value:1500,
+      };
+
+      state = {
+        value: this.props.value,
+      };
+
+      render() {
+        return (
+          <View style={styles.slider}>
+            <Text style={styles.text} >
+              {this.state.value && +this.state.value.toFixed(3)}
+            </Text>
+            <Slider
+              value={1500}
+              step={10}
+              minimumValue={10}
+              maximumValue={3000}
+              onValueChange={(value) => this.setState({value: value})} />
+          </View>
+        );
+      }
+    }
+
+
 
 const styles = StyleSheet.create({
   EntireContainer: {
@@ -113,13 +163,13 @@ const styles = StyleSheet.create({
   },
   MediaContainer: {
     height:10,
-    padding:20
+    padding:20,
   },
   DetailsContainer: {
     flexDirection:'column',
     paddingTop: 10,
     paddingLeft:20,
-    height:190,
+    height:240,
     backgroundColor: 'pink',
     position:'relative',
   },
@@ -151,6 +201,19 @@ const styles = StyleSheet.create({
     backgroundColor: 'blue',
     alignSelf:'center',
     bottom:10,
+  },
+  slider: {
+    flex: 1,
+    marginLeft: 20,
+    marginRight: 20,
+    alignItems: 'stretch',
+    justifyContent: 'center',
+  },
+  text: {
+    fontSize: 14,
+    textAlign: 'center',
+    fontWeight: '500',
+    margin: 10,
   },
 });
 
