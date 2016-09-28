@@ -159,9 +159,11 @@ class HoursSlider extends Component {
 const styles = StyleSheet.create({
   EntireContainer: {
     flex: 1,
-    backgroundColor: 'white',
+    backgroundColor: 'green',
+    justifyContent: 'space-between',
   },
   MediaContainer: {
+    flex:1,
     height:10,
     padding:20,
   },
@@ -169,7 +171,7 @@ const styles = StyleSheet.create({
     flexDirection:'column',
     paddingTop: 10,
     paddingLeft:20,
-    height:240,
+    height:230,
     backgroundColor: 'pink',
     position:'relative',
   },

@@ -13,7 +13,7 @@ import {
 const ResultsNavbar = (props) => {
 
   const handleRightButtonPress = () => {
-    props.router.push('/service-details');
+    props.router.push('/search');
   }
 
   return (

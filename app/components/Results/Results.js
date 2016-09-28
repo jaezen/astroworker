@@ -9,6 +9,16 @@ import {
 } from 'react-native';
 
 import {
+  Header,
+  Link,
+  nativeHistory,
+  Route,
+  Router,
+  StackRoute,
+  withRouter,
+} from 'react-router-native';
+
+import {
   Image,
   Tile,
   Title,
@@ -68,8 +78,12 @@ class Results extends Component {
    }
 
    renderRow (rowData, sectionID, rowID, highlightRow) {
+     const handleRightArrowButtonPress = () => {
+       this.props.router.push('/service-details');
+     }
+
      return (
-       <TouchableOpacity onPress={()=>{}}>
+       <TouchableOpacity onPress={handleRightArrowButtonPress}>
          <Row styleName="small">
            <Icon name="laptop" />
            <View styleName="vertical">
@@ -121,4 +135,4 @@ class Results extends Component {
    },
 });
 
-export default Results;
+export default withRouter(Results);
