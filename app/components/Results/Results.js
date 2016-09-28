@@ -6,8 +6,6 @@ import {
   AppRegistry,
   StyleSheet,
   TextInput,
-  View,
-  ScrollView,
 } from 'react-native';
 
 import {
@@ -22,84 +20,89 @@ import {
   Button,
   Divider,
   Caption,
+  ListView,
+  View,
+  TouchableOpacity,
 } from '@shoutem/ui';
-
-
-class ResultsRow extends Component {
-
-  myFunctionThatDoesMath(a, b){
-    return a + b;
-  }
-
-  render(){
-    //Need to change this to push to ServiceDetails page
-    const handleRightArrowButtonPress = () => {
-      console.log('right-arrow Pressed');
-      alert('right-arrow Pressed');
-    }
-
-
-    return (
-      <View
-        style={styles.row}
-      >
-      <Row>
-        <Image
-          styleName="small rounded-corners"
-          source={{ uri: 'http://shoutem.github.io/img/ui-toolkit/examples/image-3.png' }}
-        />
-        <View styleName="vertical stretch space-between">
-          <Subtitle>Wilco Cover"Space Oddity"</Subtitle>
-          <Caption>June {this.myFunctionThatDoesMath(1,2)}</Caption>
-        </View>
-        <Button
-         onPress={handleRightArrowButtonPress}
-         styleName="right-icon"><Icon name="right-arrow" />
-        </Button>
-      </Row>
-      </View>
-    )
-  }
-
-}
-
-class SectionHeader extends Component {
-
-  render() {
-
-    return (
-      <Tile styleName="text-centric">
-        <Title styleName="sm-gutter-bottom">Drive people</Title>
-      </Tile>
-    );
-  }
-
-}
-
 
 class Results extends Component {
    constructor(props) {
      super(props);
 
+     const list = [
+       {
+         company: "Uber",
+         url: "uber.com",
+         type: "Drive",
+       },
+       {
+         company: "Lyft",
+         url: "lyft.com",
+         type: "Drive",
+       },
+       {
+         company: "Instacart",
+         url: "instacart.com",
+         type: "Shop",
+       },
+       {
+         company: "Postmates",
+         url: "postmates.com",
+         type: "Shop",
+       },
+       {
+         company: "Door Dash",
+         url: "doordash.com",
+         type: "Shop",
+       },
+     ];
+
+     this.state = {
+       listData: list,
+     };
    }
 
-   render() {
+   componentWillMount(){
+     this.renderSectionHeader = this.renderSectionHeader.bind(this);
+     this.renderRow = this.renderRow.bind(this);
+   }
 
+   renderRow (rowData, sectionID, rowID, highlightRow) {
      return (
-       <ScrollView style={styles.container}>
-        <SectionHeader />
-        <ResultsRow rowName="Uber" rowImage="" />
-        <ResultsRow rowName="Lyft" rowImage="" />
-        <Divider styleName="line" />
-        <SectionHeader />
-        <ResultsRow rowName="Instacart" rowImage="" />
-        <ResultsRow rowName="Postmates" rowImage="" />
-        <ResultsRow rowName="Door Dash" rowImage="" />
-       </ScrollView>
+       <TouchableOpacity onPress={()=>{}}>
+         <Row styleName="small">
+           <Icon name="laptop" />
+           <View styleName="vertical">
+             <Subtitle>{rowData.company}</Subtitle>
+             <Text numberOfLines={1}>{rowData.url}</Text>
+           </View>
+           <Icon styleName="disclosure" name="right-arrow" />
+         </Row>
+       </TouchableOpacity>
      );
    }
-   }
 
+   renderSectionHeader(type) {
+      return (
+        <Row styleName="small">
+            <Icon name="web" />
+            <Text>{type}</Text>
+        </Row>
+      );
+    }
+
+   render() {
+     return (
+       <ListView
+          style={{style:1}}
+          data={this.state.listData}
+          renderRow={this.renderRow}
+          getSectionId={(item)=>item.type}
+          renderSectionHeader={this.renderSectionHeader}
+        />
+     );
+   }
+ }
 
  const styles = StyleSheet.create({
    container: {
