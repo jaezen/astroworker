@@ -129,7 +129,7 @@ class Results extends Component {
     borderBottomWidth: 1,
    },
    rowText: {
-     color: 'white',
+     color: 'red',
      fontWeight:'bold',
      margin:15,
    },

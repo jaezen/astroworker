@@ -160,7 +160,6 @@ const styles = StyleSheet.create({
   EntireContainer: {
     flex: 1,
     backgroundColor: 'green',
-    justifyContent: 'space-between',
   },
   MediaContainer: {
     flex:1,
@@ -172,7 +171,7 @@ const styles = StyleSheet.create({
     paddingTop: 10,
     paddingLeft:20,
     height:230,
-    backgroundColor: 'pink',
+    backgroundColor: 'white',
     position:'relative',
   },
   heading: {

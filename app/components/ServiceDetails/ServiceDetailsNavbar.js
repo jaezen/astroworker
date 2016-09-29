@@ -20,7 +20,7 @@ const ServiceDetailsNavbar = (props) => {
     <Header
       {...props}
       style={{ backgroundColor: '#EEEEEE' }}
-      leftButtonText="Back"
+      leftButtonText="< Back"
       onLeftButtonPress={handleLeftButtonPress}
       title="Company Name"
     />
