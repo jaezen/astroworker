@@ -82,6 +82,7 @@ const styles = StyleSheet.create({
   welcome: {
     fontFamily:'Helvetica',
     fontSize: 30,
+    color:'blue',
     fontWeight:'bold',
     textAlign: 'center',
     justifyContent:'center',

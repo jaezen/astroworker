@@ -12,6 +12,16 @@ import {
   Slider,
 } from 'react-native';
 
+import {
+  Header,
+  Link,
+  nativeHistory,
+  Route,
+  Router,
+  StackRoute,
+  withRouter,
+} from 'react-router-native';
+
 import Button from 'react-native-button';
 
 class ServiceDetails extends Component {
@@ -25,9 +35,9 @@ class ServiceDetails extends Component {
     return (
         <View style={styles.EntireContainer}>
           <ScrollView style={styles.MediaContainer} horizontal={true}>
-            <View style={{width: 282, height: 120, backgroundColor: 'powderblue'}} />
-            <View style={{width: 282, height: 120, backgroundColor: 'skyblue'}} />
-            <View style={{width: 282, height: 120, backgroundColor: 'steelblue'}} />
+            <View style={{width: 282, height: 120, backgroundColor: 'powderblue', marginRight:20}} />
+            <View style={{width: 282, height: 120, backgroundColor: 'skyblue', marginRight:20}}/>
+            <View style={{width: 282, height: 120, backgroundColor: 'steelblue',marginRight:20}} />
           </ScrollView>
           <ScrollView style={styles.DetailsContainer}>
             <Text style={styles.heading}>
@@ -81,14 +91,14 @@ class ServiceDetails extends Component {
   }
 }
 
-//this button is meant to stick to the bottom center and not move at all
 class ApplyNowButton extends Component {
 
   render() {
     const handleApplyNowButtonPress = () => {
-      console.log('Apply Now Pressed');
-      alert('Apply Now Pressed');
+      console.log('Login Pressed');
+      alert('Login Pressed');
     };
+
     return (
       <View style={styles.ApplyNowButtonContainer}>
        <Button
@@ -101,6 +111,7 @@ class ApplyNowButton extends Component {
     );
   }
 }
+
 
 class HoursSlider extends Component {
   static defaultProps = {
@@ -218,4 +229,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ServiceDetails;
+export default withRouter(ServiceDetails);
