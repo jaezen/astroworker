@@ -22,7 +22,7 @@ import {
   withRouter,
 } from 'react-router-native';
 
-import Button from 'react-native-button';
+// import Button from 'react-native-button';
 
 class ServiceDetails extends Component {
   constructor(props) {
@@ -34,12 +34,19 @@ class ServiceDetails extends Component {
     // render() cannot return an array of components, so we need to wrap them in a `<View />``
     return (
         <View style={styles.EntireContainer}>
-          <ScrollView style={styles.MediaContainer} horizontal={true}>
-            <View style={{width: 282, height: 120, backgroundColor: 'powderblue', marginRight:20}} />
-            <View style={{width: 282, height: 120, backgroundColor: 'skyblue', marginRight:20}}/>
-            <View style={{width: 282, height: 120, backgroundColor: 'steelblue',marginRight:20}} />
+
+          <ScrollView
+            style={styles.MediaContainer}
+            horizontal
+          >
+            <View style={[styles.innerBlock, {backgroundColor: 'powderblue'}]} />
+            <View style={[styles.innerBlock, {backgroundColor: 'skyblue'}]} />
+            <View style={[styles.innerBlock, {backgroundColor: 'steelblue'}]} />
           </ScrollView>
-          <ScrollView style={styles.DetailsContainer}>
+
+          <ScrollView
+            style={styles.DetailsContainer}
+          >
             <Text style={styles.heading}>
             Overview
             </Text>
@@ -85,8 +92,10 @@ class ServiceDetails extends Component {
               To earn $$$ profit per week, you have to work about XX hours per week, giving you $$ per hour before expenses
             </Text>
           </ScrollView>
+
           <ApplyNowButton />
-       </View>
+
+     </View>
     );
   }
 }
@@ -94,20 +103,16 @@ class ServiceDetails extends Component {
 class ApplyNowButton extends Component {
 
   render() {
-    const handleApplyNowButtonPress = () => {
-      console.log('Login Pressed');
-      alert('Login Pressed');
-    };
-
     return (
-      <View style={styles.ApplyNowButtonContainer}>
-       <Button
-       style={{fontSize: 20, color: 'white'}}
-       onPress={handleApplyNowButtonPress}
-       >
-       APPLY NOW
-       </Button>
-      </View>
+      <Link to={`/application`} style={{ height: 70 }}>
+        <View style={styles.ApplyNowButtonContainer}>
+         <Text
+         style={{fontSize: 16, textAlign: 'center', color: 'white'}}
+         >
+          APPLY NOW
+         </Text>
+       </View>
+     </Link>
     );
   }
 }
@@ -170,20 +175,23 @@ class HoursSlider extends Component {
 const styles = StyleSheet.create({
   EntireContainer: {
     flex: 1,
-    backgroundColor: 'green',
+    backgroundColor: '#fff',
   },
   MediaContainer: {
-    flex:1,
-    height:10,
+    height: 80,
     padding:20,
   },
   DetailsContainer: {
+    flex: 1,
     flexDirection:'column',
     paddingTop: 10,
     paddingLeft:20,
     height:230,
-    backgroundColor: 'white',
-    position:'relative',
+  },
+  innerBlock: {
+    width: 282,
+    height: 120,
+    marginRight:20,
   },
   heading: {
     fontWeight:'bold',
@@ -205,14 +213,13 @@ const styles = StyleSheet.create({
     marginTop: 3,
   },
   ApplyNowButtonContainer: {
+    margin:10,
     padding:10,
     height:45,
     width: 300,
-    overflow:'hidden',
     borderRadius:4,
     backgroundColor: 'blue',
     alignSelf:'center',
-    bottom:10,
   },
   slider: {
     flex: 1,
