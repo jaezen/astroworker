@@ -10,7 +10,7 @@ import {
   withRouter,
 } from 'react-router-native';
 
-const SSNPromptNavbar = (props) => {
+const Application1Navbar = (props) => {
 
   const handleRightButtonPress = () => {
     props.router.push('/worker-prompt');
@@ -23,9 +23,9 @@ const SSNPromptNavbar = (props) => {
       leftButtonText="< Back"
       rightButtonText="Next >"
       onRightButtonPress={handleRightButtonPress}
-      title="Set-up"
+      title="Application"
     />
   );
 };
 
-export default withRouter(SSNPromptNavbar);
+export default withRouter(Application1Navbar);

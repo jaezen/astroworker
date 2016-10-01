@@ -79,8 +79,8 @@ import ResultsNavbar from './app/components/Results/ResultsNavbar';
 import ServiceDetails from './app/components/ServiceDetails/ServiceDetails';
 import ServiceDetailsNavbar from './app/components/ServiceDetails/ServiceDetailsNavbar';
 
-import Application1 from './app/components/Application/Application_1';
-import Application1Navbar from './app/components/Application/Application_1_Navbar';
+import Application1 from './app/components/Application/Application1';
+import Application1Navbar from './app/components/Application/Application1Navbar';
 
 
 const Master = (props) => (
@@ -107,8 +107,8 @@ const routes = (
       <Route path="/worker-prompt" component={WorkerPrompt} overlayComponent={WorkerPromptNavbar} />
       <Route path="/search" component={Search} overlayComponent={SearchNavbar} />
       <Route path="/results" component={Results} overlayComponent={ResultsNavbar} />
-      <Route path="/" component={ServiceDetails} overlayComponent={ServiceDetailsNavbar} />
-      <Route path="/application" component={Application1} overlayComponent={Application1Navbar} />
+      <Route path="/service-details" component={ServiceDetails} overlayComponent={ServiceDetailsNavbar} />
+      <Route path="/application1" component={Application1} overlayComponent={Application1Navbar} />
     </StackRoute>
   </Router>
 );

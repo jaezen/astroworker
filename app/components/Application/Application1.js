@@ -22,7 +22,7 @@ import {
 
 import Button from 'react-native-button';
 
-class Application_1 extends Component {
+class Application1 extends Component {
   constructor(props) {
     super(props);
     this.state = { text: '' };
@@ -101,4 +101,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default withRouter(Application_1);
+export default withRouter(Application1);
