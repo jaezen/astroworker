@@ -10,10 +10,10 @@ import {
   withRouter,
 } from 'react-router-native';
 
-const Application1Navbar = (props) => {
+const Application3Navbar  = (props) => {
 
   const handleRightButtonPress = () => {
-    props.router.push('/application-2');
+    props.router.push('/application-4');
   }
 
   return (
@@ -23,9 +23,9 @@ const Application1Navbar = (props) => {
       leftButtonText="< Back"
       rightButtonText="Next >"
       onRightButtonPress={handleRightButtonPress}
-      title="Application"
+      title="Set-up"
     />
   );
 };
 
-export default withRouter(Application1Navbar);
+export default withRouter(Application3Navbar);

@@ -10,7 +10,7 @@ import {
   View,
 } from 'react-native';
 
-class DOBPrompt extends Component {
+class Application4 extends Component {
   constructor(props) {
     super(props);
     this.state = { text: '' };
@@ -21,13 +21,14 @@ class DOBPrompt extends Component {
     return (
       <View style={styles.container}>
       <Text>
-        Step 2 of 4
+        Step 4 of 5
       </Text>
         <Text style={styles.question}>
-          What is your Date of Birth?
+          Enter your mobile number{"\n"}
+          So we can verify you
         </Text>
         <TextInput
-          placeholder="MM/DD/YYYY"
+          placeholder="(XXX)-XXXX-XXXX"
           style={styles.textEdit}
           onChangeText={(text) => this.setState({text})}
           value={this.state.text}
@@ -61,6 +62,7 @@ const styles = StyleSheet.create({
     borderColor:'gray',
     borderWidth:1,
   },
+
 });
 
-export default DOBPrompt;
+export default Application4;

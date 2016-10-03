@@ -54,6 +54,7 @@ const styles = StyleSheet.create({
   },
   textEdit: {
     alignSelf:'center',
+    textAlign:'center',
     height:40,
     width:250,
     backgroundColor:'white',

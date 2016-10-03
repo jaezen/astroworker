@@ -82,6 +82,15 @@ import ServiceDetailsNavbar from './app/components/ServiceDetails/ServiceDetails
 import Application1 from './app/components/Application/Application1';
 import Application1Navbar from './app/components/Application/Application1Navbar';
 
+import Application2 from './app/components/Application/Application2';
+import Application2Navbar from './app/components/Application/Application2Navbar';
+
+import Application3 from './app/components/Application/Application3';
+import Application3Navbar from './app/components/Application/Application3Navbar';
+
+import Application4 from './app/components/Application/Application4';
+import Application4Navbar from './app/components/Application/Application4Navbar';
+
 
 const Master = (props) => (
   <View style={styles.component}>
@@ -108,7 +117,10 @@ const routes = (
       <Route path="/search" component={Search} overlayComponent={SearchNavbar} />
       <Route path="/results" component={Results} overlayComponent={ResultsNavbar} />
       <Route path="/service-details" component={ServiceDetails} overlayComponent={ServiceDetailsNavbar} />
-      <Route path="/application1" component={Application1} overlayComponent={Application1Navbar} />
+      <Route path="/" component={Application1} overlayComponent={Application1Navbar} />
+      <Route path="/application-2" component={Application2} overlayComponent={Application2Navbar} />
+      <Route path="/application-3" component={Application3} overlayComponent={Application3Navbar} />
+      <Route path="/application-4" component={Application4} overlayComponent={Application4Navbar} />
     </StackRoute>
   </Router>
 );
