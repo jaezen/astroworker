@@ -79,17 +79,17 @@ import ResultsNavbar from './app/components/Results/ResultsNavbar';
 import ServiceDetails from './app/components/ServiceDetails/ServiceDetails';
 import ServiceDetailsNavbar from './app/components/ServiceDetails/ServiceDetailsNavbar';
 
-import Application1 from './app/components/Application/Application1';
-import Application1Navbar from './app/components/Application/Application1Navbar';
+import ApplicationUberCar from './app/components/Application/ApplicationUberCar';
+import ApplicationNavbarUberCar from './app/components/Application/ApplicationNavbarUberCar';
 
-import Application2 from './app/components/Application/Application2';
-import Application2Navbar from './app/components/Application/Application2Navbar';
+import ApplicationUberDrivingRecord from './app/components/Application/ApplicationUberDrivingRecord';
+import ApplicationNavbarUberDrivingRecord from './app/components/Application/ApplicationNavbarUberDrivingRecord';
 
-import Application3 from './app/components/Application/Application3';
-import Application3Navbar from './app/components/Application/Application3Navbar';
+import ApplicationName from './app/components/Application/ApplicationName';
+import ApplicationNavbarName from './app/components/Application/ApplicationNavbarName';
 
-import Application4 from './app/components/Application/Application4';
-import Application4Navbar from './app/components/Application/Application4Navbar';
+import ApplicationMobileNo from './app/components/Application/ApplicationMobileNo';
+import ApplicationNavbarMobileNo from './app/components/Application/ApplicationNavbarMobileNo';
 
 
 const Master = (props) => (
@@ -109,7 +109,7 @@ const Master = (props) => (
 const routes = (
   <Router addressBar history={nativeHistory}>
     <StackRoute path="master" component={Master}>
-      <Route path="/a" component={Welcome}/>
+      <Route path="/" component={Welcome}/>
       <Route path="/city-prompt" component={CityPrompt} overlayComponent={CityPromptNavbar} />
       <Route path="/dob-prompt" component={DOBPrompt} overlayComponent={DOBPromptNavbar} />
       <Route path="/ssn-prompt" component={SSNPrompt} overlayComponent={SSNPromptNavbar} />
@@ -117,10 +117,10 @@ const routes = (
       <Route path="/search" component={Search} overlayComponent={SearchNavbar} />
       <Route path="/results" component={Results} overlayComponent={ResultsNavbar} />
       <Route path="/service-details" component={ServiceDetails} overlayComponent={ServiceDetailsNavbar} />
-      <Route path="/" component={Application1} overlayComponent={Application1Navbar} />
-      <Route path="/application-2" component={Application2} overlayComponent={Application2Navbar} />
-      <Route path="/application-3" component={Application3} overlayComponent={Application3Navbar} />
-      <Route path="/application-4" component={Application4} overlayComponent={Application4Navbar} />
+      <Route path="/application-uber-car" component={ApplicationUberCar} overlayComponent={ApplicationNavbarUberCar} />
+      <Route path="/application-uber-driving-record" component={ApplicationUberDrivingRecord} overlayComponent={ApplicationNavbarUberDrivingRecord} />
+      <Route path="/application-name" component={ApplicationName} overlayComponent={ApplicationNavbarName} />
+      <Route path="/application-mobile-no" component={ApplicationMobileNo} overlayComponent={ApplicationNavbarMobileNo} />
     </StackRoute>
   </Router>
 );

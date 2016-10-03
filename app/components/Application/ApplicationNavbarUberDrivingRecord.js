@@ -10,10 +10,10 @@ import {
   withRouter,
 } from 'react-router-native';
 
-const Application2Navbar = (props) => {
+const ApplicationNavbarUberDrivingRecord = (props) => {
 
   const handleRightButtonPress = () => {
-    props.router.push('/application-3');
+    props.router.push('/application-name');
   }
 
   return (
@@ -28,4 +28,4 @@ const Application2Navbar = (props) => {
   );
 };
 
-export default withRouter(Application2Navbar);
+export default withRouter(ApplicationNavbarUberDrivingRecord);

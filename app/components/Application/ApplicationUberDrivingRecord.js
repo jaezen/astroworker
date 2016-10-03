@@ -22,7 +22,7 @@ import {
 
 import Button from 'react-native-button';
 
-class Application1 extends Component {
+class ApplicationUberDrivingRecord extends Component {
   constructor(props) {
     super(props);
     this.state = { text: '' };
@@ -42,10 +42,10 @@ class Application1 extends Component {
     return (
       <View style={styles.container}>
       <Text>
-        Step 1 of 5
+        Step 2 of 5
       </Text>
         <Text style={styles.question}>
-          Do you have a 4 door car less than 10 years old?
+          Do you have 2+ years clean driving record?
         </Text>
         <Button
          containerStyle={styles.YesButtonContainer}
@@ -60,7 +60,7 @@ class Application1 extends Component {
          style={{fontSize: 20, color: 'white'}}
          onPress={handleNoButtonPress}
         >
-         NO - I NEED A CAR
+         NO
         </Button>
       </View>
     );
@@ -102,4 +102,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default withRouter(Application1);
+export default withRouter(ApplicationUberDrivingRecord);

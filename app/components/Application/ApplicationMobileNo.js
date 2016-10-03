@@ -10,7 +10,7 @@ import {
   View,
 } from 'react-native';
 
-class Application3 extends Component {
+class ApplicationMobileNo extends Component {
   constructor(props) {
     super(props);
     this.state = { text: '' };
@@ -21,13 +21,14 @@ class Application3 extends Component {
     return (
       <View style={styles.container}>
       <Text>
-        Step 3 of 5
+        Step 4 of 5
       </Text>
         <Text style={styles.question}>
-          What is your name?
+          Enter your mobile number{"\n"}
+          So we can verify you
         </Text>
         <TextInput
-          placeholder="First Name   Last Name"
+          placeholder="(XXX)-XXX-XXXX"
           style={styles.textEdit}
           onChangeText={(text) => this.setState({text})}
           value={this.state.text}
@@ -64,4 +65,4 @@ const styles = StyleSheet.create({
 
 });
 
-export default Application3;
+export default ApplicationMobileNo;

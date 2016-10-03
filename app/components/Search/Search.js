@@ -67,7 +67,7 @@ class Search extends Component {
     flexDirection:'column',
    },
    row: {
-    backgroundColor: 'cadetblue',
+    backgroundColor: 'skyblue',
     height: 107,
     borderBottomColor: 'white',
     borderBottomWidth: 1,

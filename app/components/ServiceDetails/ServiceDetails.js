@@ -104,7 +104,7 @@ class ApplyNowButton extends Component {
 
   render() {
     return (
-      <Link to={'/'} style={{ height: 70 }}>
+      <Link to={'/application-uber-car'} style={{ height: 70 }}>
         <View style={styles.ApplyNowButtonContainer}>
          <Text
          style={{fontSize: 20, textAlign: 'center', color: 'white'}}

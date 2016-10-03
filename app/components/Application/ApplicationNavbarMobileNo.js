@@ -10,10 +10,10 @@ import {
   withRouter,
 } from 'react-router-native';
 
-const Application3Navbar  = (props) => {
+const ApplicationNavbarMobileNo  = (props) => {
 
   const handleRightButtonPress = () => {
-    props.router.push('/application-4');
+    props.router.push('/dob-prompt');
   }
 
   return (
@@ -28,4 +28,4 @@ const Application3Navbar  = (props) => {
   );
 };
 
-export default withRouter(Application3Navbar);
+export default withRouter(ApplicationNavbarMobileNo);
