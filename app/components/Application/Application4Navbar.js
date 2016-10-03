@@ -23,7 +23,7 @@ const Application4Navbar  = (props) => {
       leftButtonText="< Back"
       rightButtonText="Next >"
       onRightButtonPress={handleRightButtonPress}
-      title="Set-up"
+      title="Application"
     />
   );
 };
