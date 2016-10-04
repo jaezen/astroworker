@@ -13,7 +13,7 @@ import {
 const ApplicationNavbarMobileNo  = (props) => {
 
   const handleRightButtonPress = () => {
-    props.router.push('/application-confirm-code');
+    props.router.push('/dob-prompt');
   }
 
   return (

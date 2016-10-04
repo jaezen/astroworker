@@ -91,6 +91,9 @@ import ApplicationNavbarName from './app/components/Application/ApplicationNavba
 import ApplicationMobileNo from './app/components/Application/ApplicationMobileNo';
 import ApplicationNavbarMobileNo from './app/components/Application/ApplicationNavbarMobileNo';
 
+import ApplicationConfirmCode from './app/components/Application/ApplicationConfirmCode';
+import ApplicationNavbarConfirmCode from './app/components/Application/ApplicationNavbarConfirmCode';
+
 
 const Master = (props) => (
   <View style={styles.component}>
@@ -121,6 +124,7 @@ const routes = (
       <Route path="/application-uber-driving-record" component={ApplicationUberDrivingRecord} overlayComponent={ApplicationNavbarUberDrivingRecord} />
       <Route path="/application-name" component={ApplicationName} overlayComponent={ApplicationNavbarName} />
       <Route path="/application-mobile-no" component={ApplicationMobileNo} overlayComponent={ApplicationNavbarMobileNo} />
+      <Route path="/application-confirm-code" component={ApplicationConfirmCode} overlayComponent={ApplicationNavbarConfirmCode} />
     </StackRoute>
   </Router>
 );
