@@ -10,10 +10,10 @@ import {
   withRouter,
 } from 'react-router-native';
 
-const ApplicationNavbarConfirmCode  = (props) => {
+const ApplicationNavbarMobileNo  = (props) => {
 
   const handleRightButtonPress = () => {
-    props.router.push('/application-bg-check');
+    props.router.push('/application-confirm-code');
   }
 
   return (
@@ -28,4 +28,4 @@ const ApplicationNavbarConfirmCode  = (props) => {
   );
 };
 
-export default withRouter(ApplicationNavbarConfirmCode);
+export default withRouter(ApplicationNavbarMobileNo);

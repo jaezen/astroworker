@@ -94,6 +94,9 @@ import ApplicationNavbarMobileNo from './app/components/Application/ApplicationN
 import ApplicationConfirmCode from './app/components/Application/ApplicationConfirmCode';
 import ApplicationNavbarConfirmCode from './app/components/Application/ApplicationNavbarConfirmCode';
 
+import ApplicationBGCheck from './app/components/Application/ApplicationBGCheck';
+import ApplicationNavbarBGCheck from './app/components/Application/ApplicationNavbarBGCheck';
+
 
 const Master = (props) => (
   <View style={styles.component}>
@@ -125,6 +128,7 @@ const routes = (
       <Route path="/application-name" component={ApplicationName} overlayComponent={ApplicationNavbarName} />
       <Route path="/application-mobile-no" component={ApplicationMobileNo} overlayComponent={ApplicationNavbarMobileNo} />
       <Route path="/application-confirm-code" component={ApplicationConfirmCode} overlayComponent={ApplicationNavbarConfirmCode} />
+      <Route path="/application-bg-check" component={ApplicationBGCheck} overlayComponent={ApplicationNavbarBGCheck} />
     </StackRoute>
   </Router>
 );
