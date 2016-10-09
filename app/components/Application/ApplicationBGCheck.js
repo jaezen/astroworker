@@ -3,6 +3,16 @@ import React, {
 } from 'react';
 
 import {
+  Header,
+  Link,
+  nativeHistory,
+  Route,
+  Router,
+  StackRoute,
+  withRouter,
+} from 'react-router-native';
+
+import {
   AppRegistry,
   StyleSheet,
   Text,
@@ -20,13 +30,13 @@ class ApplicationBGCheck extends Component {
     // render() cannot return an array of components, so we need to wrap them in a `<View />``
     return (
       <View style={styles.container}>
-      <Text>
+        <Text style={styles.step}>
         Step 5 of 5
-      </Text>
+        </Text>
         <Text style={styles.question}>
           To speed up the application process,{"\n"}
           we can perform a background check on you.{"\n"}
-          This is optional and costs you a one{"\n"}
+          This is <Text style={{fontWeight:'bold'}}>optional</Text> and costs you a one{"\n"}
           time fee of $25 for all applications.
         </Text>
         <Text style={styles.heading}>
@@ -52,46 +62,99 @@ class ApplicationBGCheck extends Component {
           onChangeText={(text) => this.setState({text})}
           value={this.state.text}
         />
-        <Text style={styles.headingRow}>
-        Card Expiry Date
-        </Text>
-        <TextInput
+        <View style={styles.cardExpiryCVV}>
+          <Text style={styles.cardExpiry}>
+          Card Expiry Date
+          </Text>
+          <Text style={styles.cardCVV}>
+          CVV
+          </Text>
+        </View>
+        <View style={styles.cardExpiryCVVInputs}>
+          <TextInput
           placeholder="MM/YY"
-          style={styles.textEditShort}
+          style={styles.textEditCardExpiry}
           onChangeText={(text) => this.setState({text})}
           value={this.state.text}
-        />
+          />
+          <TextInput
+          placeholder="XXX"
+          style={styles.textEditCardCVV}
+          onChangeText={(text) => this.setState({text})}
+          value={this.state.text}
+          />
+        </View>
+        <PayNowButton />
       </View>
     );
   }
 }
 
+class PayNowButton extends Component {
+
+  render() {
+    return (
+      <Link to={'/application-uber-car'} style={{ height: 70 }}>
+        <View style={styles.PayNowButtonContainer}>
+         <Text
+         style={{fontSize: 20, textAlign: 'center', color: 'white'}}
+         >
+          PAY NOW
+         </Text>
+       </View>
+     </Link>
+    );
+  }
+}
+
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    flexDirection:'column',
-    alignItems:'center',
     paddingTop: 30,
     backgroundColor: '#fff',
+  },
+  step: {
+    alignSelf:'center',
+  },
+  cardExpiryCVV: {
+    flex: 1,
+    flexDirection:'row',
+    justifyContent:'space-around',
+  },
+  cardExpiryCVVInputs: {
+    flex: 1,
+    flexDirection:'row',
+    justifyContent:'space-around',
+    marginBottom:10,
   },
   question: {
     fontSize:16,
     padding: 10,
     color: '#333333',
     marginBottom: 5,
+    alignSelf:'center',
   },
   heading: {
     fontWeight:'bold',
     fontSize:15,
     padding:5,
     marginTop: 3,
+    alignSelf:'center',
   },
-  headingRow: {
+  cardExpiry: {
     fontWeight:'bold',
     fontSize:15,
-    textAlign:'left',
-    padding:5,
+    marginLeft:15,
     marginTop: 3,
+    alignItems:'flex-start',
+  },
+  cardCVV: {
+    fontWeight:'bold',
+    fontSize:15,
+    marginTop: 3,
+    alignItems:'flex-end',
+    marginRight:15,
   },
   dotpoints: {
     fontSize:12,
@@ -99,6 +162,7 @@ const styles = StyleSheet.create({
     color: '#333333',
     marginTop:5,
     marginBottom: 5,
+    alignSelf:'center',
   },
   textEdit: {
     alignSelf:'center',
@@ -110,17 +174,33 @@ const styles = StyleSheet.create({
     borderWidth:1,
     marginBottom: 5,
   },
-  textEditShort: {
-    alignSelf:'flex-start',
+  textEditCardExpiry: {
     textAlign:'center',
     height:40,
     width:80,
-    marginLeft:60,
     backgroundColor:'white',
     borderColor:'gray',
     borderWidth:1,
+    marginLeft:15,
   },
-
+  textEditCardCVV: {
+    textAlign:'center',
+    height:40,
+    width:80,
+    backgroundColor:'white',
+    borderColor:'gray',
+    borderWidth:1,
+    marginRight:15,
+  },
+  PayNowButtonContainer: {
+    margin:10,
+    padding:10,
+    height:45,
+    width: 300,
+    borderRadius:4,
+    backgroundColor: 'blue',
+    alignSelf:'center',
+  },
 });
 
-export default ApplicationBGCheck;
+export default withRouter(ApplicationBGCheck);

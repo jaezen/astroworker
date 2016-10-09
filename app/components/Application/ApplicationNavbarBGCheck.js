@@ -21,7 +21,7 @@ const ApplicationNavbarMobileNo  = (props) => {
       {...props}
       style={{ backgroundColor: '#EEEEEE' }}
       leftButtonText="< Back"
-      rightButtonText="Next >"
+      rightButtonText="Skip >"
       onRightButtonPress={handleRightButtonPress}
       title="Application"
     />
