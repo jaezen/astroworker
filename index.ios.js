@@ -14,6 +14,7 @@ import {
   StatusBar,
   ScrollView,
   StyleSheet,
+  Image,
 } from 'react-native';
 
 import {
@@ -97,6 +98,9 @@ import ApplicationNavbarConfirmCode from './app/components/Application/Applicati
 import ApplicationBGCheck from './app/components/Application/ApplicationBGCheck';
 import ApplicationNavbarBGCheck from './app/components/Application/ApplicationNavbarBGCheck';
 
+import ApplicationBGCheckApproved from './app/components/Application/ApplicationBGCheckApproved';
+import ApplicationNavbarBGCheckApproved from './app/components/Application/ApplicationNavbarBGCheckApproved';
+
 
 const Master = (props) => (
   <View style={styles.component}>
@@ -129,6 +133,7 @@ const routes = (
       <Route path="/application-mobile-no" component={ApplicationMobileNo} overlayComponent={ApplicationNavbarMobileNo} />
       <Route path="/application-confirm-code" component={ApplicationConfirmCode} overlayComponent={ApplicationNavbarConfirmCode} />
       <Route path="/application-bg-check" component={ApplicationBGCheck} overlayComponent={ApplicationNavbarBGCheck} />
+      <Route path="/application-bg-check-approved" component={ApplicationBGCheckApproved} overlayComponent={ApplicationNavbarBGCheckApproved} />
     </StackRoute>
   </Router>
 );

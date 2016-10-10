@@ -94,7 +94,7 @@ class PayNowButton extends Component {
 
   render() {
     return (
-      <Link to={'/application-uber-car'} style={{ height: 70 }}>
+      <Link to={'/application-bg-check-approved'} style={{ height: 70 }}>
         <View style={styles.PayNowButtonContainer}>
          <Text
          style={{fontSize: 20, textAlign: 'center', color: 'white'}}

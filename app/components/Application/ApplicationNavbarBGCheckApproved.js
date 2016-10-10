@@ -10,7 +10,7 @@ import {
   withRouter,
 } from 'react-router-native';
 
-const ApplicationNavbarBGCheck  = (props) => {
+const ApplicationNavbarBGCheckApproved  = (props) => {
 
   const handleRightButtonPress = () => {
     props.router.push('/application-confirm-code');
@@ -20,12 +20,11 @@ const ApplicationNavbarBGCheck  = (props) => {
     <Header
       {...props}
       style={{ backgroundColor: '#EEEEEE' }}
-      leftButtonText="< Back"
-      rightButtonText="Skip >"
+      rightButtonText="Done >"
       onRightButtonPress={handleRightButtonPress}
       title="Application"
     />
   );
 };
 
-export default withRouter(ApplicationNavbarBGCheck);
+export default withRouter(ApplicationNavbarBGCheckApproved);
