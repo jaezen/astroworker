@@ -20,7 +20,7 @@ import {
   View,
 } from 'react-native';
 
-class ApplicationSubmitApp extends Component {
+class ApplicationKeepApplying extends Component {
   constructor(props) {
     super(props);
     this.state = { text: '' };
@@ -44,23 +44,23 @@ class ApplicationSubmitApp extends Component {
         * Your contact number is (415)96-1838
         </Text>
 
-        <SubmitApplicationButton />
+        <KeepApplyingButton />
 
       </View>
     );
   }
 }
 
-class SubmitApplicationButton extends Component {
+class KeepApplyingButton extends Component {
 
   render() {
     return (
-      <Link to={'/application-keep-applying'} style={{ height: 70 }}>
-        <View style={styles.SubmitApplicationButtonContainer}>
+      <Link to={'/application-bg-check-approved'} style={{ height: 70 }}>
+        <View style={styles.KeepApplyingButtonContainer}>
          <Text
          style={{fontSize: 20, textAlign: 'center', color: 'white',fontWeight:'bold'}}
          >
-          SUBMIT APPLICATION
+          KEEP APPLYING
          </Text>
        </View>
      </Link>
@@ -87,7 +87,7 @@ const styles = StyleSheet.create({
     marginBottom: 5,
     alignSelf:'center',
   },
-  SubmitApplicationButtonContainer: {
+  KeepApplyingButtonContainer: {
     margin:10,
     marginTop:160,
     padding:10,
@@ -99,4 +99,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default withRouter(ApplicationSubmitApp);
+export default withRouter(ApplicationKeepApplying);
