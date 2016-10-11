@@ -107,6 +107,12 @@ import ApplicationNavbarSubmitApp from './app/components/Application/Application
 import ApplicationKeepApplying from './app/components/Application/ApplicationKeepApplying';
 import ApplicationNavbarKeepApplying from './app/components/Application/ApplicationNavbarKeepApplying';
 
+import LoginMobileNo from './app/components/Login/LoginMobileNo';
+import LoginNavbarMobileNo from './app/components/Login/LoginNavbarMobileNo';
+
+import LoginConfirmCode from './app/components/Login/LoginConfirmCode';
+import LoginNavbarConfirmCode from './app/components/Login/LoginNavbarConfirmCode';
+
 const Master = (props) => (
   <View style={styles.component}>
     {
@@ -141,6 +147,8 @@ const routes = (
       <Route path="/application-bg-check-approved" component={ApplicationBGCheckApproved} overlayComponent={ApplicationNavbarBGCheckApproved} />
       <Route path="/application-submit-app" component={ApplicationSubmitApp} overlayComponent={ApplicationNavbarSubmitApp} />
       <Route path="/application-keep-applying" component={ApplicationKeepApplying} overlayComponent={ApplicationNavbarKeepApplying} />
+      <Route path="/login-mobile-no" component={LoginMobileNo} overlayComponent={LoginNavbarMobileNo} />
+      <Route path="/login-confirm-code" component={LoginConfirmCode} overlayComponent={LoginNavbarConfirmCode} />
     </StackRoute>
   </Router>
 );

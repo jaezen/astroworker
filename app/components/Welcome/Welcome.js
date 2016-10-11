@@ -34,8 +34,7 @@ class Welcome extends Component {
     }
 
     const handleLoginButtonPress = () => {
-      console.log('Login Pressed');
-      alert('Login Pressed');
+      this.props.router.push('/login-mobile-no');
     };
 
     return (

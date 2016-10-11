@@ -18,6 +18,7 @@ import {
   Text,
   TextInput,
   View,
+  Image,
 } from 'react-native';
 
 class ApplicationKeepApplying extends Component {
@@ -30,18 +31,18 @@ class ApplicationKeepApplying extends Component {
     // render() cannot return an array of components, so we need to wrap them in a `<View />``
     return (
       <View style={styles.container}>
-        <Text style={styles.step}>
-        Ready to submit!
+        <Image source={require('../../images/thumbs-up.png')} style={styles.image} />
+        <Text style={styles.heading}>
+        Congratulations!
         </Text>
-        <Text style={styles.dotpoints}>
-        * Your name is XXX {"\n\n"}
-        * You want to work in XXX {"\n\n"}
-        * You are over 21 years old {"\n\n"}
-        * You have a SSN and allowed to work in the U.S. {"\n\n"}
-        * Your background check is successful {"\n\n"}
-        * You have a 4 door car less than 10 years old {"\n\n"}
-        * You have 2+ years clean driving record {"\n\n"}
-        * Your contact number is (415)96-1838
+        <Text style={styles.notification}>
+          You have successfully applied to work with Uber!
+        </Text>
+        <Text style={styles.heading}>
+        What happens next?
+        </Text>
+        <Text style={styles.notification}>
+          You will receive a message by text message, notifying you if you have been approved or not.
         </Text>
 
         <KeepApplyingButton />
@@ -55,7 +56,7 @@ class KeepApplyingButton extends Component {
 
   render() {
     return (
-      <Link to={'/application-bg-check-approved'} style={{ height: 70 }}>
+      <Link to={'/results'} style={{ height: 70 }}>
         <View style={styles.KeepApplyingButtonContainer}>
          <Text
          style={{fontSize: 20, textAlign: 'center', color: 'white',fontWeight:'bold'}}
@@ -73,23 +74,29 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     paddingTop: 30,
+    alignItems:'center',
     backgroundColor: '#fff',
   },
-  step: {
+  image: {
+    width:200,
+    height:200,
     alignSelf:'center',
-    fontWeight:'bold',
   },
-  dotpoints: {
+  heading: {
+    fontWeight:'bold',
+    fontSize:15,
+    padding:5,
+    marginTop: 5,
+  },
+  notification: {
     fontSize:12,
-    padding: 10,
-    color: '#333333',
-    marginTop:20,
-    marginBottom: 5,
-    alignSelf:'center',
+    paddingTop:5,
+    paddingLeft:40,
+    paddingRight:40,
   },
   KeepApplyingButtonContainer: {
     margin:10,
-    marginTop:160,
+    marginTop:120,
     padding:10,
     height:45,
     width: 300,

@@ -177,7 +177,7 @@ const styles = StyleSheet.create({
   textEditCardExpiry: {
     textAlign:'center',
     height:40,
-    width:80,
+    width:100,
     backgroundColor:'white',
     borderColor:'gray',
     borderWidth:1,
