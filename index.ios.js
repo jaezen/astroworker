@@ -101,6 +101,8 @@ import ApplicationNavbarBGCheck from './app/components/Application/ApplicationNa
 import ApplicationBGCheckApproved from './app/components/Application/ApplicationBGCheckApproved';
 import ApplicationNavbarBGCheckApproved from './app/components/Application/ApplicationNavbarBGCheckApproved';
 
+import ApplicationSubmitApp from './app/components/Application/ApplicationSubmitApp';
+import ApplicationNavbarSubmitApp from './app/components/Application/ApplicationNavbarSubmitApp';
 
 const Master = (props) => (
   <View style={styles.component}>
@@ -134,6 +136,7 @@ const routes = (
       <Route path="/application-confirm-code" component={ApplicationConfirmCode} overlayComponent={ApplicationNavbarConfirmCode} />
       <Route path="/application-bg-check" component={ApplicationBGCheck} overlayComponent={ApplicationNavbarBGCheck} />
       <Route path="/application-bg-check-approved" component={ApplicationBGCheckApproved} overlayComponent={ApplicationNavbarBGCheckApproved} />
+      <Route path="/application-submit-app" component={ApplicationSubmitApp} overlayComponent={ApplicationNavbarSubmitApp} />
     </StackRoute>
   </Router>
 );

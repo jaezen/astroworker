@@ -97,7 +97,7 @@ class PayNowButton extends Component {
       <Link to={'/application-bg-check-approved'} style={{ height: 70 }}>
         <View style={styles.PayNowButtonContainer}>
          <Text
-         style={{fontSize: 20, textAlign: 'center', color: 'white'}}
+         style={{fontSize: 20, textAlign: 'center', color: 'white',fontWeight:'bold'}}
          >
           PAY NOW
          </Text>

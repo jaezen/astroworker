@@ -34,12 +34,12 @@ class ApplicationBGCheckApproved extends Component {
         <Text style={styles.step}>
         Step 5 of 5
         </Text>
-        <Image source={require('./images/thumbs-up.png')} style={styles.image} />
+        <Image source={require('../../images/thumbs-up.png')} style={styles.image} />
         <Text style={styles.heading}>
         Congratulations!
         </Text>
         <Text style={styles.dotpoints}>
-        * Payment Accepted {"\n"}
+        * Payment Accepted {"\n\n"}
         * Background Check Approved {"\n"}
         </Text>
       </View>
@@ -58,14 +58,15 @@ const styles = StyleSheet.create({
     alignSelf:'center',
   },
   image: {
-    width:100,
-    height:100,
+    width:200,
+    height:200,
+    alignSelf:'center',
   },
   heading: {
     fontWeight:'bold',
     fontSize:15,
     padding:5,
-    marginTop: 150,
+    marginTop: 20,
     alignSelf:'center',
   },
   dotpoints: {
@@ -77,5 +78,7 @@ const styles = StyleSheet.create({
     alignSelf:'center',
   },
 });
+
+
 
 export default withRouter(ApplicationBGCheckApproved);

@@ -13,7 +13,7 @@ import {
 const ApplicationNavbarBGCheckApproved  = (props) => {
 
   const handleRightButtonPress = () => {
-    props.router.push('/application-confirm-code');
+    props.router.push('/application-submit-app');
   }
 
   return (

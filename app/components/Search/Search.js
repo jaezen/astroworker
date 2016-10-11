@@ -1,4 +1,4 @@
-import React, {
+    import React, {
   Component,
 } from 'react';
 
@@ -67,7 +67,7 @@ class Search extends Component {
     flexDirection:'column',
    },
    row: {
-    backgroundColor: 'skyblue',
+    backgroundColor: 'gray',
     height: 107,
     borderBottomColor: 'white',
     borderBottomWidth: 1,
