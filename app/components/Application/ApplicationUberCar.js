@@ -35,8 +35,7 @@ class ApplicationUberCar extends Component {
     }
 
     const handleNoButtonPress = () => {
-      console.log('Login Pressed');
-      alert('No Pressed');
+      this.props.router.push('/service-details-secondary');
     };
 
     return (

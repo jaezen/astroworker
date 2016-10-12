@@ -86,11 +86,17 @@ import ResultsNavbar from './app/components/Results/ResultsNavbar';
 import ServiceDetails from './app/components/ServiceDetails/ServiceDetails';
 import ServiceDetailsNavbar from './app/components/ServiceDetails/ServiceDetailsNavbar';
 
+import ServiceDetailsSecondary from './app/components/ServiceDetails/ServiceDetailsSecondary';
+import ServiceDetailsSecondaryNavbar from './app/components/ServiceDetails/ServiceDetailsSecondaryNavbar';
+
 import ApplicationUberCar from './app/components/Application/ApplicationUberCar';
 import ApplicationNavbarUberCar from './app/components/Application/ApplicationNavbarUberCar';
 
 import ApplicationUberDrivingRecord from './app/components/Application/ApplicationUberDrivingRecord';
 import ApplicationNavbarUberDrivingRecord from './app/components/Application/ApplicationNavbarUberDrivingRecord';
+
+import ApplicationUberDrivingRecordFailed from './app/components/Application/ApplicationUberDrivingRecordFailed';
+import ApplicationNavbarUberDrivingRecordFailed from './app/components/Application/ApplicationNavbarUberDrivingRecordFailed';
 
 import ApplicationName from './app/components/Application/ApplicationName';
 import ApplicationNavbarName from './app/components/Application/ApplicationNavbarName';
@@ -146,8 +152,10 @@ const routes = (
       <Route path="/search" component={Search} overlayComponent={SearchNavbar} />
       <Route path="/results" component={Results} overlayComponent={ResultsNavbar} />
       <Route path="/service-details" component={ServiceDetails} overlayComponent={ServiceDetailsNavbar} />
+      <Route path="/service-details-secondary" component={ServiceDetailsSecondary} overlayComponent={ServiceDetailsSecondaryNavbar} />
       <Route path="/application-uber-car" component={ApplicationUberCar} overlayComponent={ApplicationNavbarUberCar} />
       <Route path="/application-uber-driving-record" component={ApplicationUberDrivingRecord} overlayComponent={ApplicationNavbarUberDrivingRecord} />
+      <Route path="/application-uber-driving-record-failed" component={ApplicationUberDrivingRecordFailed} overlayComponent={ApplicationNavbarUberDrivingRecordFailed} />
       <Route path="/application-name" component={ApplicationName} overlayComponent={ApplicationNavbarName} />
       <Route path="/application-mobile-no" component={ApplicationMobileNo} overlayComponent={ApplicationNavbarMobileNo} />
       <Route path="/application-confirm-code" component={ApplicationConfirmCode} overlayComponent={ApplicationNavbarConfirmCode} />

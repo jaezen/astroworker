@@ -35,9 +35,10 @@ class ApplicationUberDrivingRecord extends Component {
     }
 
     const handleNoButtonPress = () => {
-      console.log('Login Pressed');
-      alert('No Pressed');
-    };
+      this.props.router.push('/application-uber-driving-record-failed');
+  };
+
+
 
     return (
       <View style={styles.container}>
