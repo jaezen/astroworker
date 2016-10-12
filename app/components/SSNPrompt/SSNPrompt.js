@@ -3,6 +3,16 @@ import React, {
 } from 'react';
 
 import {
+  Header,
+  Link,
+  nativeHistory,
+  Route,
+  Router,
+  StackRoute,
+  withRouter,
+} from 'react-router-native';
+
+import {
   AppRegistry,
   StyleSheet,
   Text,
@@ -25,8 +35,7 @@ class SSNPrompt extends Component {
     }
 
     const handleNoButtonPress = () => {
-      console.log('Login Pressed');
-      alert('No Pressed');
+        this.props.router.push('/ssn-prompt-failed');
     };
 
     return (
@@ -91,4 +100,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default SSNPrompt;
+export default withRouter(SSNPrompt);

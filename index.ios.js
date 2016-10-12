@@ -60,9 +60,15 @@ import CityPromptNavbar from './app/components/CityPrompt/CityPromptNavbar';
 import DOBPrompt from './app/components/DOBPrompt/DOBPrompt';
 import DOBPromptNavbar from './app/components/DOBPrompt/DOBPromptNavbar';
 
+import DOBPromptFailed from './app/components/DOBPrompt/DOBPromptFailed';
+import DOBPromptFailedNavbar from './app/components/DOBPrompt/DOBPromptFailedNavbar';
+
 // `./` = root of your project. Onboard_2.js is inside a folder called `Pages`
 import SSNPrompt from './app/components/SSNPrompt/SSNPrompt';
 import SSNPromptNavbar from './app/components/SSNPrompt/SSNPromptNavbar';
+
+import SSNPromptFailed from './app/components/SSNPrompt/SSNPromptFailed';
+import SSNPromptFailedNavbar from './app/components/SSNPrompt/SSNPromptFailedNavbar';
 
 // `./` = root of your project. Onboard_2.js is inside a folder called `Pages`
 import WorkerPrompt from './app/components/WorkerPrompt/WorkerPrompt';
@@ -133,7 +139,9 @@ const routes = (
       <Route path="/" component={Welcome}/>
       <Route path="/city-prompt" component={CityPrompt} overlayComponent={CityPromptNavbar} />
       <Route path="/dob-prompt" component={DOBPrompt} overlayComponent={DOBPromptNavbar} />
+      <Route path="/dob-prompt-failed" component={DOBPromptFailed} overlayComponent={DOBPromptFailedNavbar} />
       <Route path="/ssn-prompt" component={SSNPrompt} overlayComponent={SSNPromptNavbar} />
+      <Route path="/ssn-prompt-failed" component={SSNPromptFailed} overlayComponent={SSNPromptFailedNavbar} />
       <Route path="/worker-prompt" component={WorkerPrompt} overlayComponent={WorkerPromptNavbar} />
       <Route path="/search" component={Search} overlayComponent={SearchNavbar} />
       <Route path="/results" component={Results} overlayComponent={ResultsNavbar} />
