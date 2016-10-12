@@ -10,10 +10,33 @@ import {
   View,
 } from 'react-native';
 
+import {
+  Form,
+  DatePickerField,
+} from 'react-native-form-generator';
+
 class DOBPrompt extends Component {
   constructor(props) {
     super(props);
     this.state = { text: '' };
+  }
+
+// export class FormView extends React.Component{
+//   constructor(props){
+//     super(props);
+//     this.state = {
+//       formData:{}
+//     }
+//   }
+
+  handleFormChange(formData){
+    formData = {
+    birthday: Date,
+  }
+
+
+    this.setState({formData:formData})
+    this.props.onFormChange && this.props.onFormChange(formData);
   }
 
   render() {
@@ -32,10 +55,20 @@ class DOBPrompt extends Component {
           onChangeText={(text) => this.setState({text})}
           value={this.state.text}
         />
+        <Form>
+        <DatePickerField style={styles.DatePickerField}
+          ref='birthday'
+          minimumDate={new Date('1/1/1900')}
+          maximumDate={new Date()}
+          placeholder='Birthday'/>
+        </Form>
+
       </View>
     );
   }
 }
+
+
 
 const styles = StyleSheet.create({
   container: {
@@ -55,6 +88,16 @@ const styles = StyleSheet.create({
   textEdit: {
     alignSelf:'center',
     textAlign:'center',
+    height:40,
+    width:250,
+    backgroundColor:'white',
+    borderColor:'gray',
+    borderWidth:1,
+  },
+  DatePickerField: {
+    alignSelf:'center',
+    textAlign:'center',
+    fontSize:20,
     height:40,
     width:250,
     backgroundColor:'white',
