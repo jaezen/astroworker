@@ -54,16 +54,16 @@ class DOBPrompt extends Component {
           style={{
             flex: 1,
             padding: 20,
-            backgroundColor: 'yellow',
+            backgroundColor: 'white',
           }}
         >
 
           <Form>
             <DatePickerField style={styles.DatePickerField}
-              ref='birthday'
               mode="date"
-              minimumDate={new Date('1/1/1900')}
-              maximumDate={new Date()}
+              valueStyle = {styles.fieldValue}
+              minimumDate={new Date('1/1/1950')}
+              maximumDate={new Date('1/1/2000')}
               placeholder='Birthday'/>
           </Form>
 
@@ -73,48 +73,33 @@ class DOBPrompt extends Component {
   }
 }
 
-//
-// <TextInput
-//   placeholder="MM/DD/YYYY"
-//   style={styles.textEdit}
-//   onChangeText={(text) => this.setState({text})}
-//   value={this.state.text}
-// />
-
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection:'column',
-    // alignItems:'center',
     paddingTop: 70,
-    backgroundColor: 'red',
+    backgroundColor: 'white',
   },
   question: {
     fontSize:20,
     textAlign: 'center',
-    padding: 50,
-    color: '#333333',
-    marginBottom: 5,
-  },
-  textEdit: {
-    alignSelf:'center',
-    textAlign:'center',
-    height:40,
-    width:250,
-    backgroundColor:'white',
-    borderColor:'gray',
-    borderWidth:1,
+    padding: 30,
+    marginBottom: 3,
   },
   DatePickerField: {
     alignSelf:'center',
     textAlign:'center',
     fontSize:20,
+    color:'black',
     height:40,
     width:250,
     backgroundColor:'white',
-    borderColor:'gray',
     borderWidth:1,
+  },
+  fieldValue:{
+    paddingTop:1,
+    color: 'black',
   },
 });
 
