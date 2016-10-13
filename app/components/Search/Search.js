@@ -18,7 +18,29 @@ import CheckBox from 'react-native-checkbox';
 //create child component
 class SearchRow extends Component {
 
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      isChecked: false,
+    }
+
+
+  }
+
+
   render(){
+
+    const handleChange = (newValue) => {
+      console.log('I am checked', newValue)
+
+      // alert(checked)
+
+      this.setState({
+        isChecked: newValue
+      })
+    }
+
 
     return (
       <View
@@ -29,8 +51,8 @@ class SearchRow extends Component {
           labelStyle={styles.checkBoxLabel}
           checkboxStyle ={styles.checkboxStyle}
           label={this.props.rowName}
-          checked={false}
-          onChange={(checked) => console.log('I am checked', checked)}
+          checked={this.state.isChecked}
+          onChange={handleChange}
          />
       </View>
     )

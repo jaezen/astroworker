@@ -43,40 +43,52 @@ class DOBPrompt extends Component {
     // render() cannot return an array of components, so we need to wrap them in a `<View />``
     return (
       <View style={styles.container}>
-      <Text>
-        Step 2 of 4
-      </Text>
+        <Text style={{ alignSelf: 'center' }}>
+          Step 2 of 4
+        </Text>
         <Text style={styles.question}>
           What is your Date of Birth?
         </Text>
-        <TextInput
-          placeholder="MM/DD/YYYY"
-          style={styles.textEdit}
-          onChangeText={(text) => this.setState({text})}
-          value={this.state.text}
-        />
-        <Form>
-        <DatePickerField style={styles.DatePickerField}
-          ref='birthday'
-          minimumDate={new Date('1/1/1900')}
-          maximumDate={new Date()}
-          placeholder='Birthday'/>
-        </Form>
 
+        <View
+          style={{
+            flex: 1,
+            padding: 20,
+            backgroundColor: 'yellow',
+          }}
+        >
+
+          <Form>
+            <DatePickerField style={styles.DatePickerField}
+              ref='birthday'
+              mode="date"
+              minimumDate={new Date('1/1/1900')}
+              maximumDate={new Date()}
+              placeholder='Birthday'/>
+          </Form>
+
+        </View>
       </View>
     );
   }
 }
 
+//
+// <TextInput
+//   placeholder="MM/DD/YYYY"
+//   style={styles.textEdit}
+//   onChangeText={(text) => this.setState({text})}
+//   value={this.state.text}
+// />
 
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection:'column',
-    alignItems:'center',
+    // alignItems:'center',
     paddingTop: 70,
-    backgroundColor: '#fff',
+    backgroundColor: 'red',
   },
   question: {
     fontSize:20,
