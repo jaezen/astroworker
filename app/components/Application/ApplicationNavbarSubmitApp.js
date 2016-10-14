@@ -12,6 +12,10 @@ import {
 
 const ApplicationNavbarSubmitApp  = (props) => {
 
+  const handleLeftButtonPress = () => {
+    props.router.push('/menu');
+  }
+
   const handleRightButtonPress = () => {
     props.router.push('/application-confirm-code');
   }
@@ -21,6 +25,7 @@ const ApplicationNavbarSubmitApp  = (props) => {
       {...props}
       style={{ backgroundColor: '#EEEEEE' }}
       leftButtonText="Profile"
+      onLeftButtonPress={handleLeftButtonPress}
       rightButtonText="Skip >"
       onRightButtonPress={handleRightButtonPress}
       title="Application"

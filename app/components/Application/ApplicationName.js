@@ -77,30 +77,15 @@ this.props.onFormChange && this.props.onFormChange(formData);
          }
 
          return true;
-       },(value)=>{
-            ///Initial state is null/undefined
-            if(!value) return true;
-            if(value.indexOf('4')!=-1){
-              return "I can't stand number 4";
-            }
-            return true;
-          }]}
-          />
-      <InputField ref='last_name' placeholder='Last Name'/>
+       }]}
+       />
+      <InputField ref='last_name' label='Last Name' placeholder='Last Name'/>
       </Form>
       </View>
     );
   }
 }
 
- // <InputField ref='last_name' placeholder='Last Name'/>
-
-// <TextInput
-//   placeholder="First Name   Last Name"
-//   style={styles.textEdit}
-//   onChangeText={(text) => this.setState({text})}
-//   value={this.state.text}
-// />
 
 const styles = StyleSheet.create({
   container: {

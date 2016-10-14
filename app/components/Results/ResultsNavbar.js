@@ -12,6 +12,10 @@ import {
 
 const ResultsNavbar = (props) => {
 
+  const handleLeftButtonPress = () => {
+    props.router.push('/menu');
+  }
+
   const handleRightButtonPress = () => {
     props.router.push('/search');
   }
@@ -21,6 +25,7 @@ const ResultsNavbar = (props) => {
       {...props}
       style={{ backgroundColor: '#EEEEEE' }}
       leftButtonText="Profile"
+      onLeftButtonPress={handleLeftButtonPress}
       rightButtonText="Search"
       onRightButtonPress={handleRightButtonPress}
       title="Results"

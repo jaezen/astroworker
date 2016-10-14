@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
 // responsible for registering the component with the `AppRegistry`.
 import Welcome from './app/components/Welcome/Welcome';
 // import WelcomeNavbar from './app/components/Pages/WelcomeNavbar';
-
+import Menu from './app/components/Menu/Menu';
 // `./` = root of your project. Onboard_2.js is inside a folder called `Pages`
 import CityPrompt from './app/components/CityPrompt/CityPrompt';
 import CityPromptNavbar from './app/components/CityPrompt/CityPromptNavbar';
@@ -142,7 +142,8 @@ const Master = (props) => (
 const routes = (
   <Router addressBar history={nativeHistory}>
     <StackRoute path="master" component={Master}>
-      <Route path="/" component={Welcome}/>
+      <Route path="/XXX" component={Welcome}/>
+      <Route path="/" component={Menu}/>
       <Route path="/city-prompt" component={CityPrompt} overlayComponent={CityPromptNavbar} />
       <Route path="/dob-prompt" component={DOBPrompt} overlayComponent={DOBPromptNavbar} />
       <Route path="/dob-prompt-failed" component={DOBPromptFailed} overlayComponent={DOBPromptFailedNavbar} />
