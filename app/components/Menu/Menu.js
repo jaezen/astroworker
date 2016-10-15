@@ -9,6 +9,7 @@ import {
   Text,
   TextInput,
   View,
+  Image,
 } from 'react-native';
 
 import {
@@ -21,37 +22,85 @@ import {
   withRouter,
 } from 'react-router-native';
 
-const styles = StyleSheet.create({
-  container: {
-    backgroundColor: '#DFE0E4',
-    flex: 1,
-    padding: 20,
-  },
-  tabLink: {
-    backgroundColor: 'red',
-  },
-  tabsActiveStyle: {
-    backgroundColor: 'yellow',
-  }
-});
+
 
 export class Menu extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-
+          <View style={[styles.innerBlock]}>
+            <Image source={{uri: 'https://facebook.github.io/react/img/logo_og.png'}} style={styles.image} />
+            <Text style={styles.userName}>User Name</Text>
+          </View>
+        <Link
+          to="/profile-settings"
+          activeStyle={styles.tabsActiveStyle}
+          style={styles.tabLink}
+          underlayColor="transparent"
+        >
+          <Text style={styles.tabLinkText}>PROFILE SETTINGS</Text>
+        </Link>
         <Link
           to="/city-prompt"
           activeStyle={styles.tabsActiveStyle}
           style={styles.tabLink}
           underlayColor="transparent"
         >
-          <Text style={styles.tabLinkText}>City Screen</Text>
+          <Text style={styles.tabLinkText}>NOTIFICATIONS</Text>
         </Link>
+        <Link
+          to="/city-prompt"
+          activeStyle={styles.tabsActiveStyle}
+          style={styles.tabLink}
+          underlayColor="transparent"
+        >
+          <Text style={styles.tabLinkText}>ABOUT</Text>
+        </Link>
+        <Link
+          to="/city-prompt"
+          activeStyle={styles.tabsActiveStyle}
+          style={styles.tabLink}
+          underlayColor="transparent"
+        >
+          <Text style={styles.tabLinkText}>SIGN OUT</Text>
+        </Link>
+
 
       </View>
     );
   }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: '#DFE0E4',
+    flex: 1,
+  },
+  innerBlock: {
+    width: 282,
+    height: 100,
+    marginRight:20,
+    backgroundColor:'gray',
+    padding: 20,
+    flexDirection:'row',
+    justifyContent:'flex-start',
+    alignItems:'center'
+  },
+  image: {
+    height:50,
+    width:50,
+  },
+  userName: {
+    paddingLeft:20,
+    fontSize:16,
+  },
+  tabLink: {
+    paddingLeft: 20,
+    marginTop:20,
+  },
+  tabsActiveStyle: {
+    backgroundColor: 'yellow',
+  }
+});
 
 export default withRouter(Menu);

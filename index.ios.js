@@ -128,6 +128,7 @@ import LoginNavbarConfirmCode from './app/components/Login/LoginNavbarConfirmCod
 
 import SideMenu from 'react-native-side-menu'
 import Menu from './app/components/Menu/Menu';
+import ProfileSettings from './app/components/Menu/ProfileSettings';
 
 
 const Master = (props) => (
@@ -172,6 +173,7 @@ const routes = (
       <Route path="/application-keep-applying" component={ApplicationKeepApplying} overlayComponent={ApplicationNavbarKeepApplying} />
       <Route path="/login-mobile-no" component={LoginMobileNo} overlayComponent={LoginNavbarMobileNo} />
       <Route path="/login-confirm-code" component={LoginConfirmCode} overlayComponent={LoginNavbarConfirmCode} />
+      <Route path="/profile-settings" component={ProfileSettings}/>
     </StackRoute>
   </Router>
 );
