@@ -33,6 +33,7 @@ const styles = StyleSheet.create({
   component: {
     backgroundColor: '#FFFFFF',
     flex: 1,
+    overflow: 'hidden',
   },
   home: {
     backgroundColor: '#FFFFFF',
@@ -51,7 +52,7 @@ const styles = StyleSheet.create({
 // responsible for registering the component with the `AppRegistry`.
 import Welcome from './app/components/Welcome/Welcome';
 // import WelcomeNavbar from './app/components/Pages/WelcomeNavbar';
-import Menu from './app/components/Menu/Menu';
+
 // `./` = root of your project. Onboard_2.js is inside a folder called `Pages`
 import CityPrompt from './app/components/CityPrompt/CityPrompt';
 import CityPromptNavbar from './app/components/CityPrompt/CityPromptNavbar';
@@ -125,25 +126,30 @@ import LoginNavbarMobileNo from './app/components/Login/LoginNavbarMobileNo';
 import LoginConfirmCode from './app/components/Login/LoginConfirmCode';
 import LoginNavbarConfirmCode from './app/components/Login/LoginNavbarConfirmCode';
 
-const Master = (props) => (
-  <View style={styles.component}>
-    {
-    /*
-      If you want to style your StatusBar instead of hiding it, see my answer to this question on SO:
-      http://stackoverflow.com/questions/39297291/how-to-set-ios-status-bar-background-color-in-react-native/39300715#39300715
-    */
-    }
-    <StatusBar hidden={false} />
-    {props.children}
-  </View>
-);
+import SideMenu from 'react-native-side-menu'
+import Menu from './app/components/Menu/Menu';
 
+
+const Master = (props) => (
+  <SideMenu menu={<Menu />}>
+    <View style={styles.component}>
+      {
+      /*
+        If you want to style your StatusBar instead of hiding it, see my answer to this question on SO:
+        http://stackoverflow.com/questions/39297291/how-to-set-ios-status-bar-background-color-in-react-native/39300715#39300715
+      */
+      }
+      <StatusBar hidden={false} />
+
+        {props.children}
+    </View>
+  </SideMenu>
+);
 
 const routes = (
   <Router addressBar history={nativeHistory}>
     <StackRoute path="master" component={Master}>
-      <Route path="/XXX" component={Welcome}/>
-      <Route path="/" component={Menu}/>
+      <Route path="/" component={Welcome}/>
       <Route path="/city-prompt" component={CityPrompt} overlayComponent={CityPromptNavbar} />
       <Route path="/dob-prompt" component={DOBPrompt} overlayComponent={DOBPromptNavbar} />
       <Route path="/dob-prompt-failed" component={DOBPromptFailed} overlayComponent={DOBPromptFailedNavbar} />
@@ -169,10 +175,6 @@ const routes = (
     </StackRoute>
   </Router>
 );
-
-
-
-
 
 // You should only do this once ever.
 AppRegistry.registerComponent('AstroWorker', () => () => routes);

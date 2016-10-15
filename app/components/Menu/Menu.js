@@ -21,38 +21,35 @@ import {
   withRouter,
 } from 'react-router-native';
 
-import {
-  SideMenu,
-} from 'react-native-side-menu'
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: '#DFE0E4',
+    flex: 1,
+    padding: 20,
+  },
+  tabLink: {
+    backgroundColor: 'red',
+  },
+  tabsActiveStyle: {
+    backgroundColor: 'yellow',
+  }
+});
 
-
-class Menu extends React.Component {
+export class Menu extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+Control+Z for dev menu
-        </Text>
+
+        <Link
+          to="/city-prompt"
+          activeStyle={styles.tabsActiveStyle}
+          style={styles.tabLink}
+          underlayColor="transparent"
+        >
+          <Text style={styles.tabLinkText}>City Screen</Text>
+        </Link>
+
       </View>
-    );
-  }
-}
-
-class Application extends React.Component {
-  render() {
-    const menu = <Menu navigator={navigator}/>;
-
-    return (
-      <SideMenu menu={menu}>
-        <ContentView/>
-      </SideMenu>
     );
   }
 }
