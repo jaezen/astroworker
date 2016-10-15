@@ -4,6 +4,7 @@ import React, {
 
 import {
   AppRegistry,
+  Dimensions,
   StyleSheet,
   Text,
   TextInput,
@@ -20,37 +21,40 @@ import {
   withRouter,
 } from 'react-router-native';
 
-import Drawer from 'react-native-drawer'
-
-var Menu = React.createClass({
-  closeControlPanel: function(){
-    this.refs.controlPanel.closeDrawer()
-  },
-  openControlPanel: function(){
-    this.refs.controlPanel.openDrawer()
-  },
+import {
+  SideMenu,
+} from 'react-native-side-menu'
 
 
-  render: function() {
+class Menu extends React.Component {
+  render() {
     return (
-      <Drawer
-        type="overlay"
-        content={<ControlPanel />}
-        tapToClose={true}
-        openDrawerOffset={0.2} // 20% gap on the right side of drawer
-        panCloseMask={0.2}
-        closedDrawerOffset={-3}
-        styles={drawerStyles}
-        tweenHandler={(ratio) => ({
-        main: { opacity:(2-ratio)/2 }
-      })}
-      >
-        <Text>test</Text>
-      </Drawer>
-    )
+      <View style={styles.container}>
+        <Text style={styles.welcome}>
+          Welcome to React Native!
+        </Text>
+        <Text style={styles.instructions}>
+          To get started, edit index.ios.js
+        </Text>
+        <Text style={styles.instructions}>
+          Press Cmd+R to reload,{'\n'}
+          Cmd+Control+Z for dev menu
+        </Text>
+      </View>
+    );
   }
-});
+}
 
+class Application extends React.Component {
+  render() {
+    const menu = <Menu navigator={navigator}/>;
 
+    return (
+      <SideMenu menu={menu}>
+        <ContentView/>
+      </SideMenu>
+    );
+  }
+}
 
 export default withRouter(Menu);
