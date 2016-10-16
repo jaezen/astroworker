@@ -1,4 +1,4 @@
-import React, {
+        import React, {
   Component,
 } from 'react';
 
@@ -79,7 +79,6 @@ this.props.onFormChange && this.props.onFormChange(formData);
          return true;
        }]}
        />
-      <InputField ref='last_name' label='Last Name' placeholder='Last Name'/>
       </Form>
       </View>
     );
@@ -104,8 +103,6 @@ const styles = StyleSheet.create({
   inputField: {
     alignSelf:'center',
     textAlign:'center',
-    // height:40,
-    // width:250,
     backgroundColor:'white',
     borderColor:'gray',
   },
