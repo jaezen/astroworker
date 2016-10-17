@@ -49,7 +49,7 @@ export class Menu extends React.Component {
           <Text style={styles.tabLinkText}>NOTIFICATIONS</Text>
         </Link>
         <Link
-          to="/city-prompt"
+          to="/about"
           activeStyle={styles.tabsActiveStyle}
           style={styles.tabLink}
           underlayColor="transparent"
@@ -73,14 +73,14 @@ export class Menu extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#DFE0E4',
+    backgroundColor: 'white',
     flex: 1,
   },
   innerBlock: {
-    width: 282,
+    width: 375,
     height: 100,
     marginRight:20,
-    backgroundColor:'gray',
+    backgroundColor:'#DFE0E4',
     padding: 20,
     flexDirection:'row',
     justifyContent:'flex-start',
@@ -97,6 +97,9 @@ const styles = StyleSheet.create({
   tabLink: {
     paddingLeft: 20,
     marginTop:20,
+  },
+  tabLinkText: {
+    fontSize: 16,
   },
   tabsActiveStyle: {
     backgroundColor: 'yellow',

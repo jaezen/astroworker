@@ -89,7 +89,7 @@ class Search extends Component {
     flexDirection:'column',
    },
    row: {
-    backgroundColor: 'gray',
+    backgroundColor: '#DFE0E4',
     height: 107,
     borderBottomColor: 'white',
     borderBottomWidth: 1,
@@ -100,7 +100,7 @@ class Search extends Component {
   },
   checkBoxLabel: {
     fontSize:14,
-    color:'white',
+    color:'black',
     fontWeight:'bold',
     //padding:16,
    },

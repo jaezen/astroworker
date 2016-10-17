@@ -56,7 +56,7 @@ this.props.onFormChange && this.props.onFormChange(formData);
       <View style={styles.container}>
           <View style={[styles.innerBlock]}>
             <Image source={{uri: 'https://facebook.github.io/react/img/logo_og.png'}} style={styles.image} />
-            <Text style={styles.userName}>PROFILE SETTINGS</Text>
+            <Text style={styles.menuTitle}>PROFILE SETTINGS</Text>
             <Text style={styles.edit}>EDIT</Text>
           </View>
           <Form
@@ -137,14 +137,14 @@ class SaveButton extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#DFE0E4',
+    backgroundColor: 'white',
     flex: 1,
   },
   innerBlock: {
     width: 375,
     height: 100,
     marginRight:20,
-    backgroundColor:'gray',
+    backgroundColor:'#DFE0E4',
     padding: 20,
     flexDirection:'row',
     justifyContent:'space-around',
@@ -154,7 +154,7 @@ const styles = StyleSheet.create({
     height:50,
     width:50,
   },
-  userName: {
+  menuTitle: {
     paddingLeft:20,
     fontSize:16,
   },
