@@ -29,45 +29,21 @@ import CheckBox from 'react-native-checkbox';
 //create child component
 class NotificationRow extends Component {
 
-constructor(props) {
-super(props);
+    state = {
+      trueSwitchIsOn: true,
+      falseSwitchIsOn: false,
+    };
 
-this.state = {
-  switchIsOn: true,
-}
-}
-
-
-render(){
-
-const onValueChange = (value) => {
-  console.log('I am ON', value)
-
-  // alert(checked)
-
-  this.setState({
-    trueSwitchIsOn: value,
-    value:this.state.switchIsOn
-  })
-}
-
-
-return (
-  <View
-    style={styles.row}
-  >
-     <Switch
-      containerStyle={styles.switch}
-      labelStyle={styles.switchLabel}
-      label={this.props.rowName}
-      value={true}
-      onValueChange={onValueChange}
-     />
-  </View>
-    )
+    render() {
+      return (
+        <View>
+          <Switch style={styles.switch}
+            onValueChange={(value) => this.setState({trueSwitchIsOn: value})}
+            value={this.state.trueSwitchIsOn} />
+        </View>
+      );
+    }
   }
-}
-
 
 class Notifications extends Component {
 constructor(props) {
@@ -79,7 +55,6 @@ render() {
 
  return (
    <View style={styles.container}>
-
     <NotificationRow rowName="New work opportunities" rowImage="" />
     <NotificationRow rowName="Work changes" rowImage="" />
    </View>
@@ -102,6 +77,7 @@ row: {
 },
 switch: {
   paddingLeft:20,
+  justifyContent:'flex-end'
 },
 switchLabel: {
   fontSize:14,
