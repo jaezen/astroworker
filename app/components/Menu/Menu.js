@@ -41,7 +41,7 @@ export class Menu extends React.Component {
           <Text style={styles.tabLinkText}>PROFILE SETTINGS</Text>
         </Link>
         <Link
-          to="/city-prompt"
+          to="/notifications"
           activeStyle={styles.tabsActiveStyle}
           style={styles.tabLink}
           underlayColor="transparent"

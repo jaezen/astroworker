@@ -130,6 +130,7 @@ import SideMenu from 'react-native-side-menu'
 import Menu from './app/components/Menu/Menu';
 import ProfileSettings from './app/components/Menu/ProfileSettings';
 import About from './app/components/Menu/About';
+import Notifications from './app/components/Menu/Notifications';
 
 
 const Master = (props) => (
@@ -151,7 +152,7 @@ const Master = (props) => (
 const routes = (
   <Router addressBar history={nativeHistory}>
     <StackRoute path="master" component={Master}>
-      <Route path="/" component={Welcome}/>
+      <Route path="/xx" component={Welcome}/>
       <Route path="/city-prompt" component={CityPrompt} overlayComponent={CityPromptNavbar} />
       <Route path="/dob-prompt" component={DOBPrompt} overlayComponent={DOBPromptNavbar} />
       <Route path="/dob-prompt-failed" component={DOBPromptFailed} overlayComponent={DOBPromptFailedNavbar} />
@@ -176,6 +177,7 @@ const routes = (
       <Route path="/login-confirm-code" component={LoginConfirmCode} overlayComponent={LoginNavbarConfirmCode} />
       <Route path="/profile-settings" component={ProfileSettings}/>
       <Route path="/about" component={About}/>
+      <Route path="/" component={Notifications}/>
     </StackRoute>
   </Router>
 );
