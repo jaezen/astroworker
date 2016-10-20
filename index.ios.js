@@ -27,7 +27,24 @@ import {
   withRouter,
 } from 'react-router-native';
 
+import {
+  createStore,
+  combineReducers }
+  from 'redux'
+
+import {
+  reducer as formReducer }
+  from 'redux-form'
+
+
 import { Examples } from '@shoutem/ui';
+
+const reducers = {
+  // ... your other reducers here ...
+  form: formReducer     // <---- Mounted at 'form'
+}
+const reducer = combineReducers(reducers)
+const store = createStore(reducer)
 
 const styles = StyleSheet.create({
   component: {

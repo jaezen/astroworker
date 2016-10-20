@@ -16,24 +16,28 @@ import {
   InputField,
 } from 'react-native-form-generator';
 
+import {
+  Field,
+  reduxForm
+} from 'redux-form'
+
+
+
+const SimpleForm = (props) => {
+const { handleSubmit, pristine, reset, submitting } = props
+
+
+
 class ApplicationName extends Component {
   constructor(props) {
     super(props);
     this.state = { text: '' };
   }
 
-handleFormChange(formData){
-  formData = {
-  first_name:"",
-  last_name:"",
-}
-
-this.setState({formData:formData})
-this.props.onFormChange && this.props.onFormChange(formData);
-}
 
 
   render() {
+
     // render() cannot return an array of components, so we need to wrap them in a `<View />``
     return (
       <View style={styles.container}>
@@ -43,43 +47,16 @@ this.props.onFormChange && this.props.onFormChange(formData);
         <Text style={styles.question}>
           What is your name?
         </Text>
-      <Form
-        ref='registrationForm'
-        label="Personal Information">
-        <Separator />
-        <InputField style={styles.inputField}
-        ref='first_name'
-        label='First Name'
-        placeholder='First Name'
-        helpText={((self)=>{
-
-         if(Object.keys(self.refs).length !== 0){
-           if(!self.refs.registrationForm.refs.first_name.valid){
-             return self.refs.registrationForm.refs.first_name.validationErrors.join("\n");
-           }
-
-         }
-         // if(!!(self.refs && self.refs.first_name.valid)){
-         // }
-       })(this)}
-       validationFunction={[(value)=>{
-         /*
-         you can have multiple validators in a single function or an array of functions
-          */
-
-         if(value == '') return "Required";
-         //Initial state is null/undefined
-         if(!value) return true;
-         // Check if First Name Contains Numbers
-         var matches = value.match(/\d+/g);
-         if (matches != null) {
-             return "First Name can't contain numbers";
-         }
-
-         return true;
-       }]}
-       />
-      </Form>
+        <form onSubmit={handleSubmit}>
+        <View>
+          <Field
+            placeholder="First Name"
+            style={styles.textEdit}
+            onChangeText={(text) => this.setState({text})}
+            value={this.state.text}
+            />
+            </View>
+        </form>
       </View>
     );
   }
@@ -100,13 +77,19 @@ const styles = StyleSheet.create({
     color: '#333333',
     marginBottom: 2,
   },
-  inputField: {
+  textEdit: {
     alignSelf:'center',
     textAlign:'center',
+    height:40,
+    width:250,
     backgroundColor:'white',
     borderColor:'gray',
+    borderWidth:1,
   },
-
 });
+
+export default reduxForm({
+  form: 'simple'  // a unique identifier for this form
+})(SimpleForm)
 
 export default ApplicationName;
