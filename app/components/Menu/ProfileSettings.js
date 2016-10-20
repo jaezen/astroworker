@@ -157,6 +157,7 @@ const styles = StyleSheet.create({
   menuTitle: {
     paddingLeft:20,
     fontSize:16,
+    fontWeight:'bold'
   },
   edit: {
     justifyContent:'flex-end',

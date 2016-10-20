@@ -95,6 +95,7 @@ const styles = StyleSheet.create({
   },
   menuTitle: {
     fontSize:16,
+    fontWeight:'bold',
   },
   tabLink: {
     paddingLeft: 20,

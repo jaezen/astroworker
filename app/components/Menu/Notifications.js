@@ -39,7 +39,8 @@ class NotificationRow extends Component {
         <View>
           <Switch style={styles.switch}
             onValueChange={(value) => this.setState({trueSwitchIsOn: value})}
-            value={this.state.trueSwitchIsOn} />
+            value={this.state.trueSwitchIsOn}
+            label={this.props.rowName}/>
         </View>
       );
     }
@@ -55,18 +56,35 @@ render() {
 
  return (
    <View style={styles.container}>
+    <View style={[styles.innerBlock]}>
+      <Text style={styles.menuTitle}>NOTIFICATIONS</Text>
+    </View>
     <NotificationRow rowName="New work opportunities" rowImage="" />
     <NotificationRow rowName="Work changes" rowImage="" />
+
    </View>
  );
 }
 }
 
-
 const styles = StyleSheet.create({
 container: {
   flex: 1,
   flexDirection:'column',
+},
+innerBlock: {
+  width: 375,
+  height: 100,
+  marginRight:20,
+  backgroundColor:'#DFE0E4',
+  padding: 20,
+  flexDirection:'row',
+  justifyContent:'center',
+  alignItems:'center'
+},
+menuTitle: {
+  fontSize:16,
+  fontWeight:'bold'
 },
 row: {
   backgroundColor: 'white',

@@ -86,6 +86,10 @@ const styles = StyleSheet.create({
     justifyContent:'flex-start',
     alignItems:'center'
   },
+  menuTitle: {
+    fontSize:16,
+    fontWeight:'bold'
+  },
   image: {
     height:50,
     width:50,
