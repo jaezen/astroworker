@@ -27,10 +27,6 @@ import {
   withRouter,
 } from 'react-router-native';
 
-import {
-  createStore,
-  combineReducers }
-  from 'redux'
 
 import {
   reducer as formReducer }
