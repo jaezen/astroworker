@@ -169,7 +169,7 @@ const Master = (props) => (
 const routes = (
   <Router addressBar history={nativeHistory}>
     <StackRoute path="master" component={Master}>
-      <Route path="/" component={Welcome}/>
+      <Route path="/xx" component={Welcome}/>
       <Route path="/city-prompt" component={CityPrompt} overlayComponent={CityPromptNavbar} />
       <Route path="/dob-prompt" component={DOBPrompt} overlayComponent={DOBPromptNavbar} />
       <Route path="/dob-prompt-failed" component={DOBPromptFailed} overlayComponent={DOBPromptFailedNavbar} />
@@ -194,7 +194,7 @@ const routes = (
       <Route path="/login-confirm-code" component={LoginConfirmCode} overlayComponent={LoginNavbarConfirmCode} />
       <Route path="/profile-settings" component={ProfileSettings}/>
       <Route path="/about" component={About}/>
-      <Route path="/notifications" component={Notifications}/>
+      <Route path="/" component={Notifications}/>
     </StackRoute>
   </Router>
 );

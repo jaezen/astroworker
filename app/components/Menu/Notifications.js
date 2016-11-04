@@ -56,17 +56,12 @@ render() {
 
  return (
    <View style={styles.container}>
-    <View style={styles.innerBlock}>
+    <View style={[styles.innerBlock]}>
       <Text style={styles.menuTitle}>NOTIFICATIONS</Text>
     </View>
-    <View style={styles.workOpportunities}>
-      <Text>New work opportunities</Text>
-      <NotificationRow rowName="New work opportunities" rowImage="" />
-    </View>
-    <View style={styles.workChanges}>
-      <Text>Work changes</Text>
-      <NotificationRow rowName="Work changes" rowImage="" />
-    </View>
+    <NotificationRow rowName="New work opportunities" rowImage="" />
+    <NotificationRow rowName="Work changes" rowImage="" />
+
    </View>
  );
 }
@@ -76,7 +71,6 @@ const styles = StyleSheet.create({
 container: {
   flex: 1,
   flexDirection:'column',
-  backgroundColor:'white',
 },
 innerBlock: {
   width: 375,
@@ -92,21 +86,21 @@ menuTitle: {
   fontSize:16,
   fontWeight:'bold'
 },
-workOpportunities: {
-  height: 50,
-  flexDirection:'row',
-  justifyContent: 'space-between',
-  alignItems:'center',
-  paddingLeft:20,
-  marginRight:20,
+row: {
+  backgroundColor: 'white',
+  height: 107,
+  borderBottomColor: 'white',
+  borderBottomWidth: 1,
+  justifyContent: 'center',
 },
-workChanges: {
-  height: 50,
-  flexDirection:'row',
-  justifyContent: 'space-between',
-  alignItems:'center',
+switch: {
   paddingLeft:20,
-  marginRight:20,
+  justifyContent:'flex-end'
+},
+switchLabel: {
+  fontSize:14,
+  color:'black',
+  fontWeight:'bold',
 },
 });
 
