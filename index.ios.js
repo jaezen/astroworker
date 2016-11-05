@@ -27,20 +27,25 @@ import {
   withRouter,
 } from 'react-router-native';
 
-
-import {
-  reducer as formReducer }
-  from 'redux-form'
+// import {
+//   createStore,
+//   combineReducers }
+//   from 'redux'
+//
+// import {
+//   reduxForm,
+//   reducer as formReducer }
+//   from 'redux-form'
 
 
 import { Examples } from '@shoutem/ui';
 
-const reducers = {
-  // ... your other reducers here ...
-  form: formReducer     // <---- Mounted at 'form'
-}
-const reducer = combineReducers(reducers)
-const store = createStore(reducer)
+// const reducers = {
+//   // ... your other reducers here ...
+//   form: formReducer     // <---- Mounted at 'form'
+// }
+// const reducer = combineReducers(reducers)
+// const store = createStore(reducer)
 
 const styles = StyleSheet.create({
   component: {
@@ -165,7 +170,7 @@ const Master = (props) => (
 const routes = (
   <Router addressBar history={nativeHistory}>
     <StackRoute path="master" component={Master}>
-      <Route path="/xx" component={Welcome}/>
+      <Route path="/" component={Welcome}/>
       <Route path="/city-prompt" component={CityPrompt} overlayComponent={CityPromptNavbar} />
       <Route path="/dob-prompt" component={DOBPrompt} overlayComponent={DOBPromptNavbar} />
       <Route path="/dob-prompt-failed" component={DOBPromptFailed} overlayComponent={DOBPromptFailedNavbar} />
@@ -190,7 +195,7 @@ const routes = (
       <Route path="/login-confirm-code" component={LoginConfirmCode} overlayComponent={LoginNavbarConfirmCode} />
       <Route path="/profile-settings" component={ProfileSettings}/>
       <Route path="/about" component={About}/>
-      <Route path="/" component={Notifications}/>
+      <Route path="/notifications" component={Notifications}/>
     </StackRoute>
   </Router>
 );
