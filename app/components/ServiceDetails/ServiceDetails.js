@@ -131,7 +131,7 @@ class HoursSlider extends Component {
       return (
         <View style={styles.slider}>
           <Text style={styles.text} >
-            {this.state.value && +this.state.value.toFixed(3)}
+            {this.state.value && +this.state.value.toFixed(3)} Hours
           </Text>
           <Slider
             value={50}
@@ -157,7 +157,7 @@ class HoursSlider extends Component {
         return (
           <View style={styles.slider}>
             <Text style={styles.text} >
-              {this.state.value && +this.state.value.toFixed(3)}
+              ${this.state.value && +this.state.value.toFixed(3)}
             </Text>
             <Slider
               value={1500}

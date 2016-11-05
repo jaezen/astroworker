@@ -41,7 +41,8 @@ class Welcome extends Component {
       <View style={styles.container}>
 
         <Text style={styles.welcome}>
-          ASTRO WORKER
+          ASTRO {"\n"} 
+          WORKER
         </Text>
 
         <Text

@@ -32,6 +32,7 @@ class ApplicationName extends Component {
           onChangeText={(text) => this.setState({text})}
           value={this.state.text}
         />
+        <Text style={{padding:10}}> {this.state.text} is a nice name!</Text>
       </View>
     );
   }

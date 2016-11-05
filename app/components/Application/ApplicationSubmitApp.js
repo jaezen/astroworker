@@ -41,7 +41,7 @@ class ApplicationSubmitApp extends Component {
         * Your background check is successful {"\n\n"}
         * You have a 4 door car less than 10 years old {"\n\n"}
         * You have 2+ years clean driving record {"\n\n"}
-        * Your contact number is (415)96-1838
+        * Your contact number is (415) 796-1838
         </Text>
 
         <SubmitApplicationButton />
