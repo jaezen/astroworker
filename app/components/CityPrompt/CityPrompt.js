@@ -16,6 +16,7 @@ class CityPrompt extends Component {
     this.state = { text: '' };
   }
 
+
   render() {
     // render() cannot return an array of components, so we need to wrap them in a `<View />``
     return (

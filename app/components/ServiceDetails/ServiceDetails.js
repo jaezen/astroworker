@@ -89,7 +89,7 @@ class ServiceDetails extends Component {
             </Text>
             <ProfitSlider />
             <Text style={styles.answer}>
-              To earn $$$ profit per week, you have to work about XX hours per week, giving you $$ per hour before expenses
+              To earn xxx profit per week, you have to work about XX hours per week, giving you $$ per hour before expenses
             </Text>
           </ScrollView>
 
