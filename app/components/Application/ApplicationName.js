@@ -16,6 +16,8 @@ class ApplicationName extends Component {
     this.state = { text: '' };
   }
 
+
+
   render() {
     // render() cannot return an array of components, so we need to wrap them in a `<View />``
     return (
@@ -30,9 +32,14 @@ class ApplicationName extends Component {
           placeholder="First Name"
           style={styles.textEdit}
           onChangeText={(text) => this.setState({text})}
-          value={this.state.text}
+          value={this.state.FirstNameText}
         />
-        <Text style={{padding:10}}> {this.state.text} is a nice name!</Text>
+        <TextInput
+          placeholder="Last Name"
+          style={styles.textEdit}
+          onChangeText={(text) => this.setState({text})}
+          value={this.state.LastNameText}
+        />
       </View>
     );
   }
