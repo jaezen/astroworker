@@ -7,15 +7,29 @@ import {
   StyleSheet,
   Text,
   TextInput,
+  Picker,
   View,
 } from 'react-native';
 
-class CityPrompt extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { text: '' };
-  }
+const Item = Picker.Item;
 
+// class CityPrompt extends Component {
+//   constructor(props) {
+//     super(props);
+//     this.state = { text: '' };
+//   }
+
+class CityPrompt extends React.Component {
+  static title = '<Picker>';
+  static description = 'Provides multiple options to choose from, using either a dropdown menu or a dialog.';
+
+    state = {
+      selected1: 'key1',
+      selected2: 'key1',
+      selected3: 'key1',
+      color: 'red',
+      mode: Picker.MODE_DIALOG,
+    };
 
   render() {
     // render() cannot return an array of components, so we need to wrap them in a `<View />``
@@ -27,16 +41,32 @@ class CityPrompt extends Component {
         <Text style={styles.question}>
           Which U.S. city do you want to work in?
         </Text>
-        <TextInput
-          placeholder="Type city name"
-          style={styles.textEdit}
-          onChangeText={(text) => this.setState({text})}
-          value={this.state.text}
-        />
+        <Picker
+          style={styles.picker}
+          selectedValue={this.state.selected1}
+          onValueChange={(select) => this.setState({selected1:select})}>
+          <Item label="San Francisco" value="key0" />
+          <Item label="Los Angeles" value="key1" />
+          <Item label="New York" value="key2" />
+        </Picker>
       </View>
     );
   }
 }
+
+changeMode = () => {
+    const newMode = this.state.mode === Picker.MODE_DROPDOWN
+        ? Picker.MODE_DROPDOWN
+        : Picker.MODE_DIALOG;
+    this.setState({mode: newMode});
+  };
+
+  onValueChange = (key: string, value: string) => {
+    const newState = {};
+    newState[key] = value;
+    this.setState(newState);
+  };
+
 
 const styles = StyleSheet.create({
   container: {
@@ -49,9 +79,9 @@ const styles = StyleSheet.create({
   question: {
     fontSize:20,
     textAlign: 'center',
-    padding: 50,
+    paddingTop: 50,
     color: '#333333',
-    marginBottom: 5,
+    //marginBottom: 5,
   },
   textEdit: {
     alignSelf:'center',
@@ -62,7 +92,9 @@ const styles = StyleSheet.create({
     borderColor:'gray',
     borderWidth:1,
   },
-
+  picker: {
+    width: 500,
+  },
 });
 
 export default CityPrompt;
