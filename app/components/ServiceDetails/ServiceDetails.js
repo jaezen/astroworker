@@ -10,6 +10,7 @@ import {
   View,
   ScrollView,
   Slider,
+  WebView,
 } from 'react-native';
 
 import {
@@ -39,14 +40,20 @@ class ServiceDetails extends Component {
             style={styles.MediaContainer}
             horizontal
           >
+
+            <WebView
+                style={styles.innerBlock}
+                javaScriptEnabled={true}
+                source={{uri: 'https://www.youtube.com/embed/10eiFrRqWlI?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen="false"'}}
+            />
             <View style={[styles.innerBlock, {backgroundColor: 'powderblue'}]} />
-            <View style={[styles.innerBlock, {backgroundColor: 'skyblue'}]} />
             <View style={[styles.innerBlock, {backgroundColor: 'steelblue'}]} />
           </ScrollView>
 
           <ScrollView
             style={styles.DetailsContainer}
           >
+
             <Text style={styles.heading}>
             Overview
             </Text>
@@ -89,7 +96,7 @@ class ServiceDetails extends Component {
             </Text>
             <ProfitSlider />
             <Text style={styles.answer}>
-              To earn xxx profit per week, you have to work about XX hours per week, giving you $$ per hour before expenses
+              To earn xxx profit per week, you have to work about xxx hours per week, giving you $$ per hour before expenses
             </Text>
           </ScrollView>
 
