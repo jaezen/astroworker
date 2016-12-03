@@ -46,8 +46,17 @@ class ServiceDetails extends Component {
                 javaScriptEnabled={true}
                 source={{uri: 'https://www.youtube.com/embed/10eiFrRqWlI?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen="false"'}}
             />
+            <WebView
+                style={styles.innerBlock}
+                javaScriptEnabled={true}
+                source={{uri: 'https://www.youtube.com/embed/3HwWXlmNpL4?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen="false"'}}
+            />
+            <WebView
+                style={styles.innerBlock}
+                javaScriptEnabled={true}
+                source={{uri: 'https://www.youtube.com/embed/76q7PDnxWuE?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen="false"'}}
+            />
             <View style={[styles.innerBlock, {backgroundColor: 'powderblue'}]} />
-            <View style={[styles.innerBlock, {backgroundColor: 'steelblue'}]} />
           </ScrollView>
 
           <ScrollView
@@ -131,7 +140,7 @@ class HoursSlider extends Component {
     };
 
     state = {
-      value: this.props.value,
+      value: this.props.HourValue,
     };
 
     render() {
