@@ -28,8 +28,42 @@ import {
 class ServiceDetails extends Component {
   constructor(props) {
     super(props);
-    this.state = { text: '' };
+    this.state = {
+      text: '',
+      profitSliderValue: 1500,
+      hourSliderValue: 50,
+      profitPerHourValue: 1000,
+    };
+
+    this.handleProfitSliderValueChange = this.handleProfitSliderValueChange.bind(this);
+    this.handleHourSliderValueChange = this.handleHourSliderValueChange.bind(this);
+    this.recalculate = this.recalculate.bind(this);
   }
+
+  handleProfitSliderValueChange(value) {
+    this.setState({profitSliderValue: value})
+    this.setState({hourSliderValue: value / 25});
+
+    this.recalculate();
+
+  }
+
+  handleHourSliderValueChange(value) {
+    this.setState({hourSliderValue: value});
+    this.setState({profitSliderValue: value * 25});
+
+    this.recalculate();
+  }
+
+  recalculate() {
+
+    let val = this.state.profitSliderValue / this.state.hourSliderValue;
+
+    val = Math.ceil(val);
+
+    this.setState({profitPerHourValue: val });
+  }
+
 
   render() {
     // render() cannot return an array of components, so we need to wrap them in a `<View />``
@@ -96,16 +130,16 @@ class ServiceDetails extends Component {
             <Text style={styles.question}>
               Estimated number of hours worked per week
             </Text>
-            <HoursSlider />
+            <HoursSlider value={this.state.hourSliderValue} onValueChange={this.handleHourSliderValueChange} />
             <Text style={styles.question}>
               Estimated profit per week
             </Text>
             <Text style={styles.answer}>
               After fees and taxes but before expenses
             </Text>
-            <ProfitSlider />
+            <ProfitSlider value={this.state.profitSliderValue} onValueChange={this.handleProfitSliderValueChange} />
             <Text style={styles.answer}>
-              To earn xxx profit per week, you have to work about xxx hours per week, giving you $$ per hour before expenses
+              To earn ${this.state.profitSliderValue} profit per week, you have to work about {this.state.hourSliderValue} hours per week, giving you ${this.state.profitPerHourValue} per hour before expenses
             </Text>
           </ScrollView>
 
@@ -135,52 +169,37 @@ class ApplyNowButton extends Component {
 
 
 class HoursSlider extends Component {
-  static defaultProps = {
-      value:50,
-    };
-
-    state = {
-      value: this.props.HourValue,
-    };
 
     render() {
       return (
         <View style={styles.slider}>
           <Text style={styles.text} >
-            {this.state.value && +this.state.value.toFixed(3)} Hours
+            {this.props.value} Hours
           </Text>
           <Slider
-            value={50}
+            value={this.props.value}
             step={1}
             minimumValue={1}
             maximumValue={100}
-            onValueChange={(value) => this.setState({value: value})} />
+            onValueChange={this.props.onValueChange} />
         </View>
       );
     }
   }
 
   class ProfitSlider extends Component {
-    static defaultProps = {
-        value:1500,
-      };
-
-      state = {
-        value: this.props.value,
-      };
-
       render() {
         return (
           <View style={styles.slider}>
             <Text style={styles.text} >
-              ${this.state.value && +this.state.value.toFixed(3)}
+              ${this.props.value}
             </Text>
             <Slider
-              value={1500}
+              value={this.props.value}
               step={10}
               minimumValue={10}
               maximumValue={3000}
-              onValueChange={(value) => this.setState({value: value})} />
+              onValueChange={this.props.onValueChange} />
           </View>
         );
       }
