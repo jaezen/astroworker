@@ -26,8 +26,6 @@ const ApplicationNavbarSubmitApp  = (props) => {
       style={{ backgroundColor: '#EEEEEE' }}
       leftButtonText="Profile"
       onLeftButtonPress={handleLeftButtonPress}
-      rightButtonText="Skip >"
-      onRightButtonPress={handleRightButtonPress}
       title="Application"
     />
   );

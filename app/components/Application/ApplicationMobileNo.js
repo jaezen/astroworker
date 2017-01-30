@@ -24,7 +24,7 @@ class ApplicationMobileNo extends Component {
         Step 4 of 5
       </Text>
         <Text style={styles.question}>
-          Enter your mobile number{"\n"}
+          Enter your 10-digit US mobile number{"\n"}
           So we can verify you
         </Text>
         <TextInput

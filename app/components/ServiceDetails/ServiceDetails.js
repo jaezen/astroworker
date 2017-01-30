@@ -53,6 +53,7 @@ class ServiceDetails extends Component {
     this.setState({profitSliderValue: value * 25});
 
     this.recalculate();
+
   }
 
   recalculate() {

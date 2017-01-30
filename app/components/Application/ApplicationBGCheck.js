@@ -34,10 +34,12 @@ class ApplicationBGCheck extends Component {
         Step 5 of 5
         </Text>
         <Text style={styles.question}>
-          To speed up the application process,{"\n"}
-          we can perform a background check on you.{"\n"}
-          This is <Text style={{fontWeight:'bold'}}>optional</Text> and costs you a one{"\n"}
-          time fee of $25 for all applications.
+          To work in this job, you need to{"\n"}
+          pass a background check. To do{"\n"}
+          this, Uber requires your SSN.{"\n\n"}
+          To speed up your application, you{"\n"}
+          have the <Text style={{fontWeight:'bold'}}>option</Text> to provide your{"\n"}
+          SSN and get checked for FREE now.
         </Text>
         <Text style={styles.heading}>
         Social Security Number
@@ -50,56 +52,24 @@ class ApplicationBGCheck extends Component {
         />
         <Text style={styles.dotpoints}>
         * Always private - never shared {"\n"}
-        * Not a credit card check - credit not affected {"\n"}
         * Information is safe and secure
         </Text>
-        <Text style={styles.heading}>
-        Credit/Debit Card Number
-        </Text>
-        <TextInput
-          placeholder="(XXX)-XXX-XXXX"
-          style={styles.textEdit}
-          onChangeText={(text) => this.setState({text})}
-          value={this.state.text}
-        />
-        <View style={styles.cardExpiryCVV}>
-          <Text style={styles.cardExpiry}>
-          Card Expiry Date
-          </Text>
-          <Text style={styles.cardCVV}>
-          CVV
-          </Text>
-        </View>
-        <View style={styles.cardExpiryCVVInputs}>
-          <TextInput
-          placeholder="MM/YY"
-          style={styles.textEditCardExpiry}
-          onChangeText={(text) => this.setState({text})}
-          value={this.state.text}
-          />
-          <TextInput
-          placeholder="XXX"
-          style={styles.textEditCardCVV}
-          onChangeText={(text) => this.setState({text})}
-          value={this.state.text}
-          />
-        </View>
-        <PayNowButton />
+        <GetCheckedButton />
       </View>
     );
   }
 }
 
-class PayNowButton extends Component {
+class GetCheckedButton extends Component {
 
   render() {
     return (
       <Link to={'/application-bg-check-approved'} style={{ height: 70 }}>
-        <View style={styles.PayNowButtonContainer}>
+        <View style={styles.GetCheckedButton}>
          <Text
          style={{fontSize: 20, textAlign: 'center', color: 'white',fontWeight:'bold'}}
          >
-          PAY NOW
+          GET CHECKED
          </Text>
        </View>
      </Link>
@@ -116,17 +86,7 @@ const styles = StyleSheet.create({
   },
   step: {
     alignSelf:'center',
-  },
-  cardExpiryCVV: {
-    flex: 1,
-    flexDirection:'row',
-    justifyContent:'space-around',
-  },
-  cardExpiryCVVInputs: {
-    flex: 1,
-    flexDirection:'row',
-    justifyContent:'space-around',
-    marginBottom:10,
+    marginBottom:5,
   },
   question: {
     fontSize:16,
@@ -142,22 +102,8 @@ const styles = StyleSheet.create({
     marginTop: 3,
     alignSelf:'center',
   },
-  cardExpiry: {
-    fontWeight:'bold',
-    fontSize:15,
-    marginLeft:15,
-    marginTop: 3,
-    alignItems:'flex-start',
-  },
-  cardCVV: {
-    fontWeight:'bold',
-    fontSize:15,
-    marginTop: 3,
-    alignItems:'flex-end',
-    marginRight:15,
-  },
   dotpoints: {
-    fontSize:12,
+    fontSize:15,
     padding: 10,
     color: '#333333',
     marginTop:5,
@@ -174,26 +120,9 @@ const styles = StyleSheet.create({
     borderWidth:1,
     marginBottom: 5,
   },
-  textEditCardExpiry: {
-    textAlign:'center',
-    height:40,
-    width:100,
-    backgroundColor:'white',
-    borderColor:'gray',
-    borderWidth:1,
-    marginLeft:15,
-  },
-  textEditCardCVV: {
-    textAlign:'center',
-    height:40,
-    width:80,
-    backgroundColor:'white',
-    borderColor:'gray',
-    borderWidth:1,
-    marginRight:15,
-  },
-  PayNowButtonContainer: {
+  GetCheckedButton: {
     margin:10,
+    marginTop:100,
     padding:10,
     height:45,
     width: 300,

@@ -1,4 +1,4 @@
-import React, {
+   import React, {
   Component,
 } from 'react';
 
@@ -39,7 +39,6 @@ class ApplicationBGCheckApproved extends Component {
         Congratulations!
         </Text>
         <Text style={styles.dotpoints}>
-        * Payment Accepted {"\n\n"}
         * Background Check Approved {"\n"}
         </Text>
       </View>
