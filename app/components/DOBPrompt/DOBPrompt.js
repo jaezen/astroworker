@@ -8,12 +8,8 @@ import {
   Text,
   TextInput,
   View,
+  DatePickerIOS,
 } from 'react-native';
-
-import {
-  Form,
-  DatePickerField,
-} from 'react-native-form-generator';
 
 class DOBPrompt extends Component {
   constructor(props) {
@@ -31,9 +27,8 @@ class DOBPrompt extends Component {
 
   handleFormChange(formData){
     formData = {
-    birthday: Date,
-  }
-
+      birthday: Date,
+    }
 
     this.setState({formData:formData})
     this.props.onFormChange && this.props.onFormChange(formData);
@@ -49,6 +44,9 @@ class DOBPrompt extends Component {
         <Text style={styles.question}>
           What is your Date of Birth?
         </Text>
+        <Text>
+          {this.props.dob.toString()}
+        </Text>
 
         <View
           style={{
@@ -57,16 +55,15 @@ class DOBPrompt extends Component {
             backgroundColor: 'white',
           }}
         >
-
-          <Form>
-            <DatePickerField style={styles.DatePickerField}
-              mode="date"
-              valueStyle = {styles.fieldValue}
-              minimumDate={new Date('1/1/1950')}
-              maximumDate={new Date('1/1/2000')}
-              placeholder='Birthday'/>
-          </Form>
-
+          <DatePickerIOS
+            date={this.props.dob}
+            mode="date"
+            valueStyle = {styles.fieldValue}
+            minimumDate={new Date('1/1/1950')}
+            maximumDate={new Date('1/1/2000')}
+            placeholder='Birthday'
+            onDateChange={date => this.props.setDOB(date)}
+          />
         </View>
       </View>
     );
@@ -89,7 +86,7 @@ const styles = StyleSheet.create({
   },
   DatePickerField: {
     alignSelf:'center',
-    textAlign:'center',
+    // textAlign:'center',
     fontSize:20,
     color:'black',
     height:40,
