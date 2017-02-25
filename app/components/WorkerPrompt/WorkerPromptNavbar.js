@@ -16,16 +16,31 @@ const WorkerPromptNavbar = (props) => {
     props.router.push('/search');
   }
 
-  return (
-    <Header
-      {...props}
-      style={{ backgroundColor: '#EEEEEE' }}
-      leftButtonText="< Back"
-      rightButtonText="Next >"
-      onRightButtonPress={handleRightButtonPress}
-      title="Set-up"
-    />
-  );
+  if (props.workerType) {
+
+    const buttonName = `Continue as ${props.workerType}`;
+
+    return (
+      <Header
+        {...props}
+        style={{ backgroundColor: '#EEEEEE' }}
+        leftButtonText="< Back"
+        rightButtonText={buttonName}
+        onRightButtonPress={handleRightButtonPress}
+        title="Set-up"
+      />
+    );
+  } else {
+    return (
+      <Header
+        {...props}
+        style={{ backgroundColor: '#EEEEEE' }}
+        leftButtonText="< Back"
+        onRightButtonPress={handleRightButtonPress}
+        title="Set-up"
+      />
+    );
+  }
 };
 
 export default withRouter(WorkerPromptNavbar);

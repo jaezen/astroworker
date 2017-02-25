@@ -21,24 +21,27 @@ class WorkerPrompt extends Component {
   render() {
     // render() cannot return an array of components, so we need to wrap them in a `<View />``
     const handleEmployeeButtonPress = () => {
-      console.log('Employee Pressed');
-      alert('Employee Pressed');
+      // console.log('Employee Pressed');
+      // alert('Employee Pressed');
+      this.props.setWorkerType('employee');
     }
 
     const handleContractorButtonPress = () => {
-      console.log('Contractor Pressed');
-      alert('Contractor Pressed');
+      // console.log('Contractor Pressed');
+      // alert('Contractor Pressed');
+      this.props.setWorkerType('contractor');
     };
 
     const handleEitherButtonPress = () => {
-      console.log('Either Pressed');
-      alert('Either Pressed');
+      // console.log('Either Pressed');
+      // alert('Either Pressed');
+      this.props.setWorkerType('either');
     };
 
     return (
       <View style={styles.container}>
       <Text>
-        Step 4 of 4
+        Step 4 of 4 {this.props.workerType || 'Not selected'}
       </Text>
         <Text style={styles.question}>
           What kind of worker do you want to be?

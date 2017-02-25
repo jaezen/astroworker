@@ -36,7 +36,7 @@ class CityPrompt extends React.Component {
     return (
       <View style={styles.container}>
       <Text>
-        Step 1 of 4
+        Step 1 of 4 {this.props.city}
       </Text>
         <Text style={styles.question}>
           Which U.S. city do you want to work in?
@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
     flexDirection:'column',
     alignItems:'center',
     paddingTop: 70,
-    backgroundColor: '#fff',
+    backgroundColor: 'red',
   },
   question: {
     fontSize:20,

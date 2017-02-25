@@ -71,26 +71,30 @@ import Welcome from './app/components/Welcome/Welcome';
 // import WelcomeNavbar from './app/components/Pages/WelcomeNavbar';
 
 // `./` = root of your project. Onboard_2.js is inside a folder called `Pages`
-import CityPrompt from './app/components/CityPrompt/CityPrompt';
+// import CityPrompt from './app/components/CityPrompt/CityPrompt';
+import CityPromptContainer from './app/containers/CityPrompt';
 import CityPromptNavbar from './app/components/CityPrompt/CityPromptNavbar';
 
 // `./` = root of your project. Onboard_2.js is inside a folder called `Pages`
-import DOBPrompt from './app/containers/DOBPrompt';
+import DOBPromptContainer from './app/containers/DOBPrompt';
 import DOBPromptNavbar from './app/components/DOBPrompt/DOBPromptNavbar';
 
 import DOBPromptFailed from './app/components/DOBPrompt/DOBPromptFailed';
 import DOBPromptFailedNavbar from './app/components/DOBPrompt/DOBPromptFailedNavbar';
 
 // `./` = root of your project. Onboard_2.js is inside a folder called `Pages`
-import SSNPrompt from './app/components/SSNPrompt/SSNPrompt';
+//import SSNPrompt from './app/components/SSNPrompt/SSNPrompt';
+import SSNPromptContainer from './app/containers/SSNPrompt';
 import SSNPromptNavbar from './app/components/SSNPrompt/SSNPromptNavbar';
 
 import SSNPromptFailed from './app/components/SSNPrompt/SSNPromptFailed';
 import SSNPromptFailedNavbar from './app/components/SSNPrompt/SSNPromptFailedNavbar';
 
 // `./` = root of your project. Onboard_2.js is inside a folder called `Pages`
-import WorkerPrompt from './app/components/WorkerPrompt/WorkerPrompt';
-import WorkerPromptNavbar from './app/components/WorkerPrompt/WorkerPromptNavbar';
+//import WorkerPrompt from './app/components/WorkerPrompt/WorkerPrompt';
+import WorkerPromptContainer from './app/containers/WorkerPrompt';
+// import WorkerPromptNavbar from './app/components/WorkerPrompt/WorkerPromptNavbar';
+import WorkerPromptNavbarContainer from './app/containers/WorkerPromptNavbarContainer';
 
 // `./` = root of your project. Onboard_2.js is inside a folder called `Pages`
 import Search from './app/components/Search/Search';
@@ -170,12 +174,12 @@ const routes = (
   <Router addressBar history={nativeHistory}>
     <StackRoute path="master" component={Master}>
       <Route path="/" component={Welcome}/>
-      <Route path="/city-prompt" component={CityPrompt} overlayComponent={CityPromptNavbar} />
-      <Route path="/dob-prompt" component={DOBPrompt} overlayComponent={DOBPromptNavbar} />
+      <Route path="/city-prompt" component={CityPromptContainer} overlayComponent={CityPromptNavbar} />
+      <Route path="/dob-prompt" component={DOBPromptContainer} overlayComponent={DOBPromptNavbar} />
       <Route path="/dob-prompt-failed" component={DOBPromptFailed} overlayComponent={DOBPromptFailedNavbar} />
-      <Route path="/ssn-prompt" component={SSNPrompt} overlayComponent={SSNPromptNavbar} />
+      <Route path="/ssn-prompt" component={SSNPromptContainer} overlayComponent={SSNPromptNavbar} />
       <Route path="/ssn-prompt-failed" component={SSNPromptFailed} overlayComponent={SSNPromptFailedNavbar} />
-      <Route path="/worker-prompt" component={WorkerPrompt} overlayComponent={WorkerPromptNavbar} />
+      <Route path="/worker-prompt" component={WorkerPromptContainer} overlayComponent={WorkerPromptNavbarContainer} />
       <Route path="/search" component={Search} overlayComponent={SearchNavbar} />
       <Route path="/results" component={Results} overlayComponent={ResultsNavbar} />
       <Route path="/service-details" component={ServiceDetails} overlayComponent={ServiceDetailsNavbar} />

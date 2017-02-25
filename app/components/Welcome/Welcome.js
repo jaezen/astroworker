@@ -29,6 +29,8 @@ class Welcome extends Component {
 
   render() {
 
+    console.log('Hello World!')
+
     const handleQuickStartButtonPress = () => {
       this.props.router.push('/city-prompt');
     }
@@ -41,7 +43,7 @@ class Welcome extends Component {
       <View style={styles.container}>
 
         <Text style={styles.welcome}>
-          ASTRO {"\n"} 
+          ASTRO {"\n"}
           WORKER
         </Text>
 

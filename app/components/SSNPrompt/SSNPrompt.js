@@ -28,14 +28,22 @@ class SSNPrompt extends Component {
     this.state = { text: '' };
   }
 
+//{handleYesButtonPress} --> move back down to Return > View > Yes > onPress
+
+  incrementSsnCount(){
+    this.setState({ssnCount: this.state.ssnCount+1});
+  }
+
   render() {
     // render() cannot return an array of components, so we need to wrap them in a `<View />``
     const handleYesButtonPress = () => {
       alert('Yes Pressed');
+      console.log('Yes Pressed!');
     }
 
     const handleNoButtonPress = () => {
         this.props.router.push('/ssn-prompt-failed');
+        console.log('No Pressed!');
     };
 
     return (
@@ -46,10 +54,13 @@ class SSNPrompt extends Component {
         <Text style={styles.question}>
           Do you have a Social Security Number and are legally able to work in the U.S.?
         </Text>
+        <Text>
+        SSN Count: {this.props.count}
+        </Text>
         <Button
          containerStyle={styles.YesButtonContainer}
          style={{fontSize: 20, color: 'white'}}
-         onPress={handleYesButtonPress}
+         onPress={() => {this.incrementSsnCount()}}
         >
          YES
         </Button>
