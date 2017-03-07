@@ -3,7 +3,6 @@ import CityPromptComponent from '../components/CityPrompt/CityPrompt';
 
 const mapStateToProps = state => ({
   city: state.city,
-  dob: state.dob,
 })
 
 const dispatchProps = dispatch => ({

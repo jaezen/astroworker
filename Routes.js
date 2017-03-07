@@ -97,45 +97,45 @@ import WorkerPromptContainer from './app/containers/WorkerPrompt';
 import WorkerPromptNavbarContainer from './app/containers/WorkerPromptNavbarContainer';
 
 // `./` = root of your project. Onboard_2.js is inside a folder called `Pages`
-import Search from './app/components/Search/Search';
+import SearchContainer from './app/containers/Search';
 import SearchNavbar from './app/components/Search/SearchNavbar';
 
 // `./` = root of your project. Onboard_2.js is inside a folder called `Pages`
-import Results from './app/components/Results/Results';
+import ResultsContainer from './app/containers/Results';
 import ResultsNavbar from './app/components/Results/ResultsNavbar';
 
 // `./` = root of your project. Onboard_2.js is inside a folder called `Pages`
-import ServiceDetails from './app/components/ServiceDetails/ServiceDetails';
+import ServiceDetailsContainer from './app/containers/ServiceDetails';
 import ServiceDetailsNavbar from './app/components/ServiceDetails/ServiceDetailsNavbar';
 
-import ServiceDetailsSecondary from './app/components/ServiceDetails/ServiceDetailsSecondary';
+import ServiceDetailsSecondaryContainer from './app/containers/ServiceDetailsSecondary';
 import ServiceDetailsSecondaryNavbar from './app/components/ServiceDetails/ServiceDetailsSecondaryNavbar';
 
-import ApplicationUberCar from './app/components/Application/ApplicationUberCar';
+import ApplicationUberCarContainer from './app/containers/ApplicationUberCar';
 import ApplicationNavbarUberCar from './app/components/Application/ApplicationNavbarUberCar';
 
-import ApplicationUberDrivingRecord from './app/components/Application/ApplicationUberDrivingRecord';
+import ApplicationUberDrivingRecordContainer from './app/containers/ApplicationUberDrivingRecord';
 import ApplicationNavbarUberDrivingRecord from './app/components/Application/ApplicationNavbarUberDrivingRecord';
 
 import ApplicationUberDrivingRecordFailed from './app/components/Application/ApplicationUberDrivingRecordFailed';
 import ApplicationNavbarUberDrivingRecordFailed from './app/components/Application/ApplicationNavbarUberDrivingRecordFailed';
 
-import ApplicationName from './app/components/Application/ApplicationName';
+import ApplicationNameContainer from './app/containers/ApplicationName';
 import ApplicationNavbarName from './app/components/Application/ApplicationNavbarName';
 
-import ApplicationMobileNo from './app/components/Application/ApplicationMobileNo';
+import ApplicationMobileNoContainer from './app/containers/ApplicationMobileNo';
 import ApplicationNavbarMobileNo from './app/components/Application/ApplicationNavbarMobileNo';
 
-import ApplicationConfirmCode from './app/components/Application/ApplicationConfirmCode';
+import ApplicationConfirmCodeContainer from './app/containers/ApplicationConfirmCode';
 import ApplicationNavbarConfirmCode from './app/components/Application/ApplicationNavbarConfirmCode';
 
-import ApplicationBGCheck from './app/components/Application/ApplicationBGCheck';
+import ApplicationBGCheckContainer from './app/containers/ApplicationBGCheck';
 import ApplicationNavbarBGCheck from './app/components/Application/ApplicationNavbarBGCheck';
 
 import ApplicationBGCheckApproved from './app/components/Application/ApplicationBGCheckApproved';
 import ApplicationNavbarBGCheckApproved from './app/components/Application/ApplicationNavbarBGCheckApproved';
 
-import ApplicationSubmitApp from './app/components/Application/ApplicationSubmitApp';
+import ApplicationSubmitAppContainer from './app/containers/ApplicationSubmitApp';
 import ApplicationNavbarSubmitApp from './app/components/Application/ApplicationNavbarSubmitApp';
 
 import ApplicationKeepApplying from './app/components/Application/ApplicationKeepApplying';
@@ -180,19 +180,19 @@ const routes = (
       <Route path="/ssn-prompt" component={SSNPromptContainer} overlayComponent={SSNPromptNavbar} />
       <Route path="/ssn-prompt-failed" component={SSNPromptFailed} overlayComponent={SSNPromptFailedNavbar} />
       <Route path="/worker-prompt" component={WorkerPromptContainer} overlayComponent={WorkerPromptNavbarContainer} />
-      <Route path="/search" component={Search} overlayComponent={SearchNavbar} />
-      <Route path="/results" component={Results} overlayComponent={ResultsNavbar} />
-      <Route path="/service-details" component={ServiceDetails} overlayComponent={ServiceDetailsNavbar} />
-      <Route path="/service-details-secondary" component={ServiceDetailsSecondary} overlayComponent={ServiceDetailsSecondaryNavbar} />
-      <Route path="/application-uber-car" component={ApplicationUberCar} overlayComponent={ApplicationNavbarUberCar} />
-      <Route path="/application-uber-driving-record" component={ApplicationUberDrivingRecord} overlayComponent={ApplicationNavbarUberDrivingRecord} />
+      <Route path="/search" component={SearchContainer} overlayComponent={SearchNavbar} />
+      <Route path="/results" component={ResultsContainer} overlayComponent={ResultsNavbar} />
+      <Route path="/service-details" component={ServiceDetailsContainer} overlayComponent={ServiceDetailsNavbar} />
+      <Route path="/service-details-secondary" component={ServiceDetailsSecondaryContainer} overlayComponent={ServiceDetailsSecondaryNavbar} />
+      <Route path="/application-uber-car" component={ApplicationUberCarContainer} overlayComponent={ApplicationNavbarUberCar} />
+      <Route path="/application-uber-driving-record" component={ApplicationUberDrivingRecordContainer} overlayComponent={ApplicationNavbarUberDrivingRecord} />
       <Route path="/application-uber-driving-record-failed" component={ApplicationUberDrivingRecordFailed} overlayComponent={ApplicationNavbarUberDrivingRecordFailed} />
-      <Route path="/application-name" component={ApplicationName} overlayComponent={ApplicationNavbarName} />
-      <Route path="/application-mobile-no" component={ApplicationMobileNo} overlayComponent={ApplicationNavbarMobileNo} />
-      <Route path="/application-confirm-code" component={ApplicationConfirmCode} overlayComponent={ApplicationNavbarConfirmCode} />
-      <Route path="/application-bg-check" component={ApplicationBGCheck} overlayComponent={ApplicationNavbarBGCheck} />
+      <Route path="/application-name" component={ApplicationNameContainer} overlayComponent={ApplicationNavbarName} />
+      <Route path="/application-mobile-no" component={ApplicationMobileNoContainer} overlayComponent={ApplicationNavbarMobileNo} />
+      <Route path="/application-confirm-code" component={ApplicationConfirmCodeContainer} overlayComponent={ApplicationNavbarConfirmCode} />
+      <Route path="/application-bg-check" component={ApplicationBGCheckContainer} overlayComponent={ApplicationNavbarBGCheck} />
       <Route path="/application-bg-check-approved" component={ApplicationBGCheckApproved} overlayComponent={ApplicationNavbarBGCheckApproved} />
-      <Route path="/application-submit-app" component={ApplicationSubmitApp} overlayComponent={ApplicationNavbarSubmitApp} />
+      <Route path="/application-submit-app" component={ApplicationSubmitAppContainer} overlayComponent={ApplicationNavbarSubmitApp} />
       <Route path="/application-keep-applying" component={ApplicationKeepApplying} overlayComponent={ApplicationNavbarKeepApplying} />
       <Route path="/login-mobile-no" component={LoginMobileNo} overlayComponent={LoginNavbarMobileNo} />
       <Route path="/login-confirm-code" component={LoginConfirmCode} overlayComponent={LoginNavbarConfirmCode} />

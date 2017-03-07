@@ -21,7 +21,7 @@ import {
   Image,
 } from 'react-native';
 
-class ApplicationBGCheckApproved extends Component {
+class DOBPromptFailed extends Component {
   constructor(props) {
     super(props);
     this.state = { text: '' };
@@ -37,7 +37,7 @@ class ApplicationBGCheckApproved extends Component {
         </Text>
         <Text style={styles.notification}>
           You do not qualify to work because you must be at least 18 years old SSN.{"\n\n"}
-          Please come back when you are 18 years old. 
+          Please come back when you are 18 years old.
         </Text>
       </View>
     );
@@ -75,4 +75,4 @@ const styles = StyleSheet.create({
 
 
 
-export default withRouter(ApplicationBGCheckApproved);
+export default withRouter(DOBPromptFailed);

@@ -28,40 +28,105 @@ const reducer = (state = initialState, action) => {
     return {
       ...state,
       workerType: action.payload,
-    }
-  };
+    };
+  }
 
-  switch (action.type) {
-    case 'SET_DOB':
-      debugger;
-      return Object.assign({}, state, { dob: action.payload });
-    case 'SET_CITY':
-      return Object.assign({}, state, { location: action.payload });
-    case 'SET_HAS_SSN':
-      debugger;
-      return Object.assign({}, state, { hasSSN: action.payload });
-    case 'SET_SSN':
-      return Object.assign({}, state, { ssn: action.payload });
-    case 'SET_RESULTS':
-      return Object.assign({}, state, { results: action.payload });
-    case 'SET_APPLY_NOW':
-      return Object.assign({}, state, { applyNow: action.payload });
-    case 'SET_HAS_CAR':
-      return Object.assign({}, state, { hasCar: action.payload });
-    case 'SET_HAS_DRIVING_RECORD':
-      return Object.assign({}, state, { hasDrivingRecord: action.payload });
-    case 'SET_NAME':
-      return Object.assign({}, state, { name: action.payload });
-    case 'SET_MOBILE_NO':
-      return Object.assign({}, state, { mobileNo: action.payload });
-    case 'SET_CONFIRM_CODE':
-      return Object.assign({}, state, { confirmCode: action.payload });
-    case 'SET_GET_CHECKED':
-      return Object.assign({}, state, { getChecked: action.payload });
-    case 'SET_SUBMIT_APP':
-      return Object.assign({}, state, { submitApp: action.payload });
-    default:
-      return state;
+  if (action.type === 'SET_DOB') {
+    return {
+      ...state,
+      dob: action.payload,
+    };
+  }
+
+  if (action.type === 'SET_CITY') {
+    return {
+      ...state,
+      city: action.payload,
+    };
+  }
+
+  if (action.type === 'SET_HAS_SSN') {
+    return {
+      ...state,
+      hasSSN: action.payload,
+    };
+  }
+
+  if (action.type === 'SET_SSN') {
+    return {
+      ...state,
+      ssn: action.payload,
+    };
+  }
+
+  if (action.type === 'SET_RESULTS') {
+    return {
+      ...state,
+      results: action.payload,
+    };
+  }
+
+  if (action.type === 'SET_APPLY_NOW') {
+    return {
+      ...state,
+      applyNow: action.payload,
+    };
+  }
+
+  if (action.type === 'SET_APPLY_NOW') {
+    return {
+      ...state,
+      applyNow: action.payload,
+    };
+  }
+
+  if (action.type === 'SET_HAS_CAR') {
+    return {
+      ...state,
+      hasCar: action.payload,
+    };
+  }
+
+  if (action.type === 'SET_HAS_DRIVING_RECORD') {
+    return {
+      ...state,
+      hasDrivingRecord: action.payload,
+    };
+  }
+
+  if (action.type === 'SET_NAME') {
+    return {
+      ...state,
+      name: action.payload,
+    };
+  }
+
+  if (action.type === 'SET_MOBILE_NO') {
+    return {
+      ...state,
+      mobileNo: action.payload,
+    };
+  }
+
+  if (action.type === 'SET_CONFIRM_CODE') {
+    return {
+      ...state,
+      confirmCode: action.payload,
+    };
+  }
+
+  if (action.type === 'SET_GET_CHECKED') {
+    return {
+      ...state,
+      getChecked: action.payload,
+    };
+  }
+
+  if (action.type === 'SET_SUBMIT_APP') {
+    return {
+      ...state,
+      submitApp: action.payload,
+    };
   }
 
   // sync(state);

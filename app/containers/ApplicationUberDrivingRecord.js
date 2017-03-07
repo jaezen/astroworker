@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import ApplicationUberDrivingRecord from '../components/Application/ApplicationUberDrivingRecord';
+import ApplicationUberDrivingRecordComponent from '../components/Application/ApplicationUberDrivingRecord';
 
 const mapStateToProps = state => ({
   drivingRecord: state.drivingRecord,
@@ -12,6 +12,6 @@ const dispatchProps = dispatch => ({
 const ApplicationUberDrivingRecord = connect(
   mapStateToProps,
   dispatchProps,
-)(ApplicationUberDrivingRecord);
+)(ApplicationUberDrivingRecordComponent);
 
 export default ApplicationUberDrivingRecord;
