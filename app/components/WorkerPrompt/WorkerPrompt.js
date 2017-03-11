@@ -24,7 +24,7 @@ class WorkerPrompt extends Component {
       // console.log('Employee Pressed');
       // alert('Employee Pressed');
       this.props.setWorkerType('employee');
-    }
+    };
 
     const handleContractorButtonPress = () => {
       // console.log('Contractor Pressed');

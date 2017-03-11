@@ -10,6 +10,8 @@ import {
   withRouter,
 } from 'react-router-native';
 
+//const buttonName= `Continue as ${props.workerType}}`;
+
 const WorkerPromptNavbar = (props) => {
 
   const handleRightButtonPress = () => {
@@ -18,7 +20,7 @@ const WorkerPromptNavbar = (props) => {
 
   if (props.workerType) {
 
-    const buttonName = `Continue as ${props.workerType}`;
+    const buttonName = "Next >";
 
     return (
       <Header

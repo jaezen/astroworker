@@ -16,16 +16,31 @@ const SSNPromptNavbar = (props) => {
     props.router.push('/worker-prompt');
   }
 
-  return (
-    <Header
-      {...props}
-      style={{ backgroundColor: '#EEEEEE' }}
-      leftButtonText="< Back"
-      rightButtonText="Next >"
-      onRightButtonPress={handleRightButtonPress}
-      title="Set-up"
-    />
-  );
+  if (props.hasSSN) {
+
+    const buttonName = "Next >";
+
+    return (
+      <Header
+        {...props}
+        style={{ backgroundColor: '#EEEEEE' }}
+        leftButtonText="< Back"
+        rightButtonText={buttonName}
+        onRightButtonPress={handleRightButtonPress}
+        title="Set-up"
+      />
+    );
+  } else {
+    return (
+      <Header
+        {...props}
+        style={{ backgroundColor: '#EEEEEE' }}
+        leftButtonText="< Back"
+        onRightButtonPress={handleRightButtonPress}
+        title="Set-up"
+      />
+    );
+  }
 };
 
 export default withRouter(SSNPromptNavbar);

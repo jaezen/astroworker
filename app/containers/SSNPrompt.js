@@ -2,12 +2,11 @@ import { connect } from 'react-redux';
 import SSNPromptComponent from '../components/SSNPrompt/SSNPrompt';
 
 const mapStateToProps = state => ({
-  ssn: state.ssn,
-  count:state.count,
+  hasSSN:state.hasSSN,
 })
 
 const dispatchProps = dispatch => ({
-  setSSN: (ssn) => dispatch({type: 'SET_HAS_SSN', payload: hasSsn})
+  setHasSSN: (hasSSN) => dispatch({type: 'SET_HAS_SSN', payload: hasSSN})
   // setSSN: (ssn) => dispatch({type: 'SET_SSN', payload: ssn})
 });
 
