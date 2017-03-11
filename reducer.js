@@ -131,6 +131,8 @@ const reducer = (state = initialState, action) => {
 
   // sync(state);
 
+  return(state);
+
 }
 
 export default reducer;
