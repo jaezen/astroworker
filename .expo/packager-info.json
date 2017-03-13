@@ -3,5 +3,8 @@
   "exponentServerNgrokUrl": null,
   "packagerNgrokUrl": null,
   "ngrokPid": null,
-  "expoServerPort": null
+  "expoServerPort": null,
+  "packagerPort": null,
+  "packagerPid": null,
+  "expoServerNgrokUrl": null
 }
