@@ -31,10 +31,13 @@ class ApplicationUberCar extends Component {
   render() {
     // render() cannot return an array of components, so we need to wrap them in a `<View />``
     const handleYesButtonPress = () => {
-      alert('Yes Pressed');
+      //alert('Yes Pressed');
+      this.props.setHasCar('yes');
+      this.props.router.push('/application-uber-driving-record');
     }
 
     const handleNoButtonPress = () => {
+      this.props.setHasCar('no');
       this.props.router.push('/service-details-secondary');
     };
 

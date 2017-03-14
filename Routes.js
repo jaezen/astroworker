@@ -97,7 +97,7 @@ import WorkerPromptContainer from './app/containers/WorkerPrompt';
 import WorkerPromptNavbarContainer from './app/containers/WorkerPromptNavbarContainer';
 
 // `./` = root of your project. Onboard_2.js is inside a folder called `Pages`
-import SearchContainer from './app/containers/Search';
+import Search from './app/components/Search/Search';
 import SearchNavbar from './app/components/Search/SearchNavbar';
 
 // `./` = root of your project. Onboard_2.js is inside a folder called `Pages`
@@ -105,17 +105,17 @@ import ResultsContainer from './app/containers/Results';
 import ResultsNavbar from './app/components/Results/ResultsNavbar';
 
 // `./` = root of your project. Onboard_2.js is inside a folder called `Pages`
-import ServiceDetailsContainer from './app/containers/ServiceDetails';
+import ServiceDetails from './app/components/ServiceDetails/ServiceDetails';
 import ServiceDetailsNavbar from './app/components/ServiceDetails/ServiceDetailsNavbar';
 
 import ServiceDetailsSecondaryContainer from './app/containers/ServiceDetailsSecondary';
 import ServiceDetailsSecondaryNavbar from './app/components/ServiceDetails/ServiceDetailsSecondaryNavbar';
 
 import ApplicationUberCarContainer from './app/containers/ApplicationUberCar';
-import ApplicationNavbarUberCar from './app/components/Application/ApplicationNavbarUberCar';
+import ApplicationNavbarUberCarContainer from './app/containers/ApplicationNavbarUberCarContainer';
 
 import ApplicationUberDrivingRecordContainer from './app/containers/ApplicationUberDrivingRecord';
-import ApplicationNavbarUberDrivingRecord from './app/components/Application/ApplicationNavbarUberDrivingRecord';
+import ApplicationNavbarUberDrivingRecordContainer from './app/containers/ApplicationNavbarUberDrivingRecordContainer';
 
 import ApplicationUberDrivingRecordFailed from './app/components/Application/ApplicationUberDrivingRecordFailed';
 import ApplicationNavbarUberDrivingRecordFailed from './app/components/Application/ApplicationNavbarUberDrivingRecordFailed';
@@ -180,12 +180,12 @@ const routes = (
       <Route path="/ssn-prompt" component={SSNPromptContainer} overlayComponent={SSNPromptNavbar} />
       <Route path="/ssn-prompt-failed" component={SSNPromptFailed} overlayComponent={SSNPromptFailedNavbar} />
       <Route path="/worker-prompt" component={WorkerPromptContainer} overlayComponent={WorkerPromptNavbarContainer} />
-      <Route path="/search" component={SearchContainer} overlayComponent={SearchNavbar} />
+      <Route path="/search" component={Search} overlayComponent={SearchNavbar} />
       <Route path="/results" component={ResultsContainer} overlayComponent={ResultsNavbar} />
-      <Route path="/service-details" component={ServiceDetailsContainer} overlayComponent={ServiceDetailsNavbar} />
+      <Route path="/service-details" component={ServiceDetails} overlayComponent={ServiceDetailsNavbar} />
       <Route path="/service-details-secondary" component={ServiceDetailsSecondaryContainer} overlayComponent={ServiceDetailsSecondaryNavbar} />
-      <Route path="/application-uber-car" component={ApplicationUberCarContainer} overlayComponent={ApplicationNavbarUberCar} />
-      <Route path="/application-uber-driving-record" component={ApplicationUberDrivingRecordContainer} overlayComponent={ApplicationNavbarUberDrivingRecord} />
+      <Route path="/application-uber-car" component={ApplicationUberCarContainer} overlayComponent={ApplicationNavbarUberCarContainer} />
+      <Route path="/application-uber-driving-record" component={ApplicationUberDrivingRecordContainer} overlayComponent={ApplicationNavbarUberDrivingRecordContainer} />
       <Route path="/application-uber-driving-record-failed" component={ApplicationUberDrivingRecordFailed} overlayComponent={ApplicationNavbarUberDrivingRecordFailed} />
       <Route path="/application-name" component={ApplicationNameContainer} overlayComponent={ApplicationNavbarName} />
       <Route path="/application-mobile-no" component={ApplicationMobileNoContainer} overlayComponent={ApplicationNavbarMobileNo} />

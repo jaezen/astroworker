@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import WorkerPromptComponent from '../components/WorkerPrompt/WorkerPrompt';
+import SearchComponent from '../components/Search/Search';
 
 const mapStateToProps = state => ({
   worker: state.worker,

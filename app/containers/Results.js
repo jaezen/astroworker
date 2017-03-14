@@ -1,17 +1,17 @@
 import { connect } from 'react-redux';
-import WorkerPromptComponent from '../components/WorkerPrompt/WorkerPrompt';
+import ResultsComponent from '../components/Results/Results';
 
 const mapStateToProps = state => ({
-  worker: state.worker,
+  result: state.result,
 })
 
 const dispatchProps = dispatch => ({
-  setWorker: (workerType) => dispatch({ type: 'SET_WORKER_TYPE', payload: workerType })
+  setResults: (results) => dispatch({ type: 'SET_RESULTS', payload: results })
 });
 
-const WorkerPrompt = connect(
+const Results = connect(
   mapStateToProps,
   dispatchProps,
-)(WorkerPromptComponent);
+)(ResultsComponent);
 
-export default WorkerPrompt;
+export default Results;

@@ -20,7 +20,7 @@ const WorkerPromptNavbar = (props) => {
 
   if (props.workerType) {
 
-    const buttonName = "Next >";
+    const buttonName = "Search >";
 
     return (
       <Header

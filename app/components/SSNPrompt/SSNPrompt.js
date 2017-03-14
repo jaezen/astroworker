@@ -38,6 +38,7 @@ class SSNPrompt extends Component {
     // render() cannot return an array of components, so we need to wrap them in a `<View />``
 
     const handleYesButtonPress = () => {
+        this.props.router.push('/worker-prompt');
         this.props.setHasSSN('yes');
     };
 

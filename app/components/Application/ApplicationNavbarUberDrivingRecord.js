@@ -16,16 +16,32 @@ const ApplicationNavbarUberDrivingRecord = (props) => {
     props.router.push('/application-name');
   }
 
+  if (props.hasDrivingRecord) {
+
+    const buttonName = "Next>";
+
+
   return (
     <Header
       {...props}
       style={{ backgroundColor: '#EEEEEE' }}
       leftButtonText="< Back"
-      rightButtonText="Next >"
+      //rightButtonText={buttonName}
       onRightButtonPress={handleRightButtonPress}
-      title="Application"
+      title="Set-up"
     />
   );
+} else {
+  return (
+    <Header
+      {...props}
+      style={{ backgroundColor: '#EEEEEE' }}
+      leftButtonText="< Back"
+      onRightButtonPress={handleRightButtonPress}
+      title="Set-up"
+    />
+  );
+}
 };
 
 export default withRouter(ApplicationNavbarUberDrivingRecord);

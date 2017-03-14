@@ -16,9 +16,6 @@ const ResultsNavbar = (props) => {
     props.router.push('/menu');
   }
 
-  const handleRightButtonPress = () => {
-    props.router.push('/search');
-  }
 
   return (
     <Header
@@ -26,9 +23,6 @@ const ResultsNavbar = (props) => {
       style={{ backgroundColor: '#EEEEEE' }}
       leftButtonText="Profile"
       onLeftButtonPress={handleLeftButtonPress}
-      rightButtonText="Search"
-      onRightButtonPress={handleRightButtonPress}
-      title="Results"
     />
   );
 };

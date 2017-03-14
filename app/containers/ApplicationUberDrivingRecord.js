@@ -2,11 +2,11 @@ import { connect } from 'react-redux';
 import ApplicationUberDrivingRecordComponent from '../components/Application/ApplicationUberDrivingRecord';
 
 const mapStateToProps = state => ({
-  drivingRecord: state.drivingRecord,
+  hasDrivingRecord: state.hasDrivingRecord,
 })
 
 const dispatchProps = dispatch => ({
-  setDrivingRecord: (hasDrivingRecord) => dispatch({type: 'SET_HAS_DRIVING_RECORD', payload: hasDrivingRecord})
+  setHasDrivingRecord: (hasDrivingRecord) => dispatch({type: 'SET_HAS_DRIVING_RECORD', payload: hasDrivingRecord})
 });
 
 const ApplicationUberDrivingRecord = connect(

@@ -25,7 +25,7 @@ const SSNPromptNavbar = (props) => {
         {...props}
         style={{ backgroundColor: '#EEEEEE' }}
         leftButtonText="< Back"
-        rightButtonText={buttonName}
+        //rightButtonText={buttonName}
         onRightButtonPress={handleRightButtonPress}
         title="Set-up"
       />

@@ -31,10 +31,13 @@ class ApplicationUberDrivingRecord extends Component {
   render() {
     // render() cannot return an array of components, so we need to wrap them in a `<View />``
     const handleYesButtonPress = () => {
-      alert('Yes Pressed');
+      // alert('Yes Pressed');
+      this.props.setHasDrivingRecord('yes');
+      this.props.router.push('/application-name');
     }
 
     const handleNoButtonPress = () => {
+      this.props.setHasDrivingRecord('no');
       this.props.router.push('/application-uber-driving-record-failed');
   };
 
