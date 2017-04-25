@@ -34,7 +34,7 @@ class ApplicationSubmitApp extends Component {
         Ready to submit!
         </Text>
         <Text style={styles.dotpoints}>
-        * Your name is XXX {"\n\n"}
+        * Your name is {this.props.name} {"\n\n"}
         * You want to work in XXX {"\n\n"}
         * You are over 21 years old {"\n\n"}
         * You have a SSN and allowed to work in the U.S. {"\n\n"}
