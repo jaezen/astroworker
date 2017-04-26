@@ -6,7 +6,7 @@ const mapStateToProps = state => ({
 })
 
 const dispatchProps = dispatch => ({
-  setMobileNo: (mobileNo) => dispatch({type: 'SET_MOBILE_NO', payload: mobileNo})
+  setMobileNo: (mobileNo) => dispatch({type: 'SET_MOBILE_NO', payload: mobileNo}),
 });
 
 const ApplicationMobileNo = connect(

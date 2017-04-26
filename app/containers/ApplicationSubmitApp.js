@@ -2,7 +2,10 @@ import { connect } from 'react-redux';
 import ApplicationSubmitAppComponent from '../components/Application/ApplicationSubmitApp';
 
 const mapStateToProps = state => ({
-  ApplicationSubmitApp: state.ApplicationSubmitApp,
+  city: state.city,
+  firstName: state.firstName,
+  lastName: state.lastName,
+  mobileNo: state.mobileNo,
 })
 
 const dispatchProps = dispatch => ({

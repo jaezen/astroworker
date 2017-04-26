@@ -34,14 +34,14 @@ class ApplicationSubmitApp extends Component {
         Ready to submit!
         </Text>
         <Text style={styles.dotpoints}>
-        * Your name is {this.props.name} {"\n\n"}
-        * You want to work in XXX {"\n\n"}
+        * Your name is {this.props.firstName} {this.props.lastName} {"\n\n"}
+        * You want to work in {this.props.city} {"\n\n"}
         * You are over 21 years old {"\n\n"}
         * You have a SSN and allowed to work in the U.S. {"\n\n"}
         * Your background check is successful {"\n\n"}
         * You have a 4 door car less than 10 years old {"\n\n"}
         * You have 2+ years clean driving record {"\n\n"}
-        * Your contact number is (415) 966-1838
+        * Your contact number is {this.props.mobileNo}
         </Text>
 
         <SubmitApplicationButton />

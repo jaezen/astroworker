@@ -2,11 +2,13 @@ import { connect } from 'react-redux';
 import ApplicationNameComponent from '../components/Application/ApplicationName';
 
 const mapStateToProps = state => ({
-  name: state.name,
+  firstName: state.firstName,
+  lastName: state.lastName,
 })
 
 const dispatchProps = dispatch => ({
-  setName: (name) => dispatch({type: 'SET_NAME', payload: name})
+  setFirstName: (firstName) => dispatch({type: 'SET_FIRST_NAME', payload: firstName}),
+  setLastName: (lastName) => dispatch({type: 'SET_LAST_NAME', payload: lastName}),
 });
 
 const ApplicationName = connect(

@@ -8,8 +8,9 @@ const initialState = {
   applyNow:null,
   hasCar:null,
   hasDrivingRecord:null,
-  name:null,
-  mobile:null,
+  firstName:null,
+  lastName: null,
+  mobileNo:null,
   confirmCode:null,
   getChecked:null,
   submitApp:null,
@@ -94,10 +95,17 @@ const reducer = (state = initialState, action) => {
     };
   }
 
-  if (action.type === 'SET_NAME') {
+  if (action.type === 'SET_FIRST_NAME') {
     return {
       ...state,
-      name: action.payload,
+      firstName: action.payload.trim(),
+    };
+  }
+
+  if (action.type === 'SET_LAST_NAME') {
+    return {
+      ...state,
+      lastName: action.payload.trim(),
     };
   }
 

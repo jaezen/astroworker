@@ -30,8 +30,10 @@ class ApplicationMobileNo extends Component {
         <TextInput
           placeholder="(XXX)-XXX-XXXX"
           style={styles.textEdit}
-          onChangeText={(text) => this.setState({text})}
-          value={this.state.text}
+          onChangeText={(mobileNo) => {
+            this.props.setMobileNo(mobileNo);
+          }}
+          value={this.props.mobileNo}
         />
       </View>
     );
