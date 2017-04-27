@@ -32,12 +32,18 @@ class CityPrompt extends React.Component {
       mode: Picker.MODE_DIALOG,
     };
 
+    // onChangeText={(lastName) =>
+    //   this.props.setLastName(lastName)
+    // }
+    // value={this.props.lastName}
+
+
   render() {
     // render() cannot return an array of components, so we need to wrap them in a `<View />``
     return (
       <View style={styles.container}>
       <Text>
-        Step 1 of 4 
+        Step 1 of 4
       </Text>
         <Text style={styles.question}>
           Which U.S. city do you want to work in?
@@ -45,7 +51,7 @@ class CityPrompt extends React.Component {
         <Picker
           style={styles.picker}
           selectedValue={this.state.selected1}
-          onValueChange={(select) => this.setState({selected1:select})}>
+          onValueChange={(city) => this.props.setState(city)}>
           <Item label="San Francisco" value="key0" />
           <Item label="Los Angeles" value="key1" />
           <Item label="New York" value="key2" />

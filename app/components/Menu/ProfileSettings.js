@@ -65,7 +65,7 @@ this.props.onFormChange && this.props.onFormChange(formData);
             <InputField style={styles.inputField}
             ref='first_name'
             label='First Name'
-            placeholder='Bilbo'/>
+            placeholder={this.props.firstName}/>
           </Form>
           <Form
             ref='ProfileSettingsForm'
@@ -73,7 +73,7 @@ this.props.onFormChange && this.props.onFormChange(formData);
             <InputField style={styles.inputField}
             ref='last_name'
             label='Last Name'
-            placeholder='Baggins'/>
+            placeholder={this.props.lastName}/>
           </Form>
           <Form
             ref='ProfileSettingsForm'
