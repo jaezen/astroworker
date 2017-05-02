@@ -14,28 +14,9 @@ import {
 
 const Item = Picker.Item;
 
-// class CityPrompt extends Component {
-//   constructor(props) {
-//     super(props);
-//     this.state = { text: '' };
-//   }
-
 class CityPrompt extends React.Component {
   static title = '<Picker>';
   static description = 'Provides multiple options to choose from, using either a dropdown menu or a dialog.';
-
-    state = {
-      selected1: 'key1',
-      selected2: 'key1',
-      selected3: 'key1',
-      color: 'red',
-      mode: Picker.MODE_DIALOG,
-    };
-
-    // onChangeText={(lastName) =>
-    //   this.props.setLastName(lastName)
-    // }
-    // value={this.props.lastName}
 
 
   render() {
@@ -50,11 +31,10 @@ class CityPrompt extends React.Component {
         </Text>
         <Picker
           style={styles.picker}
-          selectedValue={this.state.selected1}
-          onValueChange={(city) => this.props.setState(city)}>
-          <Item label="San Francisco" value="key0" />
-          <Item label="Los Angeles" value="key1" />
-          <Item label="New York" value="key2" />
+          selectedValue={this.props.city}
+          <Item label="San Francisco" value="San Francisco" />
+          <Item label="Los Angeles" value="Los Angeles" />
+          <Item label="New York" value="New York" />
         </Picker>
       </View>
     );
@@ -65,13 +45,11 @@ changeMode = () => {
     const newMode = this.state.mode === Picker.MODE_DROPDOWN
         ? Picker.MODE_DROPDOWN
         : Picker.MODE_DIALOG;
-    this.setState({mode: newMode});
   };
 
   onValueChange = (key: string, value: string) => {
     const newState = {};
     newState[key] = value;
-    this.setState(newState);
   };
 
 
