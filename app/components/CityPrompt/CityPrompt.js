@@ -32,6 +32,8 @@ class CityPrompt extends React.Component {
         <Picker
           style={styles.picker}
           selectedValue={this.props.city}
+          onValueChange={(city) => this.props.setCity(city)}
+        >
           <Item label="San Francisco" value="San Francisco" />
           <Item label="Los Angeles" value="Los Angeles" />
           <Item label="New York" value="New York" />

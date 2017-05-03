@@ -6,13 +6,17 @@
 
 import React from 'react';
 import { AppRegistry } from 'react-native';
-import { createStore } from 'redux';
+import { applyMiddleware, createStore } from 'redux';
 import { Provider } from 'react-redux';
+import logger from 'redux-logger'
 
 import Routes from './Routes';
 import reducer from './reducer';
 
-const store = createStore(reducer);
+const store = createStore(
+  reducer,
+  applyMiddleware(logger)
+);
 
 const Root = () => (
   <Provider store={store}>

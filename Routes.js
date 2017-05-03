@@ -46,25 +46,6 @@ import { Examples } from '@shoutem/ui';
 // const reducer = combineReducers(reducers)
 // const store = createStore(reducer)
 
-const styles = StyleSheet.create({
-  component: {
-    backgroundColor: '#FFFFFF',
-    flex: 1,
-    overflow: 'hidden',
-  },
-  home: {
-    backgroundColor: '#FFFFFF',
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    justifyContent: 'center',
-  },
-  detailCard: {
-    height: 100,
-    margin: 20,
-    width: 100,
-  },
-});
-
 // Renamed AstroWorker component to Onboard_1 and moved it to `Pages`. `index` should only be
 // responsible for registering the component with the `AppRegistry`.
 import Welcome from './app/components/Welcome/Welcome';
@@ -153,6 +134,24 @@ import ProfileSettings from './app/components/Menu/ProfileSettings';
 import About from './app/components/Menu/About';
 import Notifications from './app/components/Menu/Notifications';
 
+const styles = StyleSheet.create({
+  component: {
+    backgroundColor: '#FFFFFF',
+    flex: 1,
+    overflow: 'hidden',
+  },
+  home: {
+    backgroundColor: '#FFFFFF',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'center',
+  },
+  detailCard: {
+    height: 100,
+    margin: 20,
+    width: 100,
+  },
+});
 
 const Master = (props) => (
   <SideMenu menu={<Menu />}>
